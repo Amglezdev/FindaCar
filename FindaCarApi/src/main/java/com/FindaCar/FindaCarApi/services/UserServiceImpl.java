@@ -32,17 +32,41 @@ public class UserServiceImpl implements UserService {
 			// TODO: handle exception
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public User findByEmailAndPassword(String mail, String password) {
 		try {
-			return userRepo.findUserByMailAndPassword(mail, password);
-		}catch (Exception e) {
+			return userRepo.findByMailAndPassword(mail, password);
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
+	}
+
+	@Override
+	public boolean deleteUser(Long id) {
+		try {
+			deleteUser(id);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+		
+	}
+
+	@Override
+	public boolean updateUser(User user) {
+		try {
+			userRepo.save(user);
+			return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+		
 	}
 
 }

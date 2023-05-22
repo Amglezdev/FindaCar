@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 * @param password the password
 	 * @return the user
 	 */
-	@Query("SELECT U FROM USER U WHERE U.MAIL = :mail AND U.password")
-	public User findUserByMailAndPassword(String mail, String password);
+	
+	public User findByMailAndPassword(String mail, String password);	
 
 }

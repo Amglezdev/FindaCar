@@ -10,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -56,12 +59,13 @@ public class User {
 	private String password;
 
 	/** The role. */
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_usuario")
 	private Role role;
 
 	/** The vehicles owned. */
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
+	@JsonIgnore
 	private List<Vehicle> vehiclesOwned;
 
 	/**

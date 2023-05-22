@@ -1,29 +1,33 @@
 package com.FindaCar.FindaCarApi.entities;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "fac_gu_roles", schema = "sc_findacar_gestion_usuarios")
 public class Role {
-	
+
 	/** The id. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	/** The role. */
 	@Column(name = "rol")
 	private int role;
-	
+
 	/** The description. */
 	@Column(name = "desc_rol")
 	private String description;
-	
+
 	/**
 	 * Gets the id.
 	 *
@@ -32,7 +36,7 @@ public class Role {
 	public int getId() {
 		return id;
 	}
-	
+
 	/**
 	 * Sets the id.
 	 *
@@ -41,7 +45,7 @@ public class Role {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	/**
 	 * Gets the role.
 	 *
@@ -50,7 +54,7 @@ public class Role {
 	public int getRole() {
 		return role;
 	}
-	
+
 	/**
 	 * Sets the role.
 	 *
@@ -59,7 +63,7 @@ public class Role {
 	public void setRole(int role) {
 		this.role = role;
 	}
-	
+
 	/**
 	 * Gets the description.
 	 *
@@ -68,7 +72,7 @@ public class Role {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	/**
 	 * Sets the description.
 	 *
@@ -77,7 +81,5 @@ public class Role {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
 
 }

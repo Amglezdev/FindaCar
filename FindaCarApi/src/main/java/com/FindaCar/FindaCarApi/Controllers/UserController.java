@@ -4,12 +4,17 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FindaCar.FindaCarApi.entities.User;
+import com.FindaCar.FindaCarApi.dto.UserDto;
+import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
+import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
 import com.FindaCar.FindaCarApi.services.UserServiceImpl;
 
 @RestController
@@ -18,11 +23,15 @@ public class UserController {
 
 	@Autowired
 	UserServiceImpl userImpl;
+	@Autowired
+	ToDtoImpl toDto;
+	@Autowired
+	DtoToImpl dtoTo;
 
 	@GetMapping("/allUsers")
-	public ArrayList<User> getUsers() {
-		try {
-			return userImpl.getAllUsers();
+	public ArrayList<UserDto> getUsers() {
+		try {			
+			return toDto.listUserToDto(userImpl.getAllUsers());
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
@@ -30,9 +39,9 @@ public class UserController {
 	}
 
 	@PutMapping("/addUser")
-	public boolean addUser(User user) {
+	public boolean addUser(@RequestBody UserDto user) {
 		try {
-			return userImpl.createUser(user);
+			return userImpl.createUser(dtoTo.userToDao(user));
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
@@ -40,14 +49,55 @@ public class UserController {
 	}
 
 	@GetMapping("/getByMailAndPassword")
-	public User getUserByMailAndPassword(@Param(value = "mail") String mail,
+	public UserDto getUserByMailAndPassword(@Param(value = "mail") String mail,
 			@Param(value = "password") String password) {
 		try {
-			return userImpl.findByEmailAndPassword(mail, password);
+			return toDto.userToDto(userImpl.findByEmailAndPassword(mail, password));
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
 		}
 	}
+	
+	@PostMapping("/updateUser")
+	public boolean updateUser(@RequestBody UserDto user) {
+		try {
+			return userImpl.updateUser(dtoTo.userToDao(user));
+		}catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+	
+	@DeleteMapping("/deleteUser")
+	public boolean deleteUser(@Param(value = "id") Long id) {
+		try {
+			return userImpl.deleteUser(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
