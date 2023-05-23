@@ -69,4 +69,15 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public User findById(long id) {
+		
+		try {
+			return userRepo.findById(id).orElse(null);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+	}
+
 }

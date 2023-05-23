@@ -26,11 +26,32 @@ public class VehicleDto {
 	/** The age. */
 	private Calendar age;
 	
+	/** The mileage. */
+	private int mileage;
+	
 	/** The user id. */
 	private long userId;
 	
 	/** The price. */
 	private double price;
+	
+	/**
+	 * Gets the mileage.
+	 *
+	 * @return the mileage
+	 */
+	public int getMileage() {
+		return mileage;
+	}
+
+	/**
+	 * Sets the mileage.
+	 *
+	 * @param mileage the new mileage
+	 */
+	public void setMileage(int mileage) {
+		this.mileage = mileage;
+	}	
 	
 	/**
 	 * Gets the id.

@@ -1,6 +1,10 @@
 package com.FindaCar.FindaCarApi.repositories;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Repository;
+
+import com.FindaCar.FindaCarApi.entities.VehiclePictures;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -17,4 +21,6 @@ public interface VehiclePicturesRepository {
 //	 */
 //	@Query("SELECT VP FROM VehiclePictures VP WHERE VP.Vehiculo.id = :id")
 //	ArrayList<VehiclePictures> getAllPicturesByVehicle(@Param("id") Long id);
+
+	public ArrayList<VehiclePictures> findByVehicleId(long id);
 }

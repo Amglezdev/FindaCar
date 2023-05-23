@@ -18,7 +18,7 @@ public interface UserService {
 	 * @return the all users
 	 */
 	public ArrayList<User> getAllUsers();
-	
+
 	/**
 	 * Creates the user.
 	 *
@@ -26,16 +26,16 @@ public interface UserService {
 	 * @return true, if successful
 	 */
 	public boolean createUser(@RequestBody User user);
-	
+
 	/**
 	 * Find by email and password.
 	 *
-	 * @param mail the mail
+	 * @param mail     the mail
 	 * @param password the password
 	 * @return the user
 	 */
 	public User findByEmailAndPassword(String mail, String password);
-	
+
 	/**
 	 * Delete user.
 	 *
@@ -43,7 +43,7 @@ public interface UserService {
 	 * @return true, if successful
 	 */
 	public boolean deleteUser(Long id);
-	
+
 	/**
 	 * Update user.
 	 *
@@ -51,7 +51,13 @@ public interface UserService {
 	 * @return true, if successful
 	 */
 	public boolean updateUser(@RequestBody User user);
-	
-	
+
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return the user
+	 */
+	public User findById(long id);
 
 }

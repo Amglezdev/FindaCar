@@ -4,7 +4,7 @@ package com.FindaCar.FindaCarApi.dto;
 /**
  * The Class UserFavorites.
  */
-public class UserFavorites {
+public class UserFavoritesDto {
 	
 	/** The id. */
 	private long id;

@@ -3,10 +3,12 @@ package com.FindaCar.FindaCarApi.services;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.FindaCar.FindaCarApi.entities.Post;
 import com.FindaCar.FindaCarApi.repositories.PostRepository;
 
+@Component
 public class PostServiceImpl implements PostService {
 
 	@Autowired

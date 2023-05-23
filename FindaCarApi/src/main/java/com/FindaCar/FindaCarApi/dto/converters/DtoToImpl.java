@@ -7,12 +7,27 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
+import com.FindaCar.FindaCarApi.dto.RoleDto;
 import com.FindaCar.FindaCarApi.dto.UserDto;
+import com.FindaCar.FindaCarApi.dto.UserFavoritesDto;
+import com.FindaCar.FindaCarApi.dto.VehicleDto;
+import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
+import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.DtoToService;
+import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
+import com.FindaCar.FindaCarApi.entities.Role;
 import com.FindaCar.FindaCarApi.entities.User;
+import com.FindaCar.FindaCarApi.entities.UserFavorites;
+import com.FindaCar.FindaCarApi.entities.Vehicle;
+import com.FindaCar.FindaCarApi.entities.VehiclePictures;
+import com.FindaCar.FindaCarApi.entities.VehicleType;
 import com.FindaCar.FindaCarApi.services.RoleServiceImpl;
+import com.FindaCar.FindaCarApi.services.UserServiceImpl;
+import com.FindaCar.FindaCarApi.services.VehicleServiceImpl;
+import com.FindaCar.FindaCarApi.services.VehicleTypeServiceImpl;
 
 @Component
 public class DtoToImpl implements DtoToService {
@@ -22,6 +37,12 @@ public class DtoToImpl implements DtoToService {
 
 	@Autowired
 	RoleServiceImpl roleService;
+	@Autowired
+	UserServiceImpl userService;
+	@Autowired
+	VehicleServiceImpl vehicleService;
+	@Autowired
+	VehicleTypeServiceImpl vtService;
 
 	@Override
 	public User userToDao(UserDto dto) {
@@ -66,7 +87,7 @@ public class DtoToImpl implements DtoToService {
 	}
 
 	@Override
-	public ArrayList<Post> listPostToDto(ArrayList<PostDto> listDto) {
+	public ArrayList<Post> listPostToDao(ArrayList<PostDto> listDto) {
 		// TODO Auto-generated method stub
 		ArrayList<Post> listDao = new ArrayList<>();
 
@@ -75,6 +96,153 @@ public class DtoToImpl implements DtoToService {
 		}
 
 		return listDao;
+	}
+
+	@Override
+	public Messages messageToDao(MessagesDto dto) {
+		// TODO Auto-generated method stub
+		Messages dao = new Messages();
+
+		dao.setId(dto.getId());
+		dao.setMdDate(calendar);
+		dao.setMdUuid(mdUuid);
+		dao.setReciever(userService.findById(dto.getReciever()));
+		dao.setSender(userService.findById(dto.getSender()));
+
+		return dao;
+	}
+
+	@Override
+	public ArrayList<Messages> listMessagesToDao(ArrayList<MessagesDto> listDto) {
+
+		ArrayList<Messages> listDao = new ArrayList<>();
+
+		for (MessagesDto messages : listDto) {
+			listDao.add(messageToDao(messages));
+		}
+
+		return listDao;
+	}
+
+	@Override
+	public Role roleToDao(RoleDto dto) {
+
+		Role dao = new Role();
+
+		dao.setDescription(dto.getDescRol());
+		dao.setId(dto.getId());
+		dao.setRole(dto.getRol());
+
+		return dao;
+	}
+
+	@Override
+	public ArrayList<Role> listRoleToDao(ArrayList<RoleDto> listDto) {
+
+		ArrayList<Role> listDao = new ArrayList<>();
+
+		for (RoleDto role : listDto) {
+			listDao.add(roleToDao(role));
+		}
+
+		return listDao;
+	}
+
+	@Override
+	public UserFavorites userFavoritesToDao(UserFavoritesDto dto) {
+
+		UserFavorites uf = new UserFavorites();
+
+		uf.setId(dto.getId());
+		uf.setMdDate(calendar);
+		uf.setMdUuid(mdUuid);
+		uf.setUser(userService.findById(dto.getId()));
+		uf.setVehicle(vehicleService.findById(dto.getVehicleId()));
+
+		return uf;
+	}
+
+	@Override
+	public Vehicle vehicleToDao(VehicleDto dto) {
+
+		Vehicle dao = new Vehicle();
+
+		dao.setAge(dto.getAge());
+		dao.setBrand(dto.getBrand());
+		dao.setId(dto.getId());
+		dao.setMdDate(calendar);
+		dao.setMdUuid(mdUuid);
+		dao.setMileage(dto.getMileage());
+		dao.setModel(dto.getModel());
+		dao.setOwner(userService.findById(dto.getUserId()));
+		dao.setPower(dto.getPower());
+		dao.setPrice(dto.getPrice());
+		dao.setType(vtService.findById(dto.getTypeId()));
+
+		return dao;
+
+	}
+
+	@Override
+	public ArrayList<Vehicle> listVehicleToDao(ArrayList<VehicleDto> listDto) {
+
+		ArrayList<Vehicle> listDao = new ArrayList<>();
+
+		for (VehicleDto vehicle : listDto) {
+			listDao.add(vehicleToDao(vehicle));
+		}
+
+		return listDao;
+	}
+
+	@Override
+	public VehiclePictures vehiclePicturesToDao(VehiclePicturesDto dto) {
+
+		VehiclePictures dao = new VehiclePictures();
+
+		dao.setId(dto.getId());
+		dao.setImage(dao.getImage());
+		dao.setMdDate(calendar);
+		dao.setMdUuid(mdUuid);
+		dao.setVehicle(vehicleService.findById(dto.getVehicleId()));
+
+		return dao;
+	}
+
+	@Override
+	public ArrayList<VehiclePictures> listVehiclePicturesDto(ArrayList<VehiclePicturesDto> listDto) {
+		ArrayList<VehiclePictures> listDao = new ArrayList<>();
+
+		for (VehiclePicturesDto vehiclePictures : listDto) {
+			vehiclePicturesToDao(vehiclePictures);
+		}
+
+		return listDao;
+	}
+
+	@Override
+	public VehicleType vehicleTypeToDao(VehicleTypeDto dto) {
+
+		VehicleType dao = new VehicleType();
+
+		dao.setId(dto.getId());
+		dao.setType(dto.getType());
+
+		return dao;
+
+	}
+
+	@Override
+	public ArrayList<VehicleType> listVehicleType(ArrayList<VehicleTypeDto> listDto) {
+
+		ArrayList<VehicleType> listDao = new ArrayList<>();
+
+		for (VehicleTypeDto vehicleType : listDto) {
+			listDao.add(vehicleTypeToDao(vehicleType));
+		}
+
+		return listDao;
+
 	}
 
 }

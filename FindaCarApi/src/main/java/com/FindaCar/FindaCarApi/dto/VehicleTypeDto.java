@@ -4,7 +4,7 @@ package com.FindaCar.FindaCarApi.dto;
 /**
  * The Class VehicleType.
  */
-public class VehicleType {
+public class VehicleTypeDto {
 	
 	/** The id. */
 	private long id;
