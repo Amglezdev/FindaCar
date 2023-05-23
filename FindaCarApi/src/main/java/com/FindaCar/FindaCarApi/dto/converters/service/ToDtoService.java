@@ -27,15 +27,15 @@ public interface ToDtoService {
 	 * @param listDto the list dto
 	 * @return the array list
 	 */
-	public ArrayList<UserDto> listUserToDto(ArrayList<User> listDto);
+	public ArrayList<UserDto> listUserToDto(ArrayList<User> listDao);
 	
 	/**
-	 * Post to dto.
+	 * Post to dto. 
 	 *
 	 * @param post the post
 	 * @return the post dto
 	 */
-	public PostDto postToDto(PostDto post);
+	public PostDto postToDto(Post post);
 	
 	/**
 	 * List post to dto.
@@ -43,7 +43,7 @@ public interface ToDtoService {
 	 * @param listDto the list dto
 	 * @return the array list
 	 */
-	public ArrayList<PostDto> listPostToDto(ArrayList<Post> listDto);
+	public ArrayList<PostDto> listPostToDto(ArrayList<Post> listDao);
 	
 	
 
