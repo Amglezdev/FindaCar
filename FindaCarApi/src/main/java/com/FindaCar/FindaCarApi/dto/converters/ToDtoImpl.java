@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
 import com.FindaCar.FindaCarApi.dto.RoleDto;
 import com.FindaCar.FindaCarApi.dto.UserDto;
@@ -12,6 +13,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.ToDtoService;
+import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
 import com.FindaCar.FindaCarApi.entities.Role;
 import com.FindaCar.FindaCarApi.entities.User;
@@ -193,6 +195,30 @@ public class ToDtoImpl implements ToDtoService {
 
 		for (VehicleType vehicleType : listDao) {
 			listDto.add(vehicleTypeToDto(vehicleType));
+		}
+		return listDto;
+
+	}
+
+	@Override
+	public MessagesDto messageToDto(Messages message) {
+
+		MessagesDto dto = new MessagesDto();
+
+		dto.setId(message.getId());
+		dto.setReciever(message.getReciever().getId());
+		dto.setSender(message.getSender().getId());
+
+		return dto;
+	}
+
+	@Override
+	public ArrayList<MessagesDto> listMessagesToDto(ArrayList<Messages> listDao) {
+
+		ArrayList<MessagesDto> listDto = new ArrayList<>();
+
+		for (Messages messages : listDao) {
+			listDto.add(messageToDto(messages));
 		}
 		return listDto;
 

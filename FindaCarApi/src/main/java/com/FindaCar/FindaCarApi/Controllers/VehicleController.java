@@ -68,7 +68,7 @@ public class VehicleController {
 		}
 	}
 
-	@GetMapping("findByOwnerId")
+	@GetMapping("/findByOwnerId")
 	public ArrayList<VehicleDto> findByOwnerId(@Param(value = "id") long id) {
 		try {
 			return toDto.listVehicleToDto(vehicleImpl.findVehicleByOwnerId(id));

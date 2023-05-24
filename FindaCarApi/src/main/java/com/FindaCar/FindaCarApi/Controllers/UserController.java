@@ -30,7 +30,7 @@ public class UserController {
 
 	@GetMapping("/allUsers")
 	public ArrayList<UserDto> getUsers() {
-		try {			
+		try {
 			return toDto.listUserToDto(userImpl.getAllUsers());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -58,17 +58,17 @@ public class UserController {
 			return null;
 		}
 	}
-	
+
 	@PostMapping("/updateUser")
 	public boolean updateUser(@RequestBody UserDto user) {
 		try {
 			return userImpl.updateUser(dtoTo.userToDao(user));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
 		}
 	}
-	
+
 	@DeleteMapping("/deleteUser")
 	public boolean deleteUser(@Param(value = "id") Long id) {
 		try {
@@ -80,24 +80,3 @@ public class UserController {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
