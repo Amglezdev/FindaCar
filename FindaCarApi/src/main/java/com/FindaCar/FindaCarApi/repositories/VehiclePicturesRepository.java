@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.repositories;
 
 import java.util.ArrayList;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.FindaCar.FindaCarApi.entities.VehiclePictures;
@@ -11,7 +12,7 @@ import com.FindaCar.FindaCarApi.entities.VehiclePictures;
  * The Interface VehiclePicturesRepository.
  */
 @Repository
-public interface VehiclePicturesRepository {
+public interface VehiclePicturesRepository extends JpaRepository<VehiclePictures, Long> {
 //
 //	/**
 //	 * Gets the all pictures by vehicle.

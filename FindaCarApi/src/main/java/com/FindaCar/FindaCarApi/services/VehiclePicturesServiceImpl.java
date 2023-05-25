@@ -23,4 +23,26 @@ public class VehiclePicturesServiceImpl implements VehiclePicturesService {
 
 	}
 
+	@Override
+	public boolean addPicture(VehiclePictures pic) {
+		try {
+			vpRepo.save(pic);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+
+	@Override
+	public boolean deletePictureById(Long id) {
+		try {
+			vpRepo.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+
 }
