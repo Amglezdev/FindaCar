@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,6 +28,7 @@ public class PostController {
 	@Autowired
 	DtoToImpl dtoTo;
 
+	@GetMapping("/findAll")
 	public ArrayList<PostDto> findAllPost() {
 		try {
 			return toDto.listPostToDto(postService.findAllPost());
@@ -33,6 +38,7 @@ public class PostController {
 		}
 	}
 
+	@PutMapping("/addPost")
 	public boolean addPost(@RequestBody PostDto post) {
 		try {
 			return postService.addPost(dtoTo.postToDao(post));
@@ -42,6 +48,7 @@ public class PostController {
 		}
 	}
 
+	@DeleteMapping("/deletePost")
 	public boolean deletePost(@Param(value = "id") long id) {
 		try {
 			return postService.deletePost(id);
@@ -51,6 +58,7 @@ public class PostController {
 		}
 	}
 
+	@PostMapping("/updatePost")
 	public boolean updatePost(@RequestBody PostDto dto) {
 		try {
 			return postService.updatePost(dtoTo.postToDao(dto));

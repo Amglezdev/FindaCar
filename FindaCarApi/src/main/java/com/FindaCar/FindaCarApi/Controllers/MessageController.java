@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,6 +26,7 @@ public class MessageController {
 	@Autowired
 	DtoToImpl dtoTo;
 
+	@GetMapping("/findMessages")
 	public ArrayList<MessagesDto> findBySenderAndReciever(@Param(value = "senderId") long senderId,
 			@Param(value = "recieverId") long recieverId) {
 		try {
@@ -34,6 +37,7 @@ public class MessageController {
 		}
 	}
 
+	@PutMapping("/sendMessage")
 	public boolean sendMessage(@RequestBody MessagesDto message) {
 		try {
 			return msi.sendMessage(dtoTo.messageToDao(message));

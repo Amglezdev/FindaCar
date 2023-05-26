@@ -3,10 +3,14 @@ package com.FindaCar.FindaCarApi.services;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.repositories.MessageRepository;
 
+@Component
+@RequestMapping("/message")
 public class MessageServiceImpl implements MessageService {
 
 	@Autowired
