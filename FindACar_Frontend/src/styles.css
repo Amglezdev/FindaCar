@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar-dark .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-dark .navbar-brand:hover {
+  color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.jumbotron {
+  background-color: #c8baff;
+  color: #000000;
+}
+
+.card {
+  background-color: #ffffff;
+  color: #000000;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.home-container {
+  position: relative;
+  height: 100vh;
+  background-image: url('assets/images/Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Ajusta el valor para cambiar la intensidad del difuminado */
+}
+
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* Ajusta el color del contenido para asegurar la legibilidad */
+}
+
+body{overflow: hidden;}
+

@@ -1,1 +1,57 @@
-<p>sign-up works!</p>
+<div class="card">
+  <div class="card-header">
+    <h2>Sign Up</h2>
+  </div>
+  <div class="card-body">
+    <div>
+      <h2>Sign Up</h2>
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div>
+          <label>Nombre:</label>
+          <input type="text" formControlName="name" required>
+          <div
+            *ngIf="signUpForm.get('name').hasError('required') && (signUpForm.get('name').touched || signUpForm.get('name').dirty)">
+            <div>Nombre es requerido</div>
+          </div>
+        </div>
+        <div>
+          <label>Apellido:</label>
+          <input type="text" formControlName="surname" required>
+          <div
+            *ngIf="signUpForm.get('surname').hasError('required') && (signUpForm.get('surname').touched || signUpForm.get('surname').dirty)">
+            <div>Apellido es requerido</div>
+          </div>
+        </div>
+        <div>
+          <label>Número de teléfono:</label>
+          <input type="text" formControlName="phoneNumber" required>
+          <div
+            *ngIf="signUpForm.get('phoneNumber').hasError('required') && (signUpForm.get('phoneNumber').touched || signUpForm.get('phoneNumber').dirty)">
+            <div>Número de teléfono es requerido</div>
+          </div>
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" formControlName="mail" required>
+          <div
+            *ngIf="signUpForm.get('mail').hasError('required') && (signUpForm.get('mail').touched || signUpForm.get('mail').dirty)">
+            <div>Email es requerido</div>
+          </div>
+          <div
+            *ngIf="signUpForm.get('mail').hasError('email') && (signUpForm.get('mail').touched || signUpForm.get('mail').dirty)">
+            <div>Email no es válido</div>
+          </div>
+        </div>
+        <div>
+          <label>Contraseña:</label>
+          <input type="password" formControlName="password" required>
+          <div
+            *ngIf="signUpForm.get('password').hasError('required') && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+            <div>Contraseña es requerida</div>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!signUpForm.valid">Registrarse</button>
+      </form>
+    </div>
+  </div>
+</div>

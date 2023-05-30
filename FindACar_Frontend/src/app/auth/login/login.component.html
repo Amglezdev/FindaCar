@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="card">
+  <div class="card-header">
+    <h2>Login</h2>
+  </div>
+  <div class="card-body">
+    <div>
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+          <label>Email:</label>
+          <input type="email" formControlName="email" required>
+          <div
+            *ngIf="loginForm.get('email').hasError('required') && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+            <div>Email es requerido</div>
+          </div>
+          <div
+            *ngIf="loginForm.get('email').hasError('email') && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+            <div>Email no es válido</div>
+          </div>
+        </div>
+        <div>
+          <label>Contraseña:</label>
+          <input type="password" formControlName="password" required>
+          <div
+            *ngIf="loginForm.get('password').hasError('required') && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+            <div>Contraseña es requerida</div>
+          </div>
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,3 @@
-import { Role } from "./role";
-
 export interface User {
   id:number,
   name:string,
@@ -7,6 +5,6 @@ export interface User {
   phoneNumber:string,
   mail:string,
   password:string,
-  role:Role,
-  
+  roleId:number,
+
 }

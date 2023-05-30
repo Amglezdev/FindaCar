@@ -59,6 +59,10 @@ public class Vehicle {
 	/** The age. */
 	@Column(name = "fecha_matriculacion")
 	private Calendar age;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tipo_combustible")
+	private Fuel fuel;
 
 	/** The owner. */
 	@ManyToOne(fetch = FetchType.LAZY)

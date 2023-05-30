@@ -1,5 +1,3 @@
-import { User } from "./user";
-
 export interface Vehicle {
   id:number,
   brand:string,
@@ -8,6 +6,6 @@ export interface Vehicle {
   mileage:number,
   type:string,
   age:Date,
-  owner:User,
+  ownerId:number,
   price:number
 }
