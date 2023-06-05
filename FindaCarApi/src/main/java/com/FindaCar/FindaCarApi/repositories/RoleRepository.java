@@ -9,6 +9,6 @@ import com.FindaCar.FindaCarApi.entities.Role;
  * The Interface RoleRepository.
  */
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Integer>{
+public interface RoleRepository extends JpaRepository<Role, String>{
 
 }

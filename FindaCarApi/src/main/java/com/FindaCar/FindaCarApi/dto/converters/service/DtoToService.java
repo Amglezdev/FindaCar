@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.dto.converters.service;
 
 import java.util.ArrayList;
 
+import com.FindaCar.FindaCarApi.dto.FuelDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
 import com.FindaCar.FindaCarApi.dto.RoleDto;
@@ -10,6 +11,7 @@ import com.FindaCar.FindaCarApi.dto.UserFavoritesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
+import com.FindaCar.FindaCarApi.entities.Fuel;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
 import com.FindaCar.FindaCarApi.entities.Role;
@@ -144,5 +146,21 @@ public interface DtoToService {
 	 * @return the array list
 	 */
 	public ArrayList<VehicleType> listVehicleType(ArrayList<VehicleTypeDto> listDto);
+
+	/**
+	 * Fuel to dto.
+	 *
+	 * @param dto the dto
+	 * @return the fuel
+	 */
+	public Fuel fuelToDao(FuelDto dto);
+
+	/**
+	 * List fuel to dao.
+	 *
+	 * @param listDto the list dto
+	 * @return the array list
+	 */
+	public ArrayList<Fuel> listFuelToDao(ArrayList<FuelDto> listDto);
 
 }

@@ -5,27 +5,31 @@ package com.FindaCar.FindaCarApi.dto;
  * The Class UserDto.
  */
 public class UserDto {
-	
+
 	/** The id. */
 	private Long id;
-	
+
 	/** The name. */
 	private String name;
-	
+
 	/** The surname. */
 	private String surname;
-	
+
 	/** The phone number. */
 	private String phoneNumber;
-	
+
 	/** The mail. */
 	private String mail;
-	
+
 	/** The password. */
 	private String password;
-	
+
 	/** The rol id. */
-	private int rolId;
+	private RoleDto rol;
+
+	public UserDto() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -75,14 +79,12 @@ public class UserDto {
 		this.password = password;
 	}
 
-	public int getRolId() {
-		return rolId;
+	public RoleDto getRol() {
+		return rol;
 	}
 
-	public void setRolId(int rolId) {
-		this.rolId = rolId;
+	public void setRol(RoleDto rol) {
+		this.rol = rol;
 	}
-	
-	
 
 }

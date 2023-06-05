@@ -2,8 +2,6 @@ package com.FindaCar.FindaCarApi.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,47 +15,28 @@ public class VehicleType {
 
 	/** The id. */
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-
-	/** The type. */
-	@Column(name = "tipo_vehiculo")
-	private String type;
+	@Column(name = "name")
+	private String name;
 
 	/**
-	 * Gets the id.
+	 * Gets the name.
 	 *
-	 * @return the id
+	 * @return the name
 	 */
-	public long getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
-	 * Sets the id.
+	 * Sets the name.
 	 *
-	 * @param id the new id
+	 * @param name the new name
 	 */
-	public void setId(long id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
+	
+	
 
-	/**
-	 * Gets the type.
-	 *
-	 * @return the type
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * Sets the type.
-	 *
-	 * @param type the new type
-	 */
-	public void setType(String type) {
-		this.type = type;
-	}
 
 }

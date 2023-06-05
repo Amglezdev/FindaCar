@@ -9,6 +9,6 @@ import com.FindaCar.FindaCarApi.entities.VehicleType;
  * The Interface VehicleTypeRepository.
  */
 @Repository
-public interface VehicleTypeRepository extends JpaRepository<VehicleType, Long>{
+public interface VehicleTypeRepository extends JpaRepository<VehicleType, String>{
 
 }

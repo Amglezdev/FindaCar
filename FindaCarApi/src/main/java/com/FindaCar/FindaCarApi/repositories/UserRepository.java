@@ -1,7 +1,6 @@
 package com.FindaCar.FindaCarApi.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.FindaCar.FindaCarApi.entities.User;
@@ -20,8 +19,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 * @param password the password
 	 * @return the user
 	 */
-	
-	public User findByMailAndPassword(String mail, String password);	
+
+	public User findByMailAndPassword(String mail, String password);
 	
 
 }

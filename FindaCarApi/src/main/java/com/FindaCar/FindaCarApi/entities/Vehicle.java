@@ -2,7 +2,6 @@ package com.FindaCar.FindaCarApi.entities;
 
 
 import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -269,6 +268,14 @@ public class Vehicle {
 	 */
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public Fuel getFuel() {
+		return fuel;
+	}
+
+	public void setFuel(Fuel fuel) {
+		this.fuel = fuel;
 	}
 
 }

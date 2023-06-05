@@ -1,0 +1,68 @@
+<div class="background-image">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FindaCar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto float-end">
+        <li class="nav-item">
+          <a class="btn btn-dark " routerLink="/userSite">Vista Usuario</a>
+        </li>
+        <li class="nav-item ">
+          <a class="btn btn-dark" (click)="logOut()">Cerrar sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+      <div class="card w-75">
+        <div class="card-header">
+          <h2>Administración</h2>
+        </div>
+        <div class="card-body">
+          <div class="row justify-content-between">
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Usuarios</h5>
+                  <p class="card-text">Administrar usuarios</p>
+                  <a routerLink="/administration/users" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Posts</h5>
+                  <p class="card-text">Administrar publicaciones</p>
+                  <a routerLink="/administration/post" class="btn btn-primary">Ir a Posts</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Tipos de Vehículo</h5>
+                  <p class="card-text">Administrar tipos de vehículo</p>
+                  <a routerLink="/administration/vehicleTypes" class="btn btn-primary">Ir a Tipos de Vehículo</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Combustible</h5>
+                  <p class="card-text">Administrar combustibles</p>
+                  <a routerLink="/administration/fuel" class="btn btn-primary">Ir a Combustible</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

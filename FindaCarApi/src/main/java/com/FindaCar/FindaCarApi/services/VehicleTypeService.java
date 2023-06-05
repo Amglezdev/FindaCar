@@ -16,15 +16,21 @@ public interface VehicleTypeService {
 	 * @return the array list
 	 */
 	public ArrayList<VehicleType> findAllVehicleTypes();
-	
+
 	/**
 	 * Find by id.
 	 *
 	 * @param id the id
 	 * @return the vehicle type
 	 */
-	public VehicleType findById(long id);
-	
-	
+	public VehicleType findById(String id);
+
+	/**
+	 * Adds the type.
+	 *
+	 * @param dao the dao
+	 * @return true, if successful
+	 */
+	public boolean addType(VehicleType dao);
 
 }

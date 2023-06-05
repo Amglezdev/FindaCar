@@ -1,0 +1,64 @@
+<div class="background-image">
+  <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card w-75">
+      <div class="card-header">
+        <h2>Sign Up</h2>
+      </div>
+      <div class="card-body">
+        <h2>Sign Up</h2>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name" formControlName="name" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('name').hasError('required') && (signUpForm.get('name').touched || signUpForm.get('name').dirty)">
+              Nombre es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="surname" class="form-label">Apellido:</label>
+            <input type="text" class="form-control" id="surname" formControlName="surname" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('surname').hasError('required') && (signUpForm.get('surname').touched || signUpForm.get('surname').dirty)">
+              Apellido es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Número de teléfono:</label>
+            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('phoneNumber').hasError('required') && (signUpForm.get('phoneNumber').touched || signUpForm.get('phoneNumber').dirty)">
+              Número de teléfono es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="mail" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="mail" formControlName="mail" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('mail').hasError('required') && (signUpForm.get('mail').touched || signUpForm.get('mail').dirty)">
+              Email es requerido
+            </div>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('mail').hasError('email') && (signUpForm.get('mail').touched || signUpForm.get('mail').dirty)">
+              Email no es válido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="password" formControlName="password" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('password').hasError('required') && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+              Contraseña es requerida
+            </div>
+
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">Registrarse</button>
+            <button (click)="goBack()" class="btn btn-danger float-end">Volver</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+

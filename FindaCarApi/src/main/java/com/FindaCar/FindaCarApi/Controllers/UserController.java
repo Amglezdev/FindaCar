@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.FindaCar.FindaCarApi.services.UserServiceImpl;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins =  {"http://localhost:4200", "http://localhost:8080"})
 public class UserController {
 
 	@Autowired
@@ -27,8 +29,19 @@ public class UserController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
+	
+	@GetMapping("/getById")
+	public UserDto getById(@Param(value = "id") Long id) {
+		try {
+			return toDto.userToDto(userImpl.findById(id));
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+		
+	}
 
-	@GetMapping("/allUsers")
+	@GetMapping("/getUsers")
 	public ArrayList<UserDto> getUsers() {
 		try {
 			return toDto.listUserToDto(userImpl.getAllUsers());
@@ -48,11 +61,11 @@ public class UserController {
 		}
 	}
 
-	@GetMapping("/getByMailAndPassword")
-	public UserDto getUserByMailAndPassword(@Param(value = "mail") String mail,
-			@Param(value = "password") String password) {
+	@PostMapping("/getByMailAndPassword")
+	public UserDto getUserByMailAndPassword(@RequestBody UserDto user) {
 		try {
-			return toDto.userToDto(userImpl.findByEmailAndPassword(mail, password));
+			System.out.println(user.toString());
+			return toDto.userToDto(userImpl.findByEmailAndPassword(user.getMail(), user.getPassword()));
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;

@@ -21,7 +21,7 @@ public class VehicleDto {
 	private int power;
 	
 	/** The type id. */
-	private long typeId;
+	private VehicleTypeDto type;
 	
 	/** The age. */
 	private Calendar age;
@@ -34,6 +34,9 @@ public class VehicleDto {
 	
 	/** The price. */
 	private double price;
+	
+	/** The fuel. */
+	private FuelDto fuel;
 	
 	/**
 	 * Gets the mileage.
@@ -130,17 +133,17 @@ public class VehicleDto {
 	 *
 	 * @return the type id
 	 */
-	public long getTypeId() {
-		return typeId;
+	public VehicleTypeDto getType() {
+		return type;
 	}
 	
 	/**
 	 * Sets the type id.
 	 *
-	 * @param typeId the new type id
+	 * @param type the new type
 	 */
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
+	public void setType(VehicleTypeDto type) {
+		this.type = type;
 	}
 	
 	/**
@@ -195,6 +198,24 @@ public class VehicleDto {
 	 */
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	/**
+	 * Gets the fuel.
+	 *
+	 * @return the fuel
+	 */
+	public FuelDto getFuel() {
+		return fuel;
+	}
+
+	/**
+	 * Sets the fuel.
+	 *
+	 * @param fuel the new fuel
+	 */
+	public void setFuel(FuelDto fuel) {
+		this.fuel = fuel;
 	}
 	
 	

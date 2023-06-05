@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.FuelDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
 import com.FindaCar.FindaCarApi.dto.RoleDto;
@@ -13,6 +14,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.ToDtoService;
+import com.FindaCar.FindaCarApi.entities.Fuel;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
 import com.FindaCar.FindaCarApi.entities.Role;
@@ -34,7 +36,10 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setName(user.getName());
 		dto.setPassword(user.getPassword());
 		dto.setPhoneNumber(user.getPhoneNumber());
-		dto.setRolId(user.getRole().getId());
+		dto.setRol(roleToDto(user.getRole()));
+		dto.setSurname(user.getSurname());
+
+		System.out.println(dto.toString());
 
 		return dto;
 	}
@@ -80,9 +85,7 @@ public class ToDtoImpl implements ToDtoService {
 
 		RoleDto dto = new RoleDto();
 
-		dto.setDescRol(dao.getDescription());
-		dto.setId(dao.getId());
-		dto.setRol(dao.getRole());
+		dto.setName(dao.getName());
 
 		return dto;
 	}
@@ -95,6 +98,7 @@ public class ToDtoImpl implements ToDtoService {
 		for (Role role : listDao) {
 			listDto.add(roleToDto(role));
 		}
+
 		return listDto;
 	}
 
@@ -133,8 +137,9 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setModel(dao.getModel());
 		dto.setPower(dao.getPower());
 		dto.setPrice(dao.getPrice());
-		dto.setTypeId(dao.getType().getId());
+		dto.setType(vehicleTypeToDto(dao.getType()));
 		dto.setUserId(dao.getOwner().getId());
+		dto.setFuel(fuelToDto(dao.getFuel()));
 
 		return dto;
 	}
@@ -181,8 +186,7 @@ public class ToDtoImpl implements ToDtoService {
 
 		VehicleTypeDto dto = new VehicleTypeDto();
 
-		dto.setId(dao.getId());
-		dto.setType(dao.getType());
+		dto.setName(dao.getName());
 
 		return dto;
 
@@ -220,6 +224,30 @@ public class ToDtoImpl implements ToDtoService {
 		for (Messages messages : listDao) {
 			listDto.add(messageToDto(messages));
 		}
+		return listDto;
+
+	}
+
+	@Override
+	public FuelDto fuelToDto(Fuel dao) {
+
+		FuelDto dto = new FuelDto();
+
+		dto.setName(dao.getName());
+
+		return dto;
+
+	}
+
+	@Override
+	public ArrayList<FuelDto> listFuelToDto(ArrayList<Fuel> listDao) {
+
+		ArrayList<FuelDto> listDto = new ArrayList<>();
+
+		for (Fuel fuel : listDao) {
+			listDto.add(fuelToDto(fuel));
+		}
+
 		return listDto;
 
 	}

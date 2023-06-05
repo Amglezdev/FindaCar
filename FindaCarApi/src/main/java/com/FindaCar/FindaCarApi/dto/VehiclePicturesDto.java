@@ -14,7 +14,7 @@ public class VehiclePicturesDto {
 	private long vehicleId;
 	
 	/** The image. */
-	private byte[] image;
+	private String image;
 	
 	/**
 	 * Gets the id.
@@ -57,7 +57,7 @@ public class VehiclePicturesDto {
 	 *
 	 * @return the image
 	 */
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 	
@@ -66,7 +66,7 @@ public class VehiclePicturesDto {
 	 *
 	 * @param image the new image
 	 */
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	

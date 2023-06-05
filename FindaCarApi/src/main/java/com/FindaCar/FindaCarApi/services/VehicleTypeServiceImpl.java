@@ -25,12 +25,23 @@ public class VehicleTypeServiceImpl implements VehicleTypeService {
 	}
 
 	@Override
-	public VehicleType findById(long id) {
+	public VehicleType findById(String id) {
 		try {
 			return vtRepo.findById(id).orElse(null);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
+		}
+	}
+
+	@Override
+	public boolean addType(VehicleType dao) {
+		try {
+			vtRepo.save(dao);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
 		}
 	}
 

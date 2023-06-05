@@ -5,69 +5,28 @@ package com.FindaCar.FindaCarApi.dto;
  * The Class RoleDto.
  */
 public class RoleDto {
-	
-	/** The id. */
-	private int id;
-	
-	/** The rol. */
-	private int rol;
-	
-	/** The desc rol. */
-	private String descRol;
-	
+
+	/** The role. */
+	private String name;
+
 	/**
-	 * Gets the id.
+	 * Gets the role.
 	 *
-	 * @return the id
+	 * @return the role
 	 */
-	public int getId() {
-		return id;
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * Sets the role.
+	 *
+	 * @param role the new role
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	/**
-	 * Sets the id.
-	 *
-	 * @param id the new id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	/**
-	 * Gets the rol.
-	 *
-	 * @return the rol
-	 */
-	public int getRol() {
-		return rol;
-	}
-	
-	/**
-	 * Sets the rol.
-	 *
-	 * @param rol the new rol
-	 */
-	public void setRol(int rol) {
-		this.rol = rol;
-	}
-	
-	/**
-	 * Gets the desc rol.
-	 *
-	 * @return the desc rol
-	 */
-	public String getDescRol() {
-		return descRol;
-	}
-	
-	/**
-	 * Sets the desc rol.
-	 *
-	 * @param descRol the new desc rol
-	 */
-	public void setDescRol(String descRol) {
-		this.descRol = descRol;
-	}
 	
 	
 

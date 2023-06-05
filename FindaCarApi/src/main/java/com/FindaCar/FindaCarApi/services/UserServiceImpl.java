@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean deleteUser(Long id) {
 		try {
-			deleteUser(id);
+			userRepo.deleteById(id);
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception

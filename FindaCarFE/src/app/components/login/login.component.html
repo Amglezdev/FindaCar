@@ -1,0 +1,51 @@
+<div class="background-image">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FindaCar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto float-end">
+        <li class="nav-item ">
+          <a class="btn btn-dark" routerLink="/signUp">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card w-75">
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+      <div class="card-body">
+        <div>
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required>
+              <div class="invalid-feedback"
+                *ngIf="loginForm.get('email').hasError('required') && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+                Email es requerido
+              </div>
+              <div class="invalid-feedback"
+                *ngIf="loginForm.get('email').hasError('email') && (loginForm.get('email').touched || loginForm.get('email').dirty)">
+                Email no es válido
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña:</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+              <div class="invalid-feedback"
+                *ngIf="loginForm.get('password').hasError('required') && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                Contraseña es requerida
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" (submit)="login()"
+              id="login">Iniciar sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

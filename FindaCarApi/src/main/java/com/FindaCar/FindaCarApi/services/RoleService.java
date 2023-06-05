@@ -16,7 +16,7 @@ public interface RoleService {
 	 * @param id the id
 	 * @return the role by id
 	 */
-	public Role getRoleById(Integer id);
+	public Role getRoleById(String id);
 
 	/**
 	 * Gets the all roles.

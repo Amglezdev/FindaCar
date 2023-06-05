@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="background-image"></div>
+  <div class="content">
+    <h2>Usuarios</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Detalles</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.name }}</td>
+          <td>{{ user.mail }}</td>
+          <td>{{ user.rol.name }}</td>
+          <td>
+            <a class="btn btn-primary btn-lg" [routerLink]="['/administration/users/detailUser', user.id]">Detalle</a>
+          </td>
+          <td>
+            <a class="btn btn-primary btn-lg" [routerLink]="['/administration/users/editUser', user.id]">Editar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-danger" (click)="goBack()">Volver</button>
+  </div>
+</div>

@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -32,6 +31,13 @@ public class User {
 	/** The md date. */
 	@Column(name = "md_date")
 	private Calendar mdDate;
+
+	@Override
+	public String toString() {
+		return "User [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", name=" + name + ", surname="
+				+ surname + ", phoneNumber=" + phoneNumber + ", mail=" + mail + ", password=" + password + ", role="
+				+ role + ", vehiclesOwned=" + vehiclesOwned + "]";
+	}
 
 	/** The id. */
 	@Id

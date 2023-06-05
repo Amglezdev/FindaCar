@@ -40,7 +40,7 @@ public class VehiclePictures {
 
 	/** The image. */
 	@Column(name = "imagenes")
-	private byte[] image;
+	private String image;
 
 	/**
 	 * Gets the md uuid.
@@ -119,7 +119,7 @@ public class VehiclePictures {
 	 *
 	 * @return the image
 	 */
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 
@@ -128,7 +128,7 @@ public class VehiclePictures {
 	 *
 	 * @param image the new image
 	 */
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 

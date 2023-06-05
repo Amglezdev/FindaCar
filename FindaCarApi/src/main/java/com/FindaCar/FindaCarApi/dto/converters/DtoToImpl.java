@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.FuelDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
 import com.FindaCar.FindaCarApi.dto.RoleDto;
@@ -16,6 +17,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.DtoToService;
+import com.FindaCar.FindaCarApi.entities.Fuel;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
 import com.FindaCar.FindaCarApi.entities.Role;
@@ -24,6 +26,8 @@ import com.FindaCar.FindaCarApi.entities.UserFavorites;
 import com.FindaCar.FindaCarApi.entities.Vehicle;
 import com.FindaCar.FindaCarApi.entities.VehiclePictures;
 import com.FindaCar.FindaCarApi.entities.VehicleType;
+import com.FindaCar.FindaCarApi.services.FuelService;
+import com.FindaCar.FindaCarApi.services.FuelServiceImpl;
 import com.FindaCar.FindaCarApi.services.RoleServiceImpl;
 import com.FindaCar.FindaCarApi.services.UserServiceImpl;
 import com.FindaCar.FindaCarApi.services.VehicleServiceImpl;
@@ -43,6 +47,8 @@ public class DtoToImpl implements DtoToService {
 	VehicleServiceImpl vehicleService;
 	@Autowired
 	VehicleTypeServiceImpl vtService;
+	@Autowired
+	FuelServiceImpl fService;
 
 	@Override
 	public User userToDao(UserDto dto) {
@@ -55,9 +61,11 @@ public class DtoToImpl implements DtoToService {
 		dao.setMdUuid(mdUuid);
 		dao.setName(dto.getName());
 		dao.setPassword(dto.getPassword());
-		dao.setPhoneNumber(dao.getPhoneNumber());
-		dao.setRole(roleService.getRoleById(dto.getRolId()));
+		dao.setPhoneNumber(dto.getPhoneNumber());
+		dao.setRole(roleService.getRoleById(dto.getRol().getName()));
 		dao.setSurname(dto.getSurname());
+
+		System.out.println(dao.toString());
 
 		return dao;
 	}
@@ -129,9 +137,7 @@ public class DtoToImpl implements DtoToService {
 
 		Role dao = new Role();
 
-		dao.setDescription(dto.getDescRol());
-		dao.setId(dto.getId());
-		dao.setRole(dto.getRol());
+		dao.setName(dto.getName());
 
 		return dao;
 	}
@@ -177,7 +183,8 @@ public class DtoToImpl implements DtoToService {
 		dao.setOwner(userService.findById(dto.getUserId()));
 		dao.setPower(dto.getPower());
 		dao.setPrice(dto.getPrice());
-		dao.setType(vtService.findById(dto.getTypeId()));
+		dao.setType(vehicleTypeToDao(dto.getType()));
+		dao.setFuel(fService.findById(dto.getFuel().getName()));
 
 		return dao;
 
@@ -225,8 +232,7 @@ public class DtoToImpl implements DtoToService {
 
 		VehicleType dao = new VehicleType();
 
-		dao.setId(dto.getId());
-		dao.setType(dto.getType());
+		dao.setName(dto.getName());
 
 		return dao;
 
@@ -239,6 +245,29 @@ public class DtoToImpl implements DtoToService {
 
 		for (VehicleTypeDto vehicleType : listDto) {
 			listDao.add(vehicleTypeToDao(vehicleType));
+		}
+
+		return listDao;
+
+	}
+
+	@Override
+	public Fuel fuelToDao(FuelDto dto) {
+
+		Fuel dao = new Fuel();
+
+		dao.setName(dto.getName());
+
+		return dao;
+	}
+
+	@Override
+	public ArrayList<Fuel> listFuelToDao(ArrayList<FuelDto> listDto) {
+
+		ArrayList<Fuel> listDao = new ArrayList<>();
+
+		for (FuelDto fuel : listDto) {
+			listDao.add(fuelToDao(fuel));
 		}
 
 		return listDao;
