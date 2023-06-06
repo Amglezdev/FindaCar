@@ -60,4 +60,13 @@ public interface UserService {
 	 */
 	public User findById(long id);
 
+	/**
+	 * User exists.
+	 *
+	 * @param mail the mail
+	 * @param password the password
+	 * @return true, if successful
+	 */
+	public boolean userExists(String mail, String password);
+
 }

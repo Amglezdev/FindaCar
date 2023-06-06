@@ -22,5 +22,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	public User findByMailAndPassword(String mail, String password);
 	
+	/**
+	 * Exists by mail and password.
+	 *
+	 * @param mail the mail
+	 * @param password the password
+	 * @return true, if successful
+	 */
+	public boolean existsByMailAndPassword(String mail, String password);
+	
 
 }

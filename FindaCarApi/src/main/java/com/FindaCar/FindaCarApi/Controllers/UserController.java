@@ -20,7 +20,7 @@ import com.FindaCar.FindaCarApi.services.UserServiceImpl;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins =  {"http://localhost:4200", "http://localhost:8080"})
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 public class UserController {
 
 	@Autowired
@@ -29,7 +29,7 @@ public class UserController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
-	
+
 	@GetMapping("/getById")
 	public UserDto getById(@Param(value = "id") Long id) {
 		try {
@@ -38,7 +38,7 @@ public class UserController {
 			// TODO: handle exception
 			return null;
 		}
-		
+
 	}
 
 	@GetMapping("/getUsers")
@@ -54,7 +54,11 @@ public class UserController {
 	@PutMapping("/addUser")
 	public boolean addUser(@RequestBody UserDto user) {
 		try {
-			return userImpl.createUser(dtoTo.userToDao(user));
+			if (userImpl.userExists(user.getMail(), user.getPassword())) {
+				return false;
+			} else {
+				return userImpl.createUser(dtoTo.userToDao(user));
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
@@ -64,7 +68,6 @@ public class UserController {
 	@PostMapping("/getByMailAndPassword")
 	public UserDto getUserByMailAndPassword(@RequestBody UserDto user) {
 		try {
-			System.out.println(user.toString());
 			return toDto.userToDto(userImpl.findByEmailAndPassword(user.getMail(), user.getPassword()));
 		} catch (Exception e) {
 			// TODO: handle exception
