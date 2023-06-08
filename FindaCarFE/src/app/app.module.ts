@@ -16,6 +16,10 @@ import { FavoritesComponent } from './user-site/favorites/favorites.component';
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChatDetailComponent } from './user-site/chat/chat-detail/chat-detail.component';
+import { FuelService } from './services/fuel.service';
+import { VehicleService } from './services/vehicle.service';
+import { CookieService } from 'ngx-cookie-service';
+import { RoleService } from './services/role.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,7 @@ import { ChatDetailComponent } from './user-site/chat/chat-detail/chat-detail.co
     DetailPostComponent,
     VehicleComponent,
     FavoritesComponent,
-    ChatDetailComponent
+    ChatDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +40,15 @@ import { ChatDetailComponent } from './user-site/chat/chat-detail/chat-detail.co
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers:[UserService],
-  bootstrap: [AppComponent]
+  providers: [
+    UserService,
+    FuelService,
+    VehicleService,
+    CookieService,
+    RoleService,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

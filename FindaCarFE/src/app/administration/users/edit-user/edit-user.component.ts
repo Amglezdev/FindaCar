@@ -46,7 +46,6 @@ export class EditUserComponent implements OnInit {
 
   editUser() {
     try {
-      console.log(this.user.rol.name)
       this.us.updateUser(this.user);
     } catch {}
   }

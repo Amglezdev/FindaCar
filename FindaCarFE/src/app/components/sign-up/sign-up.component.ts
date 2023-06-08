@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/user.service';
 import { Role } from 'src/app/entities/role';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 //import bcrypt from 'bcryptjs';
 
@@ -15,7 +17,7 @@ import { Role } from 'src/app/entities/role';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder, private location: Location, private us:UserService) {}
+  constructor(private formBuilder: FormBuilder, private location: Location, private us:UserService, private router:Router, private cookieService:CookieService) {}
 
   signUpForm: FormGroup;
   user: User;
@@ -24,7 +26,11 @@ export class SignUpComponent implements OnInit {
   };
 
   ngOnInit() {
-    console.log('Carga SignUp');
+    const isLogged = this.cookieService.check('userData');
+
+    if (isLogged) {
+      this.router.navigate(['/userSite']);
+    }
     this.signUpForm = this.formBuilder.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
@@ -40,7 +46,7 @@ export class SignUpComponent implements OnInit {
       if (this.signUpForm.valid) {
         this.user = this.signUpForm.value;
         if(this.us.createUser(this.user)){
-          console.log('Creado')
+         this.router.navigate['/login']
 
         }else{
           console.log('No se ha creado')

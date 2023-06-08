@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-import { user } from 'src/environments/environments';
 import { Location } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-administration',
@@ -12,13 +12,11 @@ export class AdministrationComponent implements OnInit{
   ngOnInit(): void {
 
   }
-  constructor(private router:Router, private location:Location){}
+  constructor(private router:Router, private location:Location, private cookieService:CookieService){}
 
-  logOut(){
-    user.rol.name = '';
-    window.location.reload();
-    this.router.navigate(['/login'])
-
+  logOut() {
+    this.cookieService.deleteAll();
+    this.router.navigate(['/login']);
   }
 
 }

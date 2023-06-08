@@ -62,7 +62,7 @@ public class ToDtoImpl implements ToDtoService {
 
 		dto.setComment(post.getComment());
 		dto.setId(post.getId());
-		dto.setVehicleId(post.getVehicle().getId());
+		dto.setVehicleId(vehicleToDto(post.getVehicle()));
 
 		return dto;
 	}
@@ -108,8 +108,8 @@ public class ToDtoImpl implements ToDtoService {
 		UserFavoritesDto dto = new UserFavoritesDto();
 
 		dto.setId(dao.getId());
-		dto.setUserId(dao.getUser().getId());
-		dto.setVehicleId(dao.getVehicle().getId());
+		dto.setUser(userToDto(dao.getUser()));
+		dto.setVehicle(vehicleToDto(dao.getVehicle()));
 
 		return dto;
 	}
@@ -162,7 +162,7 @@ public class ToDtoImpl implements ToDtoService {
 
 		dto.setId(dao.getId());
 		dto.setImage(dao.getImage());
-		dto.setVehicleId(dao.getVehicle().getId());
+		dto.setVehicle(vehicleToDto(dao.getVehicle()));
 
 		return dto;
 
@@ -210,8 +210,8 @@ public class ToDtoImpl implements ToDtoService {
 		MessagesDto dto = new MessagesDto();
 
 		dto.setId(message.getId());
-		dto.setReciever(message.getReciever().getId());
-		dto.setSender(message.getSender().getId());
+		dto.setReciever(userToDto(message.getReciever()));
+		dto.setSender(userToDto(message.getSender()));
 
 		return dto;
 	}

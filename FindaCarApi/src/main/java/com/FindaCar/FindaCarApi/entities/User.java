@@ -32,6 +32,11 @@ public class User {
 	@Column(name = "md_date")
 	private Calendar mdDate;
 
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return "User [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", name=" + name + ", surname="
@@ -73,6 +78,28 @@ public class User {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
 	@JsonIgnore
 	private List<Vehicle> vehiclesOwned;
+
+	/** The security. */
+	@Column(name = "pregunta_seguridad")
+	private String security;
+
+	/**
+	 * Gets the security.
+	 *
+	 * @return the security
+	 */
+	public String getSecurity() {
+		return security;
+	}
+
+	/**
+	 * Sets the security.
+	 *
+	 * @param security the new security
+	 */
+	public void setSecurity(String security) {
+		this.security = security;
+	}
 
 	/**
 	 * Gets the vehicles owned.

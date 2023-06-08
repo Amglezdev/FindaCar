@@ -81,9 +81,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean userExists(String mail, String password) {
+	public boolean userExistsByMailAndPassword(String mail, String password) {
 		try {
 			return userRepo.existsByMailAndPassword(mail, password);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+		
+		
+	}
+
+	@Override
+	public boolean userExistsByMail(String mail) {
+		try {
+			return userRepo.existsByMail(mail);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;

@@ -10,10 +10,10 @@ public class UserFavoritesDto {
 	private long id;
 	
 	/** The user id. */
-	private long userId;
+	private UserDto user;
 	
 	/** The vehicle id. */
-	private long vehicleId;
+	private VehicleDto vehicle;
 	
 	/**
 	 * Gets the id.
@@ -38,8 +38,8 @@ public class UserFavoritesDto {
 	 *
 	 * @return the user id
 	 */
-	public long getUserId() {
-		return userId;
+	public UserDto getUser() {
+		return user;
 	}
 	
 	/**
@@ -47,8 +47,8 @@ public class UserFavoritesDto {
 	 *
 	 * @param userId the new user id
 	 */
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setUser(UserDto user) {
+		this.user = user;
 	}
 	
 	/**
@@ -56,8 +56,8 @@ public class UserFavoritesDto {
 	 *
 	 * @return the vehicle id
 	 */
-	public long getVehicleId() {
-		return vehicleId;
+	public VehicleDto getVehicle() {
+		return vehicle;
 	}
 	
 	/**
@@ -65,8 +65,8 @@ public class UserFavoritesDto {
 	 *
 	 * @param vehicleId the new vehicle id
 	 */
-	public void setVehicleId(long vehicleId) {
-		this.vehicleId = vehicleId;
+	public void setVehicle(VehicleDto vehicle) {
+		this.vehicle = vehicle;
 	}
 	
 	

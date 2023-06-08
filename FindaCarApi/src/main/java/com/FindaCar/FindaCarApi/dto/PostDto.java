@@ -10,7 +10,7 @@ public class PostDto {
 	private long id;
 	
 	/** The vehicle id. */
-	private long vehicleId;
+	private VehicleDto vehicle;
 	
 	/** The comment. */
 	private String comment;
@@ -38,8 +38,8 @@ public class PostDto {
 	 *
 	 * @return the vehicle id
 	 */
-	public long getVehicleId() {
-		return vehicleId;
+	public VehicleDto getVehicleId() {
+		return vehicle;
 	}
 	
 	/**
@@ -47,8 +47,8 @@ public class PostDto {
 	 *
 	 * @param vehicleId the new vehicle id
 	 */
-	public void setVehicleId(long vehicleId) {
-		this.vehicleId = vehicleId;
+	public void setVehicleId(VehicleDto vehicle) {
+		this.vehicle = vehicle;
 	}
 	
 	/**

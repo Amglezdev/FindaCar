@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 //import bcrypt from 'bcryptjs';
 import { take, map } from 'rxjs';
 import * as $ from 'jquery';
-import { user } from 'src/environments/environments';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,20 +17,22 @@ import { user } from 'src/environments/environments';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
   user: User;
-
-  test: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private location: Location,
     private router: Router,
-    private us: UserService
+    private us: UserService,
+    private cookieService: CookieService
   ) {}
 
   ngOnInit() {
-    console.log('Entrado en login component');
+    const isLogged = this.cookieService.check('userData');
+
+    if (isLogged) {
+      this.router.navigate(['/userSite']);
+    }
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -61,19 +63,10 @@ export class LoginComponent implements OnInit {
           .then(async function (resp) {
             buffer.user = await resp.json();
             if ((await buffer.user) != null) {
-              user.id = buffer.user.id;
-              user.mail = buffer.user.mail;
-              user.name = buffer.user.name;
-              user.phoneNumber = buffer.user.phoneNumber;
-              user.rol = buffer.user.rol;
-              user.surname = buffer.user.surname;
+              buffer.cookieService.set('userData', JSON.stringify(buffer.user));
               if (buffer.user.rol.name == 'Administrador') {
-                user.rol.name = buffer.user.rol.name;
-                console.log(user.name)
                 buffer.router.navigate(['/administration']);
               } else {
-                user.rol.name = buffer.user.rol.name;
-                console.log(buffer.user)
                 buffer.router.navigate(['/userSite']);
               }
             } else {
@@ -85,7 +78,6 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
 
   // async encryptPassword(password: string): Promise<string> {
   //   const saltRounds = 10; // Número de rondas de sal

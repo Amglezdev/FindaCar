@@ -11,7 +11,7 @@ public class VehiclePicturesDto {
 	private long id;
 	
 	/** The vehicle id. */
-	private long vehicleId;
+	private VehicleDto vehicle;
 	
 	/** The image. */
 	private String image;
@@ -39,8 +39,8 @@ public class VehiclePicturesDto {
 	 *
 	 * @return the vehicle id
 	 */
-	public long getVehicleId() {
-		return vehicleId;
+	public VehicleDto getVehicle() {
+		return vehicle;
 	}
 	
 	/**
@@ -48,8 +48,8 @@ public class VehiclePicturesDto {
 	 *
 	 * @param vehicleId the new vehicle id
 	 */
-	public void setVehicleId(long vehicleId) {
-		this.vehicleId = vehicleId;
+	public void setVehicle(VehicleDto vehicle) {
+		this.vehicle = vehicle;
 	}
 	
 	/**

@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { userSiteGuard } from './user-site.guard';
+import { UserSiteGuard } from './user-site.guard';
 
-describe('userSiteGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => userSiteGuard(...guardParameters));
+describe('UserSiteGuard', () => {
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.inject(UserSiteGuard).canActivate(...guardParameters);
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

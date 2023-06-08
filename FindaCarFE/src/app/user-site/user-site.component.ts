@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '../../environments/environments';
+
 import { User } from '../entities/user';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-user-site',
   templateUrl: './user-site.component.html',
-  styleUrls: ['./user-site.component.css']
+  styleUrls: ['./user-site.component.css'],
 })
-export class UserSiteComponent implements OnInit{
+export class UserSiteComponent implements OnInit {
 
-  constructor(private router:Router){}
+  user:User;
+  constructor(private router: Router, private cookieService: CookieService) {}
+
   ngOnInit(): void {
-
+    const userDataString = this.cookieService.get('userData');
+    const userData = JSON.parse(userDataString);
+    this.user = userData;
   }
 
 
 
-  user:User = user;
-
-  logOut(){
-    user.rol.name = '';
-    window.location.reload();
-    this.router.navigate(['/login'])
-
+  logOut() {
+    this.cookieService.deleteAll();
+    this.router.navigate(['/login']);
   }
 }

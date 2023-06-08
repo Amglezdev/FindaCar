@@ -1,3 +1,4 @@
+import { Fuel } from "./fuel";
 import { User } from "./user";
 import { VehicleType } from "./vehicle-type";
 
@@ -10,5 +11,6 @@ export interface Vehicle {
   type:VehicleType,
   age:Date,
   owner:User,
+  fuel:Fuel
   price:number
 }

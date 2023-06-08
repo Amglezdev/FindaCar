@@ -9,14 +9,11 @@ public class MessagesDto {
 	/** The id. */
 	private long id;
 	
-	/** The user id. */
-	private long userId;
-	
 	/** The sender. */
-	private long sender;
+	private UserDto sender;
 	
 	/** The reciever. */
-	private long reciever;
+	private UserDto reciever;
 
 	/**
 	 * Gets the id.
@@ -35,31 +32,12 @@ public class MessagesDto {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	/**
-	 * Gets the user id.
-	 *
-	 * @return the user id
-	 */
-	public long getUserId() {
-		return userId;
-	}
-
-	/**
-	 * Sets the user id.
-	 *
-	 * @param userId the new user id
-	 */
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
-
 	/**
 	 * Gets the sender.
 	 *
 	 * @return the sender
 	 */
-	public long getSender() {
+	public UserDto getSender() {
 		return sender;
 	}
 
@@ -68,7 +46,7 @@ public class MessagesDto {
 	 *
 	 * @param sender the new sender
 	 */
-	public void setSender(long sender) {
+	public void setSender(UserDto sender) {
 		this.sender = sender;
 	}
 
@@ -77,7 +55,7 @@ public class MessagesDto {
 	 *
 	 * @return the reciever
 	 */
-	public long getReciever() {
+	public UserDto getReciever() {
 		return reciever;
 	}
 
@@ -86,7 +64,7 @@ public class MessagesDto {
 	 *
 	 * @param reciever the new reciever
 	 */
-	public void setReciever(long reciever) {
+	public void setReciever(UserDto reciever) {
 		this.reciever = reciever;
 	}
 	

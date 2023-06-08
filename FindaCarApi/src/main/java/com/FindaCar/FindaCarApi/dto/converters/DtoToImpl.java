@@ -114,8 +114,8 @@ public class DtoToImpl implements DtoToService {
 		dao.setId(dto.getId());
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
-		dao.setReciever(userService.findById(dto.getReciever()));
-		dao.setSender(userService.findById(dto.getSender()));
+		dao.setReciever(userService.findById(dto.getReciever().getId()));
+		dao.setSender(userService.findById(dto.getSender().getId()));
 
 		return dao;
 	}
@@ -163,7 +163,7 @@ public class DtoToImpl implements DtoToService {
 		uf.setMdDate(calendar);
 		uf.setMdUuid(mdUuid);
 		uf.setUser(userService.findById(dto.getId()));
-		uf.setVehicle(vehicleService.findById(dto.getVehicleId()));
+		uf.setVehicle(vehicleService.findById(dto.getVehicle().getId()));
 
 		return uf;
 	}
@@ -211,7 +211,7 @@ public class DtoToImpl implements DtoToService {
 		dao.setImage(dao.getImage());
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
-		dao.setVehicle(vehicleService.findById(dto.getVehicleId()));
+		dao.setVehicle(vehicleService.findById(dto.getVehicle().getId()));
 
 		return dao;
 	}

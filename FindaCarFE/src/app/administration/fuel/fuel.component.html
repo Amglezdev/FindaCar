@@ -2,18 +2,20 @@
   <div class="background-image"></div>
   <div class="content">
     <h2>Lista de tipos de combustible</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let fuel of listFuel">
-          <td>{{ fuel.name }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fuel of listFuel">
+            <td>{{ fuel.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>Crear nuevo tipo de combustible</h2>
     <form [formGroup]="formGroup" (ngSubmit)="createFuel()">
@@ -24,6 +26,5 @@
       <button type="submit" class="btn btn-primary">Crear</button>
       <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
     </form>
-
   </div>
 </div>

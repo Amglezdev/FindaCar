@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import com.FindaCar.FindaCarApi.services.MessageServiceImpl;
 
 @RestController
 @RequestMapping("/messages")
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 public class MessageController {
 
 	@Autowired

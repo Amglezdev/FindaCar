@@ -54,7 +54,7 @@ public class UserController {
 	@PutMapping("/addUser")
 	public boolean addUser(@RequestBody UserDto user) {
 		try {
-			if (userImpl.userExists(user.getMail(), user.getPassword())) {
+			if (userImpl.userExistsByMailAndPassword(user.getMail(), user.getPassword())) {
 				return false;
 			} else {
 				return userImpl.createUser(dtoTo.userToDao(user));
@@ -89,6 +89,16 @@ public class UserController {
 	public boolean deleteUser(@Param(value = "id") Long id) {
 		try {
 			return userImpl.deleteUser(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+	
+	@PostMapping("/userExists")		
+	public boolean userExists(@RequestBody UserDto user) {
+		try {
+			return userImpl.userExistsByMail(user.getMail());
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
