@@ -1,11 +1,14 @@
+import { User } from "./user";
+import { VehicleType } from "./vehicle-type";
+
 export interface Vehicle {
   id:number,
   brand:string,
   model:string,
   power:number,
   mileage:number,
-  type:string,
+  type:VehicleType,
   age:Date,
-  ownerId:number,
+  owner:User,
   price:number
 }

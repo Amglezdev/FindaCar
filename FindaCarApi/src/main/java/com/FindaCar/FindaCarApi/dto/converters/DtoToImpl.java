@@ -180,7 +180,7 @@ public class DtoToImpl implements DtoToService {
 		dao.setMdUuid(mdUuid);
 		dao.setMileage(dto.getMileage());
 		dao.setModel(dto.getModel());
-		dao.setOwner(userService.findById(dto.getUserId()));
+		dao.setOwner(userService.findById(dto.getOwner().getId()));
 		dao.setPower(dto.getPower());
 		dao.setPrice(dto.getPrice());
 		dao.setType(vehicleTypeToDao(dto.getType()));

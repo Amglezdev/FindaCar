@@ -30,7 +30,7 @@ public class VehicleDto {
 	private int mileage;
 	
 	/** The user id. */
-	private long userId;
+	private UserDto owner;
 	
 	/** The price. */
 	private double price;
@@ -45,6 +45,14 @@ public class VehicleDto {
 	 */
 	public int getMileage() {
 		return mileage;
+	}
+
+	public UserDto getOwner() {
+		return owner;
+	}
+
+	public void setOwner(UserDto owner) {
+		this.owner = owner;
 	}
 
 	/**
@@ -162,24 +170,6 @@ public class VehicleDto {
 	 */
 	public void setAge(Calendar age) {
 		this.age = age;
-	}
-	
-	/**
-	 * Gets the user id.
-	 *
-	 * @return the user id
-	 */
-	public long getUserId() {
-		return userId;
-	}
-	
-	/**
-	 * Sets the user id.
-	 *
-	 * @param userId the new user id
-	 */
-	public void setUserId(long userId) {
-		this.userId = userId;
 	}
 	
 	/**

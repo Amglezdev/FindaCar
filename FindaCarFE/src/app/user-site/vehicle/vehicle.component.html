@@ -1,1 +1,71 @@
-<p>vehicle works!</p>
+<div class="background-image">
+  <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card w-75">
+      <div class="card-header">
+        <h2>Crear vehículo</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="vehicleForm" (ngSubmit)="createVehicle()" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="brand" class="form-label">Marca:</label>
+            <input type="text" class="form-control" id="brand" formControlName="brand" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('brand').hasError('required') && (vehicleForm.get('brand').touched || vehicleForm.get('brand').dirty)">
+              La marca es requerida
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="model" class="form-label">Modelo:</label>
+            <input type="text" class="form-control" id="model" formControlName="model" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('model').hasError('required') && (vehicleForm.get('model').touched || vehicleForm.get('model').dirty)">
+              El modelo es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="power" class="form-label">Potencia:</label>
+            <input type="number" class="form-control" id="power" formControlName="power" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('power').hasError('required') && (vehicleForm.get('power').touched || vehicleForm.get('power').dirty)">
+              La potencia es requerida
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="mileage" class="form-label">Kilometraje:</label>
+            <input type="number" class="form-control" id="mileage" formControlName="mileage" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('mileage').hasError('required') && (vehicleForm.get('mileage').touched || vehicleForm.get('mileage').dirty)">
+              El kilometraje es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type" class="form-label">Tipo de vehículo:</label>
+            <select class="form-control" id="type" formControlName="type" required>
+              <option *ngFor="let type of listType" [value]="type">{{ type.name }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="fuel" class="form-label">Tipo de combustible:</label>
+            <select class="form-control" id="fuel" formControlName="fuel" required>
+              <option *ngFor="let fuel of listFuel" [value]="fuel">{{ fuel.name }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="age" class="form-label">Fecha de matriculacion:</label>
+            <input type="date" class="form-control" id="age" formControlName="age" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('age').hasError('required') && (vehicleForm.get('age').touched || vehicleForm.get('age').dirty)">
+              El año es requerido
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="price" formControlName="price" required>
+            <div class="invalid-feedback" *ngIf="vehicleForm.get('price').hasError('required') && (vehicleForm.get('price').touched || vehicleForm.get('price').dirty)">
+              El precio es requerido
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" [disabled]="!vehicleForm.valid">Crear</button>
+            <button (click)="goBack()" class="btn btn-danger float-end">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

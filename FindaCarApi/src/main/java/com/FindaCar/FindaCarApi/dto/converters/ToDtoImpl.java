@@ -138,7 +138,7 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setPower(dao.getPower());
 		dto.setPrice(dao.getPrice());
 		dto.setType(vehicleTypeToDto(dao.getType()));
-		dto.setUserId(dao.getOwner().getId());
+		dto.setOwner(userToDto(dao.getOwner()));
 		dto.setFuel(fuelToDto(dao.getFuel()));
 
 		return dto;

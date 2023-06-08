@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserSiteComponent } from './user-site.component';
 import { PostComponent } from './post/post.component';
 import { DetailPostComponent } from './detail-post/detail-post.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 const routes: Routes = [{ path: '', component: UserSiteComponent },
 {path:'posts', component:PostComponent},
 { path: 'detailPost/:id', component: DetailPostComponent },
 { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
+{path:'userSite/vehicle', component:VehicleComponent}
 ]
 
 @NgModule({
