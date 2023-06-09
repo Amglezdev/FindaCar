@@ -20,6 +20,7 @@ import { FuelService } from './services/fuel.service';
 import { VehicleService } from './services/vehicle.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from './services/role.service';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RoleService } from './services/role.service';
     VehicleComponent,
     FavoritesComponent,
     ChatDetailComponent,
+    PasswordRecoveryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+2023-06-09 13:47:38 - Entering endpoint /users/addUser
+2023-06-09 13:47:38 - Returning user by mail and password
+2023-06-09 14:12:00 - Entering endpoint /users/addUser
+2023-06-09 14:12:00 - Returning user by mail and password
+2023-06-09 14:27:06 - Entering endpoint /users/changePassword
+2023-06-09 14:27:06 - Succesfully changed password
+2023-06-09 14:27:37 - Entering endpoint /users/addUser
+2023-06-09 14:27:37 - Returning user by mail and password
+2023-06-09 14:27:37 - Error in /users/getByMailAndPassword
+2023-06-09 14:32:29 - Entering endpoint /users/addUser
+2023-06-09 14:32:29 - Returning user by mail and password
+2023-06-09 14:32:29 - Error in /users/getByMailAndPassword
+2023-06-09 14:32:34 - Entering endpoint /users/addUser
+2023-06-09 14:32:34 - Returning user by mail and password
+2023-06-09 14:34:43 - Entering endpoint /users/addUser
+2023-06-09 14:34:43 - Returning user by mail and password
+2023-06-09 14:34:46 - Entering endpoint /fuels/getAll
+2023-06-09 14:34:46 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:34:46 - Returning all fuels
+2023-06-09 14:34:46 - Returing type list
+2023-06-09 14:35:40 - Entering endpoint /fuels/getAll
+2023-06-09 14:35:40 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:35:40 - Returning all fuels
+2023-06-09 14:35:40 - Returing type list
+2023-06-09 14:35:42 - Entering endpoint /fuels/getAll
+2023-06-09 14:35:42 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:35:42 - Returning all fuels
+2023-06-09 14:35:42 - Returing type list
+2023-06-09 14:35:43 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:35:43 - Entering endpoint /fuels/getAll
+2023-06-09 14:35:43 - Returning all fuels
+2023-06-09 14:35:43 - Returing type list
+2023-06-09 14:37:01 - Entering endpoint /fuels/getAll
+2023-06-09 14:37:01 - Returning all fuels
+2023-06-09 14:37:01 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:37:01 - Returing type list
+2023-06-09 14:37:03 - Entering endpoint /fuels/getAll
+2023-06-09 14:37:03 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:37:03 - Returing type list
+2023-06-09 14:37:03 - Returning all fuels
+2023-06-09 14:37:24 - Entering endpoint /fuels/getAll
+2023-06-09 14:37:24 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:37:24 - Returning all fuels
+2023-06-09 14:37:24 - Returing type list
+2023-06-09 14:37:25 - Entering endpoint /fuels/getAll
+2023-06-09 14:37:25 - Entering endpoint /vehicleType/allTypes
+2023-06-09 14:37:25 - Returing type list
+2023-06-09 14:37:25 - Returning all fuels
