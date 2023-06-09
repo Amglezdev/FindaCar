@@ -12,7 +12,7 @@ export class VehiclePicturesService {
 
   constructor(private http:HttpClient) { }
 
-  getUserById(id: number): Observable<VehiclePictures[]> {
+  getByVehicleId(id: number): Observable<VehiclePictures[]> {
     try {
       return this.http.get<VehiclePictures[]>(`${this.apiUrl}findAllById?id=${id}`);
     } catch {
@@ -20,7 +20,7 @@ export class VehiclePicturesService {
     }
   }
 
-  async createType(vehiclePicture:VehiclePictures) {
+  async addPicture(vehiclePicture:VehiclePictures) {
     try {
       const response = await fetch(this.apiUrl + 'addPicture', {
         method: 'PUT',

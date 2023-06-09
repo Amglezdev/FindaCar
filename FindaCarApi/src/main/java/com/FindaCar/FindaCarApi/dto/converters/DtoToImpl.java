@@ -209,7 +209,7 @@ public class DtoToImpl implements DtoToService {
 		VehiclePictures dao = new VehiclePictures();
 
 		dao.setId(dto.getId());
-		dao.setImage(dao.getImage());
+		dao.setImage(dto.getImage());
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
 		dao.setVehicle(vehicleService.findById(dto.getVehicle().getId()));

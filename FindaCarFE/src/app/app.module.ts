@@ -21,6 +21,7 @@ import { VehicleService } from './services/vehicle.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from './services/role.service';
 import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
+import { VehiclePicturesComponent } from './user-site/vehicle-pictures/vehicle-pictures.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PasswordRecoveryComponent } from './components/password-recovery/passwo
     FavoritesComponent,
     ChatDetailComponent,
     PasswordRecoveryComponent,
+    VehiclePicturesComponent,
   ],
   imports: [
     BrowserModule,

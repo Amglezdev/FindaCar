@@ -7,9 +7,12 @@ import { FuelService } from 'src/app/services/fuel.service';
 import { VehicleTypesService } from 'src/app/services/vehicle-types.service';
 import { VehicleService } from 'src/app/services/vehicle.service';
 import { Location } from '@angular/common';
-import { async } from 'rxjs';
 import { User } from 'src/app/entities/user';
 import { CookieService } from 'ngx-cookie-service';
+import { VehiclePictures } from '../../entities/vehicle-pictures';
+import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
+import * as $ from 'jquery';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle',
@@ -22,6 +25,7 @@ export class VehicleComponent implements OnInit {
   listFuel: Fuel[];
   vehicle: Vehicle;
   user: User;
+  picture: VehiclePictures;
   selectedType: VehicleType;
   selectedFuel: Fuel;
 
@@ -31,7 +35,8 @@ export class VehicleComponent implements OnInit {
     private vts: VehicleTypesService,
     private vs: VehicleService,
     private location: Location,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private vp: VehiclePicturesService
   ) {}
 
   ngOnInit() {
@@ -44,14 +49,18 @@ export class VehicleComponent implements OnInit {
     this.vehicle = {
       age: null,
       brand: '',
-      fuel: this.selectedFuel,
+      fuel: {
+        name: '',
+      },
       id: 0,
       mileage: 0,
       model: '',
       owner: null,
       power: 0,
       price: 0,
-      type: this.selectedType,
+      type: {
+        name: '',
+      },
     };
     this.getFuelTypes();
     this.getVehicleTypes();
@@ -89,17 +98,31 @@ export class VehicleComponent implements OnInit {
   createVehicle() {
     try {
       if (this.vehicleForm.valid) {
-        this.vehicle = this.vehicleForm.value;
-        if (this.vs.createVehicle(this.vehicle)) {
-          console.log('Creado');
-        } else {
-          console.log('No se ha creado');
+        // Crear una copia del formulario y omitir la propiedad "url"
+        const vehicleData = { ...this.vehicleForm.value };
+        delete vehicleData.url;
+
+        this.vehicle = vehicleData;
+        console.log(vehicleData);
+        this.selectedFuel = {
+          name : vehicleData.fuel
         }
+        this.selectedType = {
+          name : vehicleData.type
+        }
+
+        this.vehicle.type = this.selectedType;
+        this.vehicle.fuel = this.selectedFuel
+        console.log(this.vehicle)
+
+        this.vs.createVehicle(this.vehicle);
+
       }
-    } catch (error) {}
+    } catch (error) { console.log(error)}
   }
 
   goBack() {
     this.location.back();
   }
+
 }
