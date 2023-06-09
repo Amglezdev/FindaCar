@@ -5,7 +5,7 @@
 
 .background-image::before {
   content: '';
-  background-image: url('../../assets/FondoAdministracion.jpg');
+  background-image: url('./../../../assets/FondoAdministracion.jpg');
   background-size: cover;
   background-position: center;
   position: absolute;

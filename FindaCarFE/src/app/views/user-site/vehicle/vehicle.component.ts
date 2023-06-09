@@ -9,7 +9,7 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 import { Location } from '@angular/common';
 import { User } from 'src/app/entities/user';
 import { CookieService } from 'ngx-cookie-service';
-import { VehiclePictures } from '../../entities/vehicle-pictures';
+import { VehiclePictures } from 'src/app/entities/vehicle-pictures';
 import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
 import * as $ from 'jquery';
 import { take } from 'rxjs';
@@ -20,6 +20,7 @@ import { take } from 'rxjs';
   styleUrls: ['./vehicle.component.css'],
 })
 export class VehicleComponent implements OnInit {
+
   vehicleForm: FormGroup;
   listType: VehicleType[];
   listFuel: Fuel[];

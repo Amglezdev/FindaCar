@@ -3,25 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HomeComponent } from './views/components/home/home.component';
+import { LoginComponent } from './views/components/login/login.component';
+import { SignUpComponent } from './views/components/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { PostComponent } from './user-site/post/post.component';
-import { DetailPostComponent } from './user-site/detail-post/detail-post.component';
-import { VehicleComponent } from './user-site/vehicle/vehicle.component';
-import { FavoritesComponent } from './user-site/favorites/favorites.component';
+import { DetailPostComponent } from './views/user-site/detail-post/detail-post.component';
+import { VehicleComponent } from './views/user-site/vehicle/vehicle.component';
+import { FavoritesComponent } from './views/user-site/favorites/favorites.component';
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ChatDetailComponent } from './user-site/chat/chat-detail/chat-detail.component';
+import { ChatDetailComponent } from './views/user-site/chat/chat-detail/chat-detail.component';
 import { FuelService } from './services/fuel.service';
 import { VehicleService } from './services/vehicle.service';
 import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from './services/role.service';
-import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
-import { VehiclePicturesComponent } from './user-site/vehicle-pictures/vehicle-pictures.component';
+import { PasswordRecoveryComponent } from './views/components/password-recovery/password-recovery.component';
+import { VehiclePicturesComponent } from './views/user-site/vehicle-pictures/vehicle-pictures.component';
+import { PostComponent } from './views/user-site/post/post.component';
 
 @NgModule({
   declarations: [

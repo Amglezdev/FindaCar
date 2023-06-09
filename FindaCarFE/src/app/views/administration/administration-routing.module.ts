@@ -8,10 +8,6 @@ import { DetailUserComponent } from './users/detail-user/detail-user.component';
 const routes: Routes = [
   { path: '', component: AdministrationComponent },
   {
-    path: 'post',
-    loadChildren: () => import('./post/post.module').then((m) => m.PostModule),
-  },
-  {
     path: 'users',
     loadChildren: () =>
       import('./users/users.module').then((m) => m.UsersModule),
@@ -29,7 +25,17 @@ const routes: Routes = [
       import('../user-site/user-site.module').then((m) => m.UserSiteModule),
   },
   { path: 'login', component: LoginComponent },
-  { path: 'fuel', loadChildren: () => import('./fuel/fuel.module').then(m => m.FuelModule) },
+  {
+    path: 'fuel',
+    loadChildren: () => import('./fuel/fuel.module').then((m) => m.FuelModule),
+  },
+  {
+    path: 'administrationPost',
+    loadChildren: () =>
+      import('./administration-post/administration-post.module').then(
+        (m) => m.AdministrationPostModule
+      ),
+  },
 ];
 
 @NgModule({

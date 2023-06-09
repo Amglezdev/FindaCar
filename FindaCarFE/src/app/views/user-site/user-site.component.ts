@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../entities/user';
+import { User } from 'src/app/entities/user';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
