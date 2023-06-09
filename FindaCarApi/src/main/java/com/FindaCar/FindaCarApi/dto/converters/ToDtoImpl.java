@@ -38,6 +38,7 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setPhoneNumber(user.getPhoneNumber());
 		dto.setRol(roleToDto(user.getRole()));
 		dto.setSurname(user.getSurname());
+		dto.setSecurity(user.getSecurity());
 
 		System.out.println(dto.toString());
 

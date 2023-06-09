@@ -50,15 +50,21 @@
               *ngIf="signUpForm.get('password').hasError('required') && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
               Contraseña es requerida
             </div>
-
+          </div>
+          <div class="mb-3">
+            <label for="security" class="form-label">Pregunta de seguridad: ¿Cual es su modelo de coche favorito?</label>
+            <input type="text" class="form-control" id="security" formControlName="security" required>
+            <div class="invalid-feedback"
+              *ngIf="signUpForm.get('security').hasError('required') && (signUpForm.get('security').touched || signUpForm.get('security').dirty)">
+              Pregunta de seguridad es requerida
+            </div>
           </div>
           <div>
             <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">Registrarse</button>
             <button (click)="goBack()" class="btn btn-danger float-end">Volver</button>
           </div>
         </form>
-
       </div>
     </div>
   </div>
-
+</div>

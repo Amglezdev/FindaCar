@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
             name: '',
           },
           surname: '',
+          security: '',
+
         };
         this.user.mail = this.loginForm.get('email').value;
         this.user.password = this.loginForm.get('password').value;

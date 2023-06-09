@@ -8,4 +8,5 @@ export interface User {
   mail:string,
   password:string,
   rol:Role,
+  security:string,
 }

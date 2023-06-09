@@ -64,6 +64,7 @@ public class DtoToImpl implements DtoToService {
 		dao.setPhoneNumber(dto.getPhoneNumber());
 		dao.setRole(roleService.getRoleById(dto.getRol().getName()));
 		dao.setSurname(dto.getSurname());
+		dao.setSecurity(dto.getSecurity());
 
 		System.out.println(dao.toString());
 

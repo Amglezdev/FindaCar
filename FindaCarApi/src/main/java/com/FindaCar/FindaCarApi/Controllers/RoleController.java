@@ -13,6 +13,7 @@ import com.FindaCar.FindaCarApi.dto.RoleDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
 import com.FindaCar.FindaCarApi.services.RoleServiceImpl;
+import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/roles")
@@ -25,23 +26,31 @@ public class RoleController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
+	@Autowired
+	Logger log;
 
 	@GetMapping("/getAllRoles")
 	public ArrayList<RoleDto> findAllRoles() {
+		Logger.log("Entering endpoint /roles/getAllRoles");
 		try {					
+			Logger.log("Returning all roles");
 			return toDto.listRoleToDto(roleImpl.getAllRoles());
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /roles/getAllRoles");
 			return null;
 		}
 	}
 
 	@GetMapping("/roleById")
 	public RoleDto roleById(@Param(value = "roleId") String id) {
+		Logger.log("Entering endpoint /roles/roleById");
 		try {
+			Logger.log("Returning role with id: " + id);
 			return toDto.roleToDto(roleImpl.getRoleById(id));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /roles/roleById");
 			return null;
 		}
 	}

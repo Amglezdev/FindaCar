@@ -16,6 +16,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
 import com.FindaCar.FindaCarApi.services.VehicleServiceImpl;
+import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/vehicles")
@@ -28,23 +29,31 @@ public class VehicleController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
+	@Autowired
+	Logger log;
 
 	@GetMapping("/findAll")
 	public ArrayList<VehicleDto> getAllVehicles() {
+		Logger.log("Entering endpoint /vehicles/findAll");
 		try {
+			Logger.log("Returning vehicle list");
 			return toDto.listVehicleToDto(vehicleImpl.findAllVehicles());
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /vehicles/findAll");
 			return null;
 		}
 	}
 
 	@GetMapping("/findById")
 	public VehicleDto findById(@Param(value = "id") long id) {
+		Logger.log("Entering endpoint /vehicles/findById");
 		try {
+			Logger.log("Returning vehicle with id:" + id);
 			return toDto.vehicleToDto(vehicleImpl.findById(id));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /vehicles/findById");
 			return null;
 		}
 
@@ -52,30 +61,39 @@ public class VehicleController {
 
 	@PutMapping("/addVehicle")
 	public boolean addVehicle(@RequestBody VehicleDto dto) {
+		Logger.log("Entering endpoint /vehicles/addVehicle");
 		try {
+			Logger.log("Creating vehicle");
 			return vehicleImpl.addVehicle(dtoTo.vehicleToDao(dto));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /vehicles/addVehicle");
 			return false;
 		}
 	}
 
 	@PostMapping("/updateVehicle")
 	public boolean updateVehicle(@RequestBody VehicleDto dto) {
+		Logger.log("Entering endpoint /vehicles/updateVehicle");
 		try {
+			Logger.log("Updating vehicle");
 			return vehicleImpl.updateVehicle(dtoTo.vehicleToDao(dto));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /vehicles/updateVehicle");
 			return false;
 		}
 	}
 
 	@GetMapping("/findByOwnerId")
 	public ArrayList<VehicleDto> findByOwnerId(@Param(value = "id") long id) {
+		Logger.log("Entering endpoint /vehicles/findByOwnerId");
 		try {
+			Logger.log("Returning vehicle for user id:" +id);
 			return toDto.listVehicleToDto(vehicleImpl.findVehicleByOwnerId(id));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /vehicles/findByOwnerId");
 			return null;	
 		}
 	}

@@ -60,24 +60,30 @@ public interface UserService {
 	 */
 	public User findById(long id);
 
-
 	/**
 	 * User exists by mail and password.
 	 *
-	 * @param mail the mail
+	 * @param mail     the mail
 	 * @param password the password
 	 * @return true, if successful
 	 */
 	public boolean userExistsByMailAndPassword(String mail, String password);
-	
+
 	/**
 	 * User exists by mail.
 	 *
-	 * @param mail the mail
+	 * @param mail     the mail
+	 * @param security the security
 	 * @return true, if successful
 	 */
-	public boolean userExistsByMail(String mail);
-	
-	
+	public boolean userExistsByMailAndSecurity(String mail, String security);
+
+	/**
+	 * Find user by mail.
+	 *
+	 * @param mail the mail
+	 * @return the user
+	 */
+	public User findUserByMail(String mail);
 
 }

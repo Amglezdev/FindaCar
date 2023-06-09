@@ -17,6 +17,8 @@ import com.FindaCar.FindaCarApi.dto.UserDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
 import com.FindaCar.FindaCarApi.services.UserServiceImpl;
+import com.FindaCar.FindaCarApi.util.Logger;
+import com.FindaCar.FindaCarApi.util.PasswordEncryptor;
 
 @RestController
 @RequestMapping("/users")
@@ -29,12 +31,19 @@ public class UserController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
+	@Autowired
+	PasswordEncryptor pe;
+	@Autowired
+	Logger log;
 
 	@GetMapping("/getById")
 	public UserDto getById(@Param(value = "id") Long id) {
+		Logger.log("Entering endpoint /users/getById");
 		try {
+			Logger.log("Returning user with id:" + id);
 			return toDto.userToDto(userImpl.findById(id));
 		} catch (Exception e) {
+			Logger.log("Error in /users/getById");
 			// TODO: handle exception
 			return null;
 		}
@@ -43,65 +52,96 @@ public class UserController {
 
 	@GetMapping("/getUsers")
 	public ArrayList<UserDto> getUsers() {
+		Logger.log("Entering endpoint /users/getUsers");
 		try {
+			Logger.log("Returning all users");
 			return toDto.listUserToDto(userImpl.getAllUsers());
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /users/getUsers");
 			return null;
 		}
 	}
 
 	@PutMapping("/addUser")
 	public boolean addUser(@RequestBody UserDto user) {
+		Logger.log("Entering endpoint /users/addUser");
 		try {
-			if (userImpl.userExistsByMailAndPassword(user.getMail(), user.getPassword())) {
+			if (userImpl.userExistsByMailAndPassword(user.getMail(), pe.encryptPassword(user.getPassword()))) {
+				Logger.log("User already exists");
 				return false;
 			} else {
+				Logger.log("Hashing password");
+				user.setPassword(pe.encryptPassword(user.getPassword()));
+				Logger.log("Creating new user");
 				return userImpl.createUser(dtoTo.userToDao(user));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /users/addUser");
 			return false;
 		}
 	}
 
 	@PostMapping("/getByMailAndPassword")
 	public UserDto getUserByMailAndPassword(@RequestBody UserDto user) {
+		Logger.log("Entering endpoint /users/addUser");
 		try {
-			return toDto.userToDto(userImpl.findByEmailAndPassword(user.getMail(), user.getPassword()));
+			Logger.log("Returning user by mail and password");
+			return toDto
+					.userToDto(userImpl.findByEmailAndPassword(user.getMail(), pe.encryptPassword(user.getPassword())));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /users/getByMailAndPassword");
 			return null;
 		}
 	}
 
 	@PostMapping("/updateUser")
 	public boolean updateUser(@RequestBody UserDto user) {
+		Logger.log("Entering endpoint /users/updateUser");
 		try {
+			Logger.log("Updating user");
 			return userImpl.updateUser(dtoTo.userToDao(user));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /users/updateUser");
 			return false;
 		}
 	}
 
 	@DeleteMapping("/deleteUser")
 	public boolean deleteUser(@Param(value = "id") Long id) {
+		Logger.log("Entering endpoint /users/deleteUser");
 		try {
+			Logger.log("Deleting user with id:" + id);
 			return userImpl.deleteUser(id);
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /users/deleteUser");
 			return false;
 		}
 	}
-	
-	@PostMapping("/userExists")		
-	public boolean userExists(@RequestBody UserDto user) {
+
+	@PostMapping("/changePassword")
+	public UserDto changePassword(@RequestBody UserDto user) {
+		Logger.log("Entering endpoint /users/changePassword");
 		try {
-			return userImpl.userExistsByMail(user.getMail());
+			if (userImpl.userExistsByMailAndSecurity(user.getMail(), user.getSecurity())) {
+				String password = user.getPassword();
+				String mail = user.getMail();
+				user = toDto.userToDto(userImpl.findUserByMail(mail));
+				user.setPassword(pe.encryptPassword(password));
+				userImpl.updateUser(dtoTo.userToDao(user));
+				Logger.log("Succesfully changed password");
+				return user;
+			}
+			Logger.log("No user found");
+			return null;
 		} catch (Exception e) {
 			// TODO: handle exception
-			return false;
+			Logger.log("Error in /users/changePassword");
+			return null;
 		}
 	}
 

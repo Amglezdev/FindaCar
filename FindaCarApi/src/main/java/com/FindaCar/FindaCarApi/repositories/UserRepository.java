@@ -37,7 +37,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 * @param mail the mail
 	 * @return true, if successful
 	 */
-	public boolean existsByMail(String mail);
+	public boolean existsByMailAndSecurity(String mail, String security);
+	
+	public User findByMail(String mail);
 	
 	
 	

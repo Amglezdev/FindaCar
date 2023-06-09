@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 			// TODO: handle exception
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -62,16 +62,16 @@ public class UserServiceImpl implements UserService {
 		try {
 			userRepo.save(user);
 			return true;
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
 		}
-		
+
 	}
 
 	@Override
 	public User findById(long id) {
-		
+
 		try {
 			return userRepo.findById(id).orElse(null);
 		} catch (Exception e) {
@@ -88,19 +88,29 @@ public class UserServiceImpl implements UserService {
 			// TODO: handle exception
 			return false;
 		}
-		
-		
+
 	}
 
 	@Override
-	public boolean userExistsByMail(String mail) {
+	public boolean userExistsByMailAndSecurity(String mail, String security) {
 		try {
-			return userRepo.existsByMail(mail);
+			return userRepo.existsByMailAndSecurity(mail, security);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
 		}
-		
+
+	}
+
+	@Override
+	public User findUserByMail(String mail) {
+		try {
+			return userRepo.findByMail(mail);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
 	}
 
 }

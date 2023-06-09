@@ -1,12 +1,25 @@
-package com.FindaCar.FindaCarApi.encrypter;
+package com.FindaCar.FindaCarApi.util;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.springframework.stereotype.Component;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PasswordEncryptor.
+ */
+@Component
 public class PasswordEncryptor {
 
-	public static String encryptPassword(String password) {
+	/**
+	 * Encrypt password.
+	 *
+	 * @param password the password
+	 * @return the string
+	 */
+	public String encryptPassword(String password) {
 		try {
 
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");

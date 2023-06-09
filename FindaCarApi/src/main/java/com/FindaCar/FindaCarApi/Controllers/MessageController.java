@@ -15,6 +15,7 @@ import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
 import com.FindaCar.FindaCarApi.services.MessageServiceImpl;
+import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/messages")
@@ -27,24 +28,32 @@ public class MessageController {
 	ToDtoImpl toDto;
 	@Autowired
 	DtoToImpl dtoTo;
+	@Autowired
+	Logger log;
 
 	@GetMapping("/findMessages")
 	public ArrayList<MessagesDto> findBySenderAndReciever(@Param(value = "senderId") long senderId,
 			@Param(value = "recieverId") long recieverId) {
+		Logger.log("Entering endpoint /messages/findMessages");
 		try {
+			Logger.log("Returning messages");
 			return toDto.listMessagesToDto(msi.findBySenderAndReciever(senderId, recieverId));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /messages/findMessages");
 			return null;
 		}
 	}
 
 	@PutMapping("/sendMessage")
 	public boolean sendMessage(@RequestBody MessagesDto message) {
+		Logger.log("Entering endpoint /messages/sendMessage");
 		try {
+			Logger.log("Creating message");
 			return msi.sendMessage(dtoTo.messageToDao(message));
 		} catch (Exception e) {
 			// TODO: handle exception
+			Logger.log("Error in /messages/sendMessage");
 			return false;
 		}
 	}
