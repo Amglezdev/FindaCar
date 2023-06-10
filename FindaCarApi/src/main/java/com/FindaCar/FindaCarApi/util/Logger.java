@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class Logger {
 
 	/** The Constant LOG_FILE. */
-	private static final String LOG_FILE = "log.txt";
+	private static final String LOG_FILE = "log.log";
 
 	/**
 	 * Log.

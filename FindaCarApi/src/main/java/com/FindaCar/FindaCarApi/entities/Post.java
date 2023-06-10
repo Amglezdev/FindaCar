@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.entities;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class Post {
 	private Long id;
 
 	/** The vehicle. */
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "vehiculo")
 	private Vehicle vehicle;
 

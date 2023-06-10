@@ -3,6 +3,7 @@ package com.FindaCar.FindaCarApi.entities;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,18 +32,6 @@ public class User {
 	/** The md date. */
 	@Column(name = "md_date")
 	private Calendar mdDate;
-
-	/**
-	 * To string.
-	 *
-	 * @return the string
-	 */
-	@Override
-	public String toString() {
-		return "User [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", name=" + name + ", surname="
-				+ surname + ", phoneNumber=" + phoneNumber + ", mail=" + mail + ", password=" + password + ", role="
-				+ role + ", vehiclesOwned=" + vehiclesOwned + "]";
-	}
 
 	/** The id. */
 	@Id
@@ -82,6 +71,15 @@ public class User {
 	/** The security. */
 	@Column(name = "pregunta_seguridad")
 	private String security;
+
+	/** The messages sent. */
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "sender", cascade = CascadeType.REMOVE)
+	@JsonIgnore
+	private List<Messages> messagesSent;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "reciever", cascade = CascadeType.REMOVE)
+	@JsonIgnore
+	private List<Messages> messagesReceived;
 
 	/**
 	 * Gets the security.

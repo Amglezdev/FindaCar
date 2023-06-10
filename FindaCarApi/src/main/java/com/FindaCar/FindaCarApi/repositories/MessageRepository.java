@@ -21,8 +21,14 @@ public interface MessageRepository extends JpaRepository<Messages, Long> {
 	 * @param recieverId the reciever id
 	 * @return the array list
 	 */
-	public ArrayList<Messages> findBySenderIdAndRecieverId(long senderId, long recieverId);
+	public ArrayList<Messages> findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(Long usuario1Id, Long usuario2Id, Long usuerio2Id, Long usurio1Id);;
 	
-	
+	/**
+	 * Find by sender id.
+	 *
+	 * @param senderId the sender id
+	 * @return the array list
+	 */
+	public ArrayList<Messages> findBySenderId(long senderId);
 
 }

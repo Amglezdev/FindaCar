@@ -213,6 +213,9 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setId(message.getId());
 		dto.setReciever(userToDto(message.getReciever()));
 		dto.setSender(userToDto(message.getSender()));
+		dto.setContent(message.getContent());
+		
+		System.out.println(dto.toString());
 
 		return dto;
 	}

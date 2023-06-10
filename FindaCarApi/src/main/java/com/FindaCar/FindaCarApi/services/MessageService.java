@@ -17,8 +17,21 @@ public interface MessageService {
 	 * @param recieverId the reciever id
 	 * @return the array list
 	 */
-	public ArrayList<Messages> findBySenderAndReciever(long senderId, long recieverId);
+	public ArrayList<Messages> findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(Long senderId, Long recieverId);
 	
+	/**
+	 * Send message.
+	 *
+	 * @param message the message
+	 * @return true, if successful
+	 */
 	public boolean sendMessage(Messages message);
+	
+	/**
+	 * Find by user.
+	 *
+	 * @return the array list
+	 */
+	public ArrayList<Messages> findByUser(long id);
 
 }

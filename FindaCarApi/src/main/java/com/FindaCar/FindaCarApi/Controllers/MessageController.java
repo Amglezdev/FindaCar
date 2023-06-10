@@ -32,12 +32,12 @@ public class MessageController {
 	Logger log;
 
 	@GetMapping("/findMessages")
-	public ArrayList<MessagesDto> findBySenderAndReciever(@Param(value = "senderId") long senderId,
-			@Param(value = "recieverId") long recieverId) {
+	public ArrayList<MessagesDto> findBySenderAndReciever(@Param(value = "senderId") Long senderId,
+			@Param(value = "recieverId") Long recieverId) {
 		Logger.log("Entering endpoint /messages/findMessages");
 		try {
 			Logger.log("Returning messages");
-			return toDto.listMessagesToDto(msi.findBySenderAndReciever(senderId, recieverId));
+			return toDto.listMessagesToDto(msi.findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(senderId, recieverId));
 		} catch (Exception e) {
 			// TODO: handle exception
 			Logger.log("Error in /messages/findMessages");
@@ -55,6 +55,19 @@ public class MessageController {
 			// TODO: handle exception
 			Logger.log("Error in /messages/sendMessage");
 			return false;
+		}
+	}
+	
+	@GetMapping("/findBySenderId")
+	public ArrayList<MessagesDto> findBySender(@Param(value = "senderId") long senderId) {
+		Logger.log("Entering endpoint /messages/findBySenderId");
+		try {
+			Logger.log("Returning messages");
+			return toDto.listMessagesToDto(msi.findByUser(senderId));
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.log("Error in /messages/findBySenderId");
+			return null;
 		}
 	}
 

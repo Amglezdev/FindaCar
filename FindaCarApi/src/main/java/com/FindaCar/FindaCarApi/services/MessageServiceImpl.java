@@ -17,11 +17,12 @@ public class MessageServiceImpl implements MessageService {
 	MessageRepository mRepo;
 
 	@Override
-	public ArrayList<Messages> findBySenderAndReciever(long senderId, long recieverId) {
+	public ArrayList<Messages> findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(Long senderId, Long recieverId) {
 		try {
-			return (ArrayList<Messages>) mRepo.findBySenderIdAndRecieverId(senderId, recieverId);
+			return (ArrayList<Messages>) mRepo.findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(senderId, recieverId, recieverId, senderId);
 		} catch (Exception e) {
 			// TODO: handle exception4
+			System.out.println(e.getMessage());
 			return null;
 		}
 	}
@@ -34,6 +35,16 @@ public class MessageServiceImpl implements MessageService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
+		}
+	}
+
+	@Override
+	public ArrayList<Messages> findByUser(long id) {
+		try {
+			return (ArrayList<Messages>) mRepo.findBySenderId(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
 	}
 

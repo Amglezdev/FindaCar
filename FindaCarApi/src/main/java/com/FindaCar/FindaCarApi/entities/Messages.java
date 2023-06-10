@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.entities;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Messages.
+ */
 @Entity
 @Table(name = "fac_da_mensajes", schema = "sc_findacar_datos_aplicacion")
 public class Messages {
@@ -38,6 +43,34 @@ public class Messages {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "destinatario")
 	private User reciever;
+
+	/** The content. */
+	@Column(name = "contenido")
+	private String content;
+
+	/**
+	 * Gets the content.
+	 *
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	@Override
+	public String toString() {
+		return "Messages [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", sender=" + sender + ", reciever="
+				+ reciever + ", content=" + content + "]";
+	}
+
+	/**
+	 * Sets the content.
+	 *
+	 * @param content the new content
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 	/**
 	 * Gets the md uuid.

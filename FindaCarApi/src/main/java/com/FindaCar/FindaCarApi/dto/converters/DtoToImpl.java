@@ -117,6 +117,9 @@ public class DtoToImpl implements DtoToService {
 		dao.setMdUuid(mdUuid);
 		dao.setReciever(userService.findById(dto.getReciever().getId()));
 		dao.setSender(userService.findById(dto.getSender().getId()));
+		dao.setContent(dto.getContent());
+			
+		System.out.println(dao.toString());
 
 		return dao;
 	}

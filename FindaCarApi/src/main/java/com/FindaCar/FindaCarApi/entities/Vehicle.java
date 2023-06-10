@@ -2,6 +2,8 @@ package com.FindaCar.FindaCarApi.entities;
 
 
 import java.util.Calendar;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,7 +53,7 @@ public class Vehicle {
 	private int mileage;
 
 	/** The type. */	
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "tipo_vehiculo")
 	private VehicleType type;
 
@@ -59,7 +61,7 @@ public class Vehicle {
 	@Column(name = "fecha_matriculacion")
 	private Calendar age;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "tipo_combustible")
 	private Fuel fuel;
 
