@@ -11,10 +11,10 @@
           <a class="btn btn-dark" *ngIf="user.rol.name === 'Administrador'" routerLink="/administration">Administración</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-dark" (click)="logOut()">Cerrar sesión</a>
+          <a class="btn btn-dark" routerLink="userSite/vehicle">Vehículos</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-dark" routerLink="userSite/vehicle">Vehiculos</a>
+          <a class="btn btn-dark" (click)="logOut()">Cerrar sesión</a>
         </li>
       </ul>
     </div>
@@ -27,6 +27,11 @@
       <div class="card-body">
         <p>¡Hola, {{user.name}}!</p>
         <!-- Contenido adicional de la página de inicio del usuario -->
+        <div class="d-grid gap-3">
+          <a class="btn btn-primary" routerLink="userSite/posts">Ver Posts</a>
+          <a class="btn btn-primary" routerLink="userSite/chat">Ir al Chat</a>
+          <a class="btn btn-primary" routerLink="userSite/vehicle">Ver Vehículos</a>
+        </div>
       </div>
     </div>
   </div>

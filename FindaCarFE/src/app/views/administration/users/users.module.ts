@@ -8,6 +8,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { DetailUserComponent } from './detail-user/detail-user.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DetailUserComponent } from './detail-user/detail-user.component';
     UsersComponent,
     EditUserComponent,
     DetailUserComponent,
+    ConfirmDeleteComponent,
   ],
   imports: [
     CommonModule,

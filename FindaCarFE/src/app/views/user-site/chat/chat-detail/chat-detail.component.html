@@ -1,1 +1,43 @@
-<p>chat-detail works!</p>
+<div class="background-image" style="min-height: 100vh;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FindaCar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-dark" *ngIf="user.rol.name === 'Administrador'" routerLink="/administration">Administración</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-dark" routerLink="userSite/vehicle">Vehiculos</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-dark" (click)="logOut()">Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="card">
+      <div class="card-header">
+        <h2>Chat con {{ reciever.name }}</h2>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let message of listMessage"
+            [ngClass]="{'received-message': message.sender.id !== user.id, 'sent-message': message.sender.id === user.id}">
+            {{ message.content }}
+          </li>
+        </ul>
+        <form (submit)="sendMessage()">
+          <div class="form-group">
+            <textarea class="form-control" rows="3" [(ngModel)]="newMessage"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

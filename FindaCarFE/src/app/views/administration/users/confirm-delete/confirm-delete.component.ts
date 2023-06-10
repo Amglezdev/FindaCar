@@ -1,15 +1,15 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/user.service';
-import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-detail-user',
-  templateUrl: './detail-user.component.html',
-  styleUrls: ['./detail-user.component.css'],
+  selector: 'app-confirm-delete',
+  templateUrl: './confirm-delete.component.html',
+  styleUrls: ['./confirm-delete.component.css'],
 })
-export class DetailUserComponent implements OnInit {
+export class ConfirmDeleteComponent implements OnInit {
   id: string;
   user: User;
 
@@ -24,6 +24,15 @@ export class DetailUserComponent implements OnInit {
     this.us.getUserById(Number(this.id)).subscribe((resp) => {
       this.user = resp;
     });
+  }
+
+  delete() {
+    try {
+      this.us.deleteUser(Number(this.id));
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   goBack() {

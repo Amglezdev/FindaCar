@@ -30,9 +30,9 @@ export class UserService {
     }
   }
 
-  async deleteUser(id: number) {
+  deleteUser(id: number): Observable<void> {
     try {
-      return this.http.delete(`${this.apiUrl}deleteUser?id=${id}`);
+      return this.http.delete<void>(`${this.apiUrl}deleteUser?id=${id}`);
     } catch (error) {
       return null;
     }
@@ -56,7 +56,6 @@ export class UserService {
     } catch (error) {
       return null;
     }
-
   }
 
   async updateUser(user: User) {
@@ -77,7 +76,6 @@ export class UserService {
     } catch (error) {
       return null;
     }
-
   }
 
   async createUser(user: User) {
@@ -126,8 +124,5 @@ export class UserService {
     } catch (error) {
       return null;
     }
-
   }
-
-
 }

@@ -9,7 +9,6 @@ import { SignUpComponent } from './views/components/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { DetailPostComponent } from './views/user-site/detail-post/detail-post.component';
 import { VehicleComponent } from './views/user-site/vehicle/vehicle.component';
 import { FavoritesComponent } from './views/user-site/favorites/favorites.component';
 import { UserService } from './services/user.service';
@@ -21,7 +20,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from './services/role.service';
 import { PasswordRecoveryComponent } from './views/components/password-recovery/password-recovery.component';
 import { VehiclePicturesComponent } from './views/user-site/vehicle-pictures/vehicle-pictures.component';
-import { PostComponent } from './views/user-site/post/post.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { PostComponent } from './views/user-site/post/post.component';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    PostComponent,
-    DetailPostComponent,
     VehicleComponent,
     FavoritesComponent,
     ChatDetailComponent,

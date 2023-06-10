@@ -4,10 +4,6 @@
     <h2>Detalles de {{ user.name }}</h2>
     <div class="row">
       <div class="col-md-6">
-        <label>ID:</label>
-        <p>{{ user.id }}</p>
-      </div>
-      <div class="col-md-6">
         <label>Nombre:</label>
         <p>{{ user.name }}</p>
       </div>
@@ -34,7 +30,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <button class="btn btn-danger" (click)="showConfirmModal()">Eliminar</button>
+        <button class="btn btn-danger" [routerLink]="['/administration/users/delete', user.id]">Eliminar</button>
       </div>
       <div class="col-md-6">
         <button class="btn btn-primary" (click)="goBack()">Volver</button>

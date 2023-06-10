@@ -101,8 +101,7 @@ export class VehicleComponent implements OnInit {
       if (this.vehicleForm.valid) {
         // Crear una copia del formulario y omitir la propiedad "url"
         const vehicleData = { ...this.vehicleForm.value };
-        delete vehicleData.url;
-
+    
         this.vehicle = vehicleData;
         console.log(vehicleData);
         this.selectedFuel = {
