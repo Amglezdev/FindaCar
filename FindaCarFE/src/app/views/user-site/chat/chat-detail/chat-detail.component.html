@@ -31,9 +31,9 @@
             {{ message.content }}
           </li>
         </ul>
-        <form (submit)="sendMessage()">
+        <form [formGroup]="messageForm" (submit)="sendMessage()">
           <div class="form-group">
-            <textarea class="form-control" rows="3" [(ngModel)]="newMessage"></textarea>
+            <textarea class="form-control" rows="3" formControlName="content"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Enviar mensaje</button>
         </form>

@@ -1,1 +1,13 @@
-<p>vehicle-pictures works!</p>
+<form [formGroup]="imageForm" (submit)="submitForm()">
+  <div class="form-group">
+    <label for="vehicleSelect">Seleccionar vehículo:</label>
+    <select id="vehicleSelect" class="form-control" formControlName="selectedVehicle">
+      <option *ngFor="let vehicle of listVehicle" [value]="vehicle">{{ vehicle.brand }}  {{vehicle.model}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="imageUrlInput">URL de la imagen:</label>
+    <input id="imageUrlInput" type="text" class="form-control" formControlName="imageUrl">
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar imagen</button>
+</form>

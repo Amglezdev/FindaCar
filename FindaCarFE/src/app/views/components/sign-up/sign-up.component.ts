@@ -10,19 +10,24 @@ import { CookieService } from 'ngx-cookie-service';
 
 //import bcrypt from 'bcryptjs';
 
-
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder, private location: Location, private us:UserService, private router:Router, private cookieService:CookieService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private location: Location,
+    private us: UserService,
+    private router: Router,
+    private cookieService: CookieService
+  ) {}
 
   signUpForm: FormGroup;
   user: User;
-  role:Role = {
-    name:'Usuario'
+  role: Role = {
+    name: 'Usuario',
   };
 
   ngOnInit() {
@@ -38,7 +43,7 @@ export class SignUpComponent implements OnInit {
       mail: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       rol: [this.role],
-      security:['', Validators.required]
+      security: ['', Validators.required],
     });
   }
 
@@ -46,13 +51,11 @@ export class SignUpComponent implements OnInit {
     try {
       if (this.signUpForm.valid) {
         this.user = this.signUpForm.value;
-        if(this.us.createUser(this.user)){
-         this.router.navigate['/login']
-
-        }else{
-          console.log('No se ha creado')
-        }
+        this.us.createUser(this.user);
+      } else {
+        console.log('No se ha creado');
       }
+      this.router.navigate['/login'];
     } catch (error) {}
   }
 

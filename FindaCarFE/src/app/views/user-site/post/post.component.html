@@ -1,1 +1,15 @@
-<p>post works!</p>
+<div class="container">
+  <h2>Posts</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let post of listPost">
+      <div class="card mb-4">
+        <img class="card-img-top" [src]="getVehicleImageUrl(post.vehicle.id)" alt="Vehicle Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.vehicle.brand }} {{ post.vehicle.model }}</h5>
+          <p class="card-text">{{ post.comment }}</p>
+          <a [routerLink]="['/detailPost', post.id]" class="btn btn-primary">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

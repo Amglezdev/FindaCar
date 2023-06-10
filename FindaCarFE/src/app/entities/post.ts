@@ -1,6 +1,6 @@
 import { Vehicle } from './vehicle';
 export interface Post {
   id: number;
-  vehicleId: number;
+  vehicle: Vehicle;
   comment: string;
 }

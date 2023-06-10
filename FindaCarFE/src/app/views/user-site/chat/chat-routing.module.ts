@@ -4,7 +4,7 @@ import { ChatComponent } from './chat.component';
 import { ChatDetailComponent } from './chat-detail/chat-detail.component';
 
 const routes: Routes = [{ path: '', component: ChatComponent },
-{path:'userSite/chat/detailChat/:id', component:ChatDetailComponent}];
+{path:'detailChat/:id', component:ChatDetailComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

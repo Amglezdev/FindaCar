@@ -40,7 +40,7 @@ export class VehicleService {
     }
   }
 
-  getUserById(id: number): Observable<Vehicle> {
+  findById(id: number): Observable<Vehicle> {
     try {
       return this.http.get<Vehicle>(`${this.apiUrl}findById?id=${id}`);
     } catch {

@@ -19,7 +19,7 @@ export class PostService {
     }
   }
 
-  async createFuel(post: Post) {
+  async createPost(post: Post) {
     try {
       const response = await fetch(this.apiUrl + 'addPost', {
         method: 'PUT',
@@ -46,7 +46,7 @@ export class PostService {
     }
   }
 
-  async deleteUser(id: number) {
+  async deletePost(id: number) {
     try {
       return this.http.delete(`${this.apiUrl}deletePost?id=${id}`);
     } catch (error) {
@@ -80,4 +80,12 @@ export class PostService {
       return false;
     }
   }
+ findById(id: number) :Observable<Post> {
+    try {
+      return this.http.get<Post>(`${this.apiUrl}findById?id=${id}`);
+    } catch (error) {
+      return null;
+    }
+  }
+
 }

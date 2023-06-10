@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -16,7 +16,8 @@ export class ConfirmDeleteComponent implements OnInit {
   constructor(
     private us: UserService,
     private arm: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -26,9 +27,10 @@ export class ConfirmDeleteComponent implements OnInit {
     });
   }
 
-  delete() {
+  deleteUser() {
     try {
-      this.us.deleteUser(Number(this.id));
+      this.us.deleteUser(this.user);
+      this.router.navigate['/administration']
     } catch (error) {
       console.log(error)
     }

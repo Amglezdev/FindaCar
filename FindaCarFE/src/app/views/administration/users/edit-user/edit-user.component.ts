@@ -47,6 +47,7 @@ export class EditUserComponent implements OnInit {
   editUser() {
     try {
       this.us.updateUser(this.user);
+      this.goBack();
     } catch {}
   }
 

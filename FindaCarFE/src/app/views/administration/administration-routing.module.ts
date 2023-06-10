@@ -29,13 +29,6 @@ const routes: Routes = [
     path: 'fuel',
     loadChildren: () => import('./fuel/fuel.module').then((m) => m.FuelModule),
   },
-  {
-    path: 'administrationPost',
-    loadChildren: () =>
-      import('./administration-post/administration-post.module').then(
-        (m) => m.AdministrationPostModule
-      ),
-  },
 ];
 
 @NgModule({
