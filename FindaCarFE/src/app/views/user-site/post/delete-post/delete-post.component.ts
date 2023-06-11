@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Favorites } from 'src/app/entities/favorites';
 import { Post } from 'src/app/entities/post';
@@ -13,19 +13,28 @@ import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.servic
 import { VehicleService } from 'src/app/services/vehicle.service';
 
 @Component({
-  selector: 'app-post-detail',
-  templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.css']
+  selector: 'app-delete-post',
+  templateUrl: './delete-post.component.html',
+  styleUrls: ['./delete-post.component.css'],
 })
-export class PostDetailComponent implements OnInit{
+export class DeletePostComponent implements OnInit {
+  id: string;
+  vehicle: Vehicle;
+  listPictures: VehiclePictures[];
+  post: Post;
+  favorites: Favorites;
+  user: User;
 
-  id:string;
-  listPictures:VehiclePictures[];
-  post:Post;
-  favorites:Favorites;
-  user:User;
-
-  constructor(private location:Location,private vs:VehicleService, private vp:VehiclePicturesService, private fav:FavoritesService, private cookieService:CookieService, private arm:ActivatedRoute, private pos:PostService ){}
+  constructor(
+    private vs: VehicleService,
+    private vp: VehiclePicturesService,
+    private fav: FavoritesService,
+    private cookieService: CookieService,
+    private arm: ActivatedRoute,
+    private pos: PostService,
+    private router:Router,
+    private location:Location
+  ) {}
 
   ngOnInit(): void {
     const userDataString = this.cookieService.get('userData');
@@ -34,16 +43,16 @@ export class PostDetailComponent implements OnInit{
     this.id = this.arm.snapshot.paramMap.get('id');
     this.pos.findById(Number(this.id)).subscribe((resp) => {
       this.post = resp;
-      this.vp.getByVehicleId(this.post.vehicle.id).subscribe((resp) =>{
-        this.listPictures = resp;
-        console.log(resp)
-      })
-    })
-    console.log(this.post.vehicle.id)
+    });
+    this.vs.findById(Number(this.id)).subscribe((resp) => {
+      this.vehicle = resp;
+    });
+  }
 
+  deletePost(){
+    this.pos.deletePost(this.post);
   }
   goBack(){
     this.location.back()
   }
-
 }

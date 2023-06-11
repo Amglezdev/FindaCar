@@ -1,0 +1,52 @@
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.background-image::before {
+  content: '';
+  background-image: url('../../../../../assets/Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(8px);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container .container {
+  max-width: 400px;
+}
+
+.form-container h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.form-container form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-container label {
+  color: #333;
+}
+
+.form-container .btn-primary {
+  margin-top: 20px;
+}

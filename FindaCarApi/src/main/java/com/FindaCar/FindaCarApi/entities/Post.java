@@ -31,13 +31,21 @@ public class Post {
 	private Long id;
 
 	/** The vehicle. */
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vehiculo")
 	private Vehicle vehicle;
 
 	/** The comment. */
 	@Column(name = "comments")	
 	private String comment;
+	
+	
+
+	@Override
+	public String toString() {
+		return "Post [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", vehicle=" + vehicle + ", comment="
+				+ comment + "]";
+	}
 
 	/**
 	 * Gets the md uuid.

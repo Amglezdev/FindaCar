@@ -1,16 +1,21 @@
-<div class="container">
-  <h2>Crear Post</h2>
-  <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="vehicle">Vehículo</label>
-      <select class="form-control" id="vehicle" formControlName="vehicle">
-        <option *ngFor="let vehicle of userVehicles" [ngValue]="vehicle.id">{{ vehicle.brand }} {{ vehicle.model }}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="comment">Comentario</label>
-      <textarea class="form-control" id="comment" formControlName="comment"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
-  </form>
+<div class="background-image"></div>
+
+<div class="form-container">
+  <div class="container">
+    <h2>Crear Post</h2>
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="vehicle" class="text-light">Vehículo</label>
+        <select class="form-control" id="vehicle" formControlName="vehicle">
+          <option *ngFor="let vehicle of userVehicles" [ngValue]="vehicle">{{ vehicle.brand }} {{ vehicle.model }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="comment" class="text-light">Comentario</label>
+        <textarea class="form-control" id="comment" formControlName="comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Crear</button>
+      <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
+    </form>
+  </div>
 </div>

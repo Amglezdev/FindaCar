@@ -21,6 +21,7 @@ export class PostService {
 
   async createPost(post: Post) {
     try {
+      console.log(post)
       const response = await fetch(this.apiUrl + 'addPost', {
         method: 'PUT',
         mode: 'cors',
@@ -46,9 +47,21 @@ export class PostService {
     }
   }
 
-  async deletePost(id: number) {
+  async deletePost(post: Post) {
     try {
-      return this.http.delete(`${this.apiUrl}deletePost?id=${id}`);
+      return await fetch(this.apiUrl + `deletePost?id=${post.id}`, {
+        method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(null), // body data type must match "Content-Type" header
+      });
     } catch (error) {
       return null;
     }

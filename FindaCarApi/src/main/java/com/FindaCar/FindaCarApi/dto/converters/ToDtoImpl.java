@@ -59,11 +59,12 @@ public class ToDtoImpl implements ToDtoService {
 
 	@Override
 	public PostDto postToDto(Post post) {
+		
 		PostDto dto = new PostDto();
 
 		dto.setComment(post.getComment());
 		dto.setId(post.getId());
-		dto.setVehicleId(vehicleToDto(post.getVehicle()));
+		dto.setVehicle(vehicleToDto(post.getVehicle()));
 
 		return dto;
 	}

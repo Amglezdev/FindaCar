@@ -7,6 +7,7 @@ import { Post } from 'src/app/entities/post';
 import { Vehicle } from 'src/app/entities/vehicle';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from 'src/app/entities/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-post',
@@ -25,7 +26,8 @@ export class CreatePostComponent implements OnInit {
     private pos: PostService,
     private location: Location,
     private formBuilder: FormBuilder,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +44,6 @@ export class CreatePostComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.selectedVehicle = {
       age: null,
       brand: '',
@@ -61,16 +62,19 @@ export class CreatePostComponent implements OnInit {
     };
 
     const id = this.vehicleForm.get('vehicle').value;
-    console.log(Number(id))
-    this.vs.findById(Number(id)).subscribe((resp) => {
-      this.selectedVehicle = resp;
-      this.post = {
-        id: 0,
-        comment: this.vehicleForm.get('comment').value,
-        vehicle: resp,
-      };
-      this.pos.createPost(this.post);
-    });
+    console.log(Number(id));
 
+    this.post = {
+      id: 0,
+      comment: this.vehicleForm.get('comment').value,
+      vehicle: this.vehicleForm.get('vehicle').value,
+    };
+    console.log(this.post);
+    this.pos.createPost(this.post);
+    this.router.navigate['/'];
+  }
+
+  goBack(){
+    this.location.back()
   }
 }

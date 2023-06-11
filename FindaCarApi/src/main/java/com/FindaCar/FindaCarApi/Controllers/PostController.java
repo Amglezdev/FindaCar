@@ -51,9 +51,11 @@ public class PostController {
 		Logger.log("Entering endpoint /post/addPost");
 		try {
 			Logger.log("Creating new post");
+			Logger.log(post.toString());
 			return postService.addPost(dtoTo.postToDao(post));
 		} catch (Exception e) {
 			Logger.log("Error in /post/addPost");
+			System.out.println(e.getMessage());
 			return false;
 			// TODO: handle exception
 		}
@@ -82,6 +84,18 @@ public class PostController {
 			Logger.log("Error in /post/updatePost");
 			return false;
 			// TODO: handle exception
+		}
+	}
+
+	@GetMapping("/findById")
+	public PostDto findById(@Param(value = "id") long id) {
+		Logger.log("Entering endpoint /post/updatePost");
+		try {
+			Logger.log("Returning post with id:" + id);
+			return toDto.postToDto(postService.findById(id));
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
 	}
 

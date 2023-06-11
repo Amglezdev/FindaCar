@@ -7,7 +7,7 @@ import { Favorites } from '../entities/favorites';
   providedIn: 'root',
 })
 export class FavoritesService {
-  private apiUrl = 'http://localhost:8080/fuels/';
+  private apiUrl = 'http://localhost:8080/userFavorites/';
 
   constructor(private http: HttpClient) {}
 

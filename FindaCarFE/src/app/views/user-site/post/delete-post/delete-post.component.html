@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Detalles del Post</h2>
+  <div class="vehicle-slideshow swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let image of listPictures">
+        <img class="vehicle-image" [src]="image" alt="Vehicle Image">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">{{ vehicle.brand }} {{ vehicle.model }}</h5>
+      <p class="card-text">Potencia: {{ vehicle.power }} CV</p>
+      <p class="card-text">Kilometraje: {{ vehicle.mileage }} KM</p>
+      <p class="card-text">Tipo de Vehículo: {{ vehicle.type.name }}</p>
+      <p class="card-text">Fecha de Matriculación: {{ vehicle.age | date }}</p>
+      <p class="card-text">Dueño: {{ vehicle.owner.name }} {{ vehicle.owner.surname }}</p>
+      <p class="card-text">Combustible: {{ vehicle.fuel.name }}</p>
+      <p class="card-text">Precio: {{ vehicle.price }} €</p>
+      <p class="card-text">Comentario: {{ post.comment }}</p>
+      <button class="btn btn-danger" (click)="deletePost()">Elimnar</button>
+      <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+</div>

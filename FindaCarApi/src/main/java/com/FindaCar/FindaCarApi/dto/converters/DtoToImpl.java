@@ -26,7 +26,6 @@ import com.FindaCar.FindaCarApi.entities.UserFavorites;
 import com.FindaCar.FindaCarApi.entities.Vehicle;
 import com.FindaCar.FindaCarApi.entities.VehiclePictures;
 import com.FindaCar.FindaCarApi.entities.VehicleType;
-import com.FindaCar.FindaCarApi.services.FuelService;
 import com.FindaCar.FindaCarApi.services.FuelServiceImpl;
 import com.FindaCar.FindaCarApi.services.RoleServiceImpl;
 import com.FindaCar.FindaCarApi.services.UserServiceImpl;
@@ -85,14 +84,14 @@ public class DtoToImpl implements DtoToService {
 	@Override
 	public Post postToDao(PostDto dto) {
 		Post dao = new Post();
-
+				
 		dao.setComment(dto.getComment());
 		dao.setId(dto.getId());
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
-		dao.setVehicle(null);
+		dao.setVehicle(vehicleToDao(dto.getVehicle()));		
 
-		return null;
+		return dao;
 	}
 
 	@Override

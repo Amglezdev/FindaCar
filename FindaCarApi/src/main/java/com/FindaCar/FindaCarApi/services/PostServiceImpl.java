@@ -26,7 +26,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public boolean addPost(Post post) {
-		try {
+		try {			
 			postRepo.save(post);
 			return true;
 		} catch (Exception e) {
@@ -54,6 +54,16 @@ public class PostServiceImpl implements PostService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			return false;
+		}
+	}
+
+	@Override
+	public Post findById(Long id) {
+		try {
+			return postRepo.findById(id).orElse(null);
+		}catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
 	}
 

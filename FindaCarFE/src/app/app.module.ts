@@ -10,10 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { VehicleComponent } from './views/user-site/vehicle/vehicle.component';
-import { FavoritesComponent } from './views/user-site/favorites/favorites.component';
+
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ChatDetailComponent } from './views/user-site/chat/chat-detail/chat-detail.component';
+
 import { FuelService } from './services/fuel.service';
 import { VehicleService } from './services/vehicle.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -28,8 +28,6 @@ import { VehiclePicturesComponent } from './views/user-site/vehicle-pictures/veh
     LoginComponent,
     SignUpComponent,
     VehicleComponent,
-    FavoritesComponent,
-    ChatDetailComponent,
     PasswordRecoveryComponent,
     VehiclePicturesComponent,
   ],

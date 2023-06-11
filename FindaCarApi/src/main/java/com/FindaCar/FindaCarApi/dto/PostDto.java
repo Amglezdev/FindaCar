@@ -5,16 +5,16 @@ package com.FindaCar.FindaCarApi.dto;
  * The Class PostDto.
  */
 public class PostDto {
-	
+
 	/** The id. */
 	private long id;
-	
-	/** The vehicle id. */
+
+	/** The vehicle . */
 	private VehicleDto vehicle;
-	
+
 	/** The comment. */
 	private String comment;
-	
+
 	/**
 	 * Gets the id.
 	 *
@@ -24,6 +24,15 @@ public class PostDto {
 		return id;
 	}
 	
+	
+
+	@Override
+	public String toString() {
+		return "PostDto [id=" + id + ", vehicle=" + vehicle + ", comment=" + comment + "]";
+	}
+
+
+
 	/**
 	 * Sets the id.
 	 *
@@ -32,25 +41,25 @@ public class PostDto {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	/**
 	 * Gets the vehicle id.
 	 *
 	 * @return the vehicle id
 	 */
-	public VehicleDto getVehicleId() {
+	public VehicleDto getVehicle() {
 		return vehicle;
 	}
-	
+
 	/**
 	 * Sets the vehicle id.
 	 *
 	 * @param vehicleId the new vehicle id
 	 */
-	public void setVehicleId(VehicleDto vehicle) {
+	public void setVehicle(VehicleDto vehicle) {
 		this.vehicle = vehicle;
 	}
-	
+
 	/**
 	 * Gets the comment.
 	 *
@@ -59,7 +68,7 @@ public class PostDto {
 	public String getComment() {
 		return comment;
 	}
-	
+
 	/**
 	 * Sets the comment.
 	 *
@@ -68,9 +77,5 @@ public class PostDto {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
-	
-	
-	
 
 }

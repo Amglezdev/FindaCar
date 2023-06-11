@@ -6,6 +6,7 @@ import { Vehicle } from 'src/app/entities/vehicle';
 import { VehiclePictures } from 'src/app/entities/vehicle-pictures';
 import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
 import { VehicleService } from 'src/app/services/vehicle.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-vehicle-pictures',
@@ -13,6 +14,12 @@ import { VehicleService } from 'src/app/services/vehicle.service';
   styleUrls: ['./vehicle-pictures.component.css'],
 })
 export class VehiclePicturesComponent implements OnInit {
+  user: User;
+  listVehicle: Vehicle[];
+  picture: VehiclePictures;
+  imageForm: FormGroup;
+  selectedVehicle: Vehicle;
+
   constructor(
     private formBuilder: FormBuilder,
     private vs: VehicleService,
@@ -21,29 +28,45 @@ export class VehiclePicturesComponent implements OnInit {
     private vp: VehiclePicturesService
   ) {}
 
-  user: User;
-  listVehicle: Vehicle[];
-  picture: VehiclePictures;
-  imageForm: FormGroup;
-  selectedVehicle: Vehicle;
-
-  ngOnInit(): void {
+  ngOnInit() {
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
-    this.user = userData;
+    this.user = userData
     this.vs.getByUserId(this.user.id).subscribe((resp) => {
       this.listVehicle = resp;
     });
     this.imageForm = this.formBuilder.group({
-      url: ['', Validators.required],
+      imageUrl: ['', Validators.required],
+      selectedVehicle: ['', Validators.required]
     });
-  }
-
-  submitForm() {
-    this.picture = {
+    this.selectedVehicle = {
+      age: null,
+      brand: '',
+      fuel: {
+        name: '',
+      },
       id: 0,
-      image: this.imageForm.get('url').value,
-      vehicle: this.selectedVehicle
-    };
+      mileage: 0,
+      model: '',
+      owner: null,
+      power: 0,
+      price: 0,
+      type: {
+        name: '',
+      },
   }
+}
+submitForm() {
+  this.selectedVehicle = this.imageForm.get('selectedVehicle').value
+  this.picture = {
+    id: 0,
+    image: this.imageForm.get('imageUrl').value,
+    vehicle: this.selectedVehicle,
+  };
+  console.log(this.picture)
+  this.vp.addPicture(this.picture);
+}
+goBack(){
+  this.location.back()
+}
 }

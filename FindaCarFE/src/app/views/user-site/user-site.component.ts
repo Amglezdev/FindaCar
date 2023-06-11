@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/entities/user';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-site',
@@ -12,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class UserSiteComponent implements OnInit {
 
   user:User;
-  constructor(private router: Router, private cookieService: CookieService) {}
+  constructor(private router: Router, private cookieService: CookieService, private location:Location) {}
 
   ngOnInit(): void {
     const userDataString = this.cookieService.get('userData');
@@ -20,7 +21,9 @@ export class UserSiteComponent implements OnInit {
     this.user = userData;
   }
 
-
+  goBack(){
+    this.location.back()
+  }
 
   logOut() {
     this.cookieService.deleteAll();

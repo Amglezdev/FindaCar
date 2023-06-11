@@ -41,6 +41,14 @@ public interface PostService {
 	 */
 	public boolean updatePost(Post post);
 	
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return the post
+	 */
+	public Post findById(Long id);
+	
 	
 
 }

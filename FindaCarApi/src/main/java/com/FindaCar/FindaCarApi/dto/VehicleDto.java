@@ -38,6 +38,7 @@ public class VehicleDto {
 	/** The fuel. */
 	private FuelDto fuel;
 	
+
 	/**
 	 * Gets the mileage.
 	 *
