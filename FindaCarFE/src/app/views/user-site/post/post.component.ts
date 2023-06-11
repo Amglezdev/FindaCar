@@ -24,7 +24,7 @@ export class PostComponent implements OnInit{
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
     this.user = userData;
-    this.ps.getAllTypes().subscribe((resp) => {
+    this.ps.getAllPosts().subscribe((resp) => {
       this.listPost = resp;
     })
   }

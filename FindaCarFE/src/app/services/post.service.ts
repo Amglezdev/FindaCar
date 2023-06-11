@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PostService {
-  private apiUrl = 'http://localhost:8080/findAll/';
+  private apiUrl = 'http://localhost:8080/post/';
 
   constructor(private http: HttpClient) {}
 
-  getAllTypes(): Observable<Post[]> {
+  getAllPosts(): Observable<Post[]> {
     try {
       return this.http.get<Post[]>(`${this.apiUrl}findAll`);
     } catch {

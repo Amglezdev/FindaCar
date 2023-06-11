@@ -11,18 +11,22 @@ import { User } from 'src/app/entities/user';
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.css']
+  styleUrls: ['./create-post.component.css'],
 })
-export class CreatePostComponent implements OnInit{
+export class CreatePostComponent implements OnInit {
+  post: Post;
+  selectedVehicle: Vehicle;
+  userVehicles: Vehicle[];
+  user: User;
+  vehicleForm: FormGroup;
 
-  post:Post;
-  selectedVehicle:Vehicle;
-  userVehicles:Vehicle[];
-  user:User;
-  vehicleForm:FormGroup;
-
-
-  constructor(private vs:VehicleService, private pos:PostService, private location:Location, private formBuilder:FormBuilder, private cookieService:CookieService){}
+  constructor(
+    private vs: VehicleService,
+    private pos: PostService,
+    private location: Location,
+    private formBuilder: FormBuilder,
+    private cookieService: CookieService
+  ) {}
 
   ngOnInit(): void {
     const userDataString = this.cookieService.get('userData');
@@ -30,27 +34,43 @@ export class CreatePostComponent implements OnInit{
     this.user = userData;
     this.vs.getByUserId(this.user.id).subscribe((resp) => {
       this.userVehicles = resp;
-    })
+    });
     this.vehicleForm = this.formBuilder.group({
-      vehicleId: ['', Validators.required],
-      comment: ['', Validators.required]
-    })
-
+      vehicle: ['', Validators.required],
+      comment: ['', Validators.required],
+    });
   }
 
-  onSubmit(){
+  onSubmit() {
 
-    this.vs.findById(this.vehicleForm.get('id').value).subscribe((resp) =>{
+    this.selectedVehicle = {
+      age: null,
+      brand: '',
+      fuel: {
+        name: '',
+      },
+      id: 0,
+      mileage: 0,
+      model: '',
+      owner: null,
+      power: 0,
+      price: 0,
+      type: {
+        name: '',
+      },
+    };
+
+    const id = this.vehicleForm.get('vehicle').value;
+    console.log(Number(id))
+    this.vs.findById(Number(id)).subscribe((resp) => {
       this.selectedVehicle = resp;
-    })
-    this.post = {
-      id:0,
-      comment: this.vehicleForm.get('comment').value,
-      vehicle: this.selectedVehicle
-    }
-    this.pos.createPost(this.post);
-
+      this.post = {
+        id: 0,
+        comment: this.vehicleForm.get('comment').value,
+        vehicle: resp,
+      };
+      this.pos.createPost(this.post);
+    });
 
   }
-
 }
