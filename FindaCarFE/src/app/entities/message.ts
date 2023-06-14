@@ -1,8 +1,8 @@
+import { Conversation } from "./conversation";
 import { User } from "./user";
 
 export interface Message {
   id:number,
-  sender:User,
-  reciever:User,
+  conversation:Conversation,
   content:string
 }

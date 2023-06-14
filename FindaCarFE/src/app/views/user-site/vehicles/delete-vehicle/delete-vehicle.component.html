@@ -1,1 +1,47 @@
-<p>delete-vehicle works!</p>
+<div class="background-image"></div>
+<div class="container">
+  <div class="content">
+    <h2>Detalles del {{ vehicle.brand }} {{ vehicle.model }} propiedad de {{vehicle.owner.name}}
+      {{vehicle.owner.surname}}</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Tipo:</label>
+        <p>{{ vehicle.type.name }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Potencia:</label>
+        <p>{{ vehicle.power }}</p>
+      </div>
+      <div class="col-md-6">
+        <label>Kilometraje:</label>
+        <p>{{ vehicle.mileage }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Año:</label>
+        <p>{{ vehicle.age | date }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Combustible:</label>
+        <p>{{ vehicle.fuel.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label>Precio:</label>
+        <p>{{ vehicle.price }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-danger" (click)="deleteVehicle()">Eliminar</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+</div>

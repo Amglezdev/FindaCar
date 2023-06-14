@@ -14,8 +14,7 @@ public interface ConversationService {
 	/**
 	 * Creates the conversation.
 	 *
-	 * @param sender the sender
-	 * @param reciever the reciever
+	 * @param dao the dao
 	 * @return true, if successful
 	 */
 	public boolean createConversation(Conversation dao);
@@ -36,6 +35,14 @@ public interface ConversationService {
 	 * @return the conversation
 	 */
 	public Conversation findConversationBySenderAndReciever(User sender, User reciever);
+	
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return the conversation
+	 */
+	public Conversation findById(long id);
 	
 
 }

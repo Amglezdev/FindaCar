@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.entities;
 
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,7 +13,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -52,7 +58,7 @@ public class Vehicle {
 	private int mileage;
 
 	/** The type. */	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "tipo_vehiculo")
 	private VehicleType type;
 
@@ -60,7 +66,7 @@ public class Vehicle {
 	@Column(name = "fecha_matriculacion")
 	private Calendar age;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "tipo_combustible")
 	private Fuel fuel;
 
@@ -72,6 +78,10 @@ public class Vehicle {
 	/** The price. */
 	@Column(name = "precio")
 	private double price;
+	
+	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Post> posts;
 
 	/**
 	 * Gets the md uuid.

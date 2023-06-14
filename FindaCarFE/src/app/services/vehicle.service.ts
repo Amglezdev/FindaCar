@@ -86,7 +86,7 @@ export class VehicleService {
 
   async deleteVehicle(vehicle:Vehicle) {
     try {
-      const response = await fetch(this.apiUrl + `deleteUser?id=${vehicle.id}`, {
+      const response = await fetch(this.apiUrl + `deleteVehicle?id=${vehicle.id}`, {
         method: 'DELETE',
         mode: 'cors',
         cache: 'no-cache',

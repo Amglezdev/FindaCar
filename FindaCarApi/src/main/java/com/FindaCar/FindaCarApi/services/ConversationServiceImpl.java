@@ -46,4 +46,14 @@ public class ConversationServiceImpl implements ConversationService {
 		}
 	}
 
+	@Override
+	public Conversation findById(long id) {
+		try {
+			return converRepo.findById(id).orElse(null);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+	}
+
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Favorites } from '../entities/favorites';
 import { Message } from '../entities/message';
+import { Conversation } from '../entities/conversation';
 
 @Injectable({
   providedIn: 'root',
@@ -12,15 +13,6 @@ export class MessageService {
 
   constructor(private http: HttpClient) {}
 
-  findMessages(senderId: number, recieverId: number): Observable<Message[]> {
-    try {
-      return this.http.get<Message[]>(
-        `${this.apiUrl}findMessages?senderId=${senderId}&recieverId=${recieverId}`
-      );
-    } catch {
-      return null;
-    }
-  }
 
   async sendMessage(message: Message) {
     try {
@@ -50,13 +42,12 @@ export class MessageService {
     }
   }
 
-  findMessagesByUser(senderId: number): Observable<Message[]> {
+  findByConversationId(conversation:Conversation):Observable<Message[]>{
     try {
-      return this.http.get<Message[]>(
-        `${this.apiUrl}findBySenderId?senderId=${senderId}`
-      );
-    } catch {
+      return this.http.get<Message[]>(`${this.apiUrl}getMessages?id=${conversation.id}`)
+    } catch (error) {
       return null;
     }
   }
+
 }

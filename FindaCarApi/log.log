@@ -15509,3 +15509,239 @@
 2023-06-14 16:46:25 - Entering endpoint /fuels/getAll
 2023-06-14 16:46:25 - Returing type list
 2023-06-14 16:46:25 - Returning all fuels
+2023-06-14 21:35:35 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:35:35 - Returning vehicle for user id:23
+2023-06-14 21:35:37 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:35:37 - Returning vehicle for user id:23
+2023-06-14 21:35:38 - Entering endpoint /vehicles/findById
+2023-06-14 21:35:38 - Returning vehicle with id:3
+2023-06-14 21:35:48 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:35:48 - Returning vehicle for user id:23
+2023-06-14 21:35:50 - Entering endpoint /vehicles/findById
+2023-06-14 21:35:50 - Returning vehicle with id:4
+2023-06-14 21:35:51 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:35:51 - Returning vehicle for user id:23
+2023-06-14 21:36:39 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:36:39 - Returning vehicle for user id:23
+2023-06-14 21:36:47 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:36:47 - Returning vehicle for user id:23
+2023-06-14 21:36:55 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:36:55 - Returning vehicle for user id:23
+2023-06-14 21:37:11 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:37:11 - Returning vehicle for user id:23
+2023-06-14 21:37:13 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:37:13 - Returning vehicle for user id:23
+2023-06-14 21:38:18 - Entering endpoint /vehicles/findById
+2023-06-14 21:38:18 - Returning vehicle with id:3
+2023-06-14 21:38:27 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:38:27 - Returning vehicle for user id:23
+2023-06-14 21:38:38 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:38:38 - Returning vehicle for user id:23
+2023-06-14 21:38:42 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:38:42 - Returning vehicle for user id:23
+2023-06-14 21:38:42 - Entering endpoint /vehicles/findById
+2023-06-14 21:38:42 - Returning vehicle with id:3
+2023-06-14 21:38:47 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:38:47 - Returning vehicle for user id:23
+2023-06-14 21:38:59 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:38:59 - Returning vehicle for user id:23
+2023-06-14 21:39:02 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:39:02 - Returning vehicle for user id:23
+2023-06-14 21:39:03 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:39:03 - Returning vehicle for user id:23
+2023-06-14 21:39:12 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:39:12 - Returning vehicle for user id:23
+2023-06-14 21:39:13 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:39:13 - Returning vehicle for user id:23
+2023-06-14 21:39:14 - Entering endpoint /vehicles/findById
+2023-06-14 21:39:14 - Returning vehicle with id:3
+2023-06-14 21:39:23 - Entering endpoint /vehicles/findById
+2023-06-14 21:39:23 - Returning vehicle with id:3
+2023-06-14 21:39:29 - Entering endpoint /vehicles/findById
+2023-06-14 21:39:29 - Returning vehicle with id:3
+2023-06-14 21:39:30 - Entering endpoint /vehicles/findById
+2023-06-14 21:39:30 - Returning vehicle with id:3
+2023-06-14 21:39:31 - Entering endpoint /vehicles/findById
+2023-06-14 21:39:31 - Returning vehicle with id:3
+2023-06-14 21:39:47 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:39:47 - Returning vehicle for user id:23
+2023-06-14 21:40:32 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:40:32 - Returning vehicle for user id:23
+2023-06-14 21:40:36 - Entering endpoint /vehicles/findById
+2023-06-14 21:40:36 - Returning vehicle with id:4
+2023-06-14 21:40:38 - Entering endpoint /vehicles/deleteVehicle
+2023-06-14 21:40:38 - Deleting vehicle with id :4
+2023-06-14 21:40:38 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:40:38 - Returning vehicle for user id:23
+2023-06-14 21:43:36 - Entering endpoint /vehicles/findById
+2023-06-14 21:43:36 - Returning vehicle with id:4
+2023-06-14 21:43:39 - Entering endpoint /vehicles/deleteVehicle
+2023-06-14 21:43:39 - Deleting vehicle with id :4
+2023-06-14 21:43:39 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:43:39 - Returning vehicle for user id:23
+2023-06-14 21:47:34 - Entering endpoint /vehicles/findById
+2023-06-14 21:47:34 - Returning vehicle with id:4
+2023-06-14 21:47:34 - Entering endpoint /vehicles/deleteVehicle
+2023-06-14 21:47:34 - Deleting vehicle with id :4
+2023-06-14 21:47:34 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:47:34 - Returning vehicle for user id:23
+2023-06-14 21:48:50 - Entering endpoint /vehicles/findById
+2023-06-14 21:48:50 - Returning vehicle with id:4
+2023-06-14 21:48:51 - Entering endpoint /vehicles/deleteVehicle
+2023-06-14 21:48:51 - Deleting vehicle with id :4
+2023-06-14 21:48:51 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:48:51 - Returning vehicle for user id:23
+2023-06-14 21:49:10 - Entering endpoint /vehicles/findById
+2023-06-14 21:49:10 - Returning vehicle with id:3
+2023-06-14 21:49:12 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:49:12 - Returning vehicle for user id:23
+2023-06-14 21:50:11 - Entering endpoint /post/findAll
+2023-06-14 21:50:11 - Returning all posts
+2023-06-14 21:50:16 - Entering endpoint /post/updatePost
+2023-06-14 21:50:16 - Returning post with id:4
+2023-06-14 21:50:16 - Entering endpoint /pictures/findAllById
+2023-06-14 21:50:16 - Returning pictures for vehicle id:1
+2023-06-14 21:50:36 - Entering endpoint /post/updatePost
+2023-06-14 21:50:36 - Returning post with id:4
+2023-06-14 21:50:36 - Entering endpoint /pictures/findAllById
+2023-06-14 21:50:36 - Returning pictures for vehicle id:1
+2023-06-14 21:50:44 - Entering endpoint /post/updatePost
+2023-06-14 21:50:44 - Returning post with id:4
+2023-06-14 21:50:44 - Entering endpoint /pictures/findAllById
+2023-06-14 21:50:44 - Returning pictures for vehicle id:1
+2023-06-14 21:50:48 - Entering endpoint /post/updatePost
+2023-06-14 21:50:48 - Returning post with id:4
+2023-06-14 21:50:48 - Entering endpoint /pictures/findAllById
+2023-06-14 21:50:48 - Returning pictures for vehicle id:1
+2023-06-14 21:51:03 - Entering endpoint /post/updatePost
+2023-06-14 21:51:03 - Returning post with id:4
+2023-06-14 21:51:03 - Entering endpoint /pictures/findAllById
+2023-06-14 21:51:03 - Returning pictures for vehicle id:1
+2023-06-14 21:51:08 - Entering endpoint /post/updatePost
+2023-06-14 21:51:08 - Returning post with id:4
+2023-06-14 21:51:08 - Entering endpoint /pictures/findAllById
+2023-06-14 21:51:08 - Returning pictures for vehicle id:1
+2023-06-14 21:51:16 - Entering endpoint /post/updatePost
+2023-06-14 21:51:16 - Returning post with id:4
+2023-06-14 21:51:16 - Entering endpoint /pictures/findAllById
+2023-06-14 21:51:16 - Returning pictures for vehicle id:1
+2023-06-14 21:51:24 - Entering endpoint /post/updatePost
+2023-06-14 21:51:24 - Returning post with id:4
+2023-06-14 21:51:24 - Entering endpoint /pictures/findAllById
+2023-06-14 21:51:24 - Returning pictures for vehicle id:1
+2023-06-14 21:51:26 - Entering endpoint /post/updatePost
+2023-06-14 21:51:26 - Returning post with id:4
+2023-06-14 21:51:26 - Entering endpoint /pictures/findAllById
+2023-06-14 21:51:26 - Returning pictures for vehicle id:1
+2023-06-14 21:51:27 - Entering endpoint /post/findAll
+2023-06-14 21:51:27 - Returning all posts
+2023-06-14 21:51:32 - Entering endpoint /post/findAll
+2023-06-14 21:51:32 - Returning all posts
+2023-06-14 21:52:12 - Entering endpoint /post/findAll
+2023-06-14 21:52:12 - Returning all posts
+2023-06-14 21:52:15 - Entering endpoint /post/findAll
+2023-06-14 21:52:15 - Returning all posts
+2023-06-14 21:52:24 - Entering endpoint /post/findAll
+2023-06-14 21:52:24 - Returning all posts
+2023-06-14 21:52:30 - Entering endpoint /post/findAll
+2023-06-14 21:52:30 - Returning all posts
+2023-06-14 21:52:34 - Entering endpoint /post/updatePost
+2023-06-14 21:52:34 - Returning post with id:4
+2023-06-14 21:52:35 - Entering endpoint /pictures/findAllById
+2023-06-14 21:52:35 - Returning pictures for vehicle id:1
+2023-06-14 21:53:04 - Entering endpoint /post/updatePost
+2023-06-14 21:53:04 - Returning post with id:4
+2023-06-14 21:53:04 - Entering endpoint /pictures/findAllById
+2023-06-14 21:53:04 - Returning pictures for vehicle id:1
+2023-06-14 21:53:10 - Entering endpoint /post/updatePost
+2023-06-14 21:53:10 - Returning post with id:4
+2023-06-14 21:53:13 - Entering endpoint /post/updatePost
+2023-06-14 21:53:13 - Returning post with id:4
+2023-06-14 21:53:13 - Entering endpoint /pictures/findAllById
+2023-06-14 21:53:13 - Returning pictures for vehicle id:1
+2023-06-14 21:53:15 - Entering endpoint /post/updatePost
+2023-06-14 21:53:15 - Returning post with id:4
+2023-06-14 21:53:15 - Entering endpoint /pictures/findAllById
+2023-06-14 21:53:15 - Returning pictures for vehicle id:1
+2023-06-14 21:53:21 - Entering endpoint /post/updatePost
+2023-06-14 21:53:21 - Returning post with id:4
+2023-06-14 21:53:21 - Entering endpoint /pictures/findAllById
+2023-06-14 21:53:21 - Returning pictures for vehicle id:1
+2023-06-14 21:53:22 - Entering endpoint /post/updatePost
+2023-06-14 21:53:22 - Returning post with id:4
+2023-06-14 21:53:22 - Entering endpoint /pictures/findAllById
+2023-06-14 21:53:22 - Returning pictures for vehicle id:1
+2023-06-14 21:53:41 - Entering endpoint /post/updatePost
+2023-06-14 21:53:41 - Returning post with id:4
+2023-06-14 21:53:43 - Entering endpoint /post/updatePost
+2023-06-14 21:53:43 - Returning post with id:4
+2023-06-14 21:54:13 - Entering endpoint /post/updatePost
+2023-06-14 21:54:13 - Returning post with id:4
+2023-06-14 21:54:14 - Entering endpoint /post/updatePost
+2023-06-14 21:54:14 - Returning post with id:4
+2023-06-14 21:54:16 - Entering endpoint /post/updatePost
+2023-06-14 21:54:16 - Returning post with id:4
+2023-06-14 21:54:53 - Entering endpoint /post/updatePost
+2023-06-14 21:54:53 - Returning post with id:4
+2023-06-14 21:55:26 - Entering endpoint /post/updatePost
+2023-06-14 21:55:26 - Returning post with id:4
+2023-06-14 21:55:37 - Entering endpoint /post/updatePost
+2023-06-14 21:55:37 - Returning post with id:4
+2023-06-14 21:55:37 - Entering endpoint /pictures/findAllById
+2023-06-14 21:55:37 - Returning pictures for vehicle id:1
+2023-06-14 21:55:40 - Entering endpoint /post/updatePost
+2023-06-14 21:55:40 - Returning post with id:4
+2023-06-14 21:55:40 - Entering endpoint /pictures/findAllById
+2023-06-14 21:55:40 - Returning pictures for vehicle id:1
+2023-06-14 21:56:40 - Entering endpoint /post/findAll
+2023-06-14 21:56:40 - Returning all posts
+2023-06-14 21:56:42 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:56:42 - Returning vehicle for user id:23
+2023-06-14 21:56:44 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 21:56:44 - Returning vehicle for user id:23
+2023-06-14 21:58:47 - Entering endpoint /post/findAll
+2023-06-14 21:58:47 - Returning all posts
+2023-06-14 21:58:55 - Entering endpoint /post/updatePost
+2023-06-14 21:58:55 - Returning post with id:4
+2023-06-14 21:58:55 - Entering endpoint /pictures/findAllById
+2023-06-14 21:58:55 - Returning pictures for vehicle id:1
+2023-06-14 21:58:57 - Entering endpoint /post/findAll
+2023-06-14 21:58:57 - Returning all posts
+2023-06-14 21:59:30 - Entering endpoint /post/findAll
+2023-06-14 21:59:30 - Returning all posts
+2023-06-14 21:59:32 - Entering endpoint /post/findAll
+2023-06-14 21:59:32 - Returning all posts
+2023-06-14 21:59:41 - Entering endpoint /post/findAll
+2023-06-14 21:59:41 - Returning all posts
+2023-06-14 21:59:45 - Entering endpoint /post/findAll
+2023-06-14 21:59:45 - Returning all posts
+2023-06-14 21:59:56 - Entering endpoint /post/findAll
+2023-06-14 21:59:56 - Returning all posts
+2023-06-14 21:59:59 - Entering endpoint /post/findAll
+2023-06-14 21:59:59 - Returning all posts
+2023-06-14 22:03:49 - Entering endpoint /users/getUsers
+2023-06-14 22:03:49 - Returning all users
+2023-06-14 22:03:54 - Entering endpoint /users/getUsers
+2023-06-14 22:03:54 - Returning all users
+2023-06-14 22:03:56 - Entering endpoint /users/getUsers
+2023-06-14 22:03:56 - Returning all users
+2023-06-14 22:04:00 - Entering endpoint /vehicleType/allTypes
+2023-06-14 22:04:00 - Returing type list
+2023-06-14 22:04:43 - Entering endpoint /fuels/getAll
+2023-06-14 22:04:43 - Returning all fuels
+2023-06-14 22:04:59 - Entering endpoint /fuels/getAll
+2023-06-14 22:04:59 - Returning all fuels
+2023-06-14 22:05:59 - Entering endpoint /fuels/getAll
+2023-06-14 22:05:59 - Returning all fuels
+2023-06-14 22:06:09 - Entering endpoint /vehicleType/allTypes
+2023-06-14 22:06:09 - Returing type list
+2023-06-14 22:06:11 - Entering endpoint /users/getUsers
+2023-06-14 22:06:11 - Returning all users
+2023-06-14 22:09:09 - Entering endpoint /vehicles/findByOwnerId
+2023-06-14 22:09:09 - Returning vehicle for user id:23
+2023-06-14 22:09:12 - Entering endpoint /post/findAll
+2023-06-14 22:09:12 - Returning all posts
+2023-06-14 22:09:23 - Entering endpoint /users/getUsers
+2023-06-14 22:09:23 - Returning all users
+2023-06-14 22:09:25 - Entering endpoint /vehicleType/allTypes
+2023-06-14 22:09:25 - Returing type list

@@ -67,7 +67,9 @@ public class User {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "owner")
 	@JsonIgnore
 	private List<Vehicle> vehiclesOwned;
-
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	private List<Post> post;
 	/** The security. */
 	@Column(name = "pregunta_seguridad")
 	private String security;

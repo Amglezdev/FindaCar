@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FindaCar.FindaCarApi.dto.ConversationDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
+import com.FindaCar.FindaCarApi.services.ConversationServiceImpl;
 import com.FindaCar.FindaCarApi.services.MessageServiceImpl;
 import com.FindaCar.FindaCarApi.util.Logger;
 
@@ -31,6 +31,8 @@ public class MessageController {
 	DtoToImpl dtoTo;
 	@Autowired
 	Logger log;
+	@Autowired
+	ConversationServiceImpl converService;
 
 	@PutMapping("/sendMessage")
 	public boolean sendMessage(@RequestBody MessagesDto message) {
@@ -46,9 +48,9 @@ public class MessageController {
 	}
 	
 	@GetMapping("/getMessages")
-	public ArrayList<MessagesDto> findMessagesByConversation(@RequestBody ConversationDto conver){
+	public ArrayList<MessagesDto> findMessagesByConversation(@Param (value = "id")long id){
 		try {			
-			return toDto.listMessagesToDto(msi.findByConversation(dtoTo.converstaionToDao(conver)));
+			return toDto.listMessagesToDto(msi.findByConversation(converService.findById(id)));
 		}catch (Exception e) {
 			// TODO: handle exception
 			return null;

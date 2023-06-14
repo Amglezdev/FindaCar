@@ -22,31 +22,36 @@ export class PostComponent implements OnInit {
     private ps: PostService,
     private cookieService: CookieService,
     private vps: VehiclePicturesService,
-    private location:Location
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
     this.user = userData;
-    this.ps.getAllPosts().subscribe((resp) => {
+    this.getAllPost();
+  }
+
+  filter(string: any) {
+    if (string.target.value != '' || string.target.value === null) {
+      this.listPost = this.preFilter.filter(
+        (x) =>
+          x.comment.includes(string.target.value) ||
+          x.vehicle.model.includes(string.target.value) ||
+          x.vehicle.brand.includes(string.target.value)
+      );
+    } else {
+      this.listPost = this.preFilter;
+    }
+  }
+
+  async getAllPost() {
+    await this.ps.getAllPosts().subscribe((resp) => {
       this.preFilter = resp;
     });
   }
 
-  filter(string:any){
-
-    if(string.target.value != ''){
-      this.listPost = this.preFilter.filter(x => x.comment.includes(string.target.value) || x.vehicle.model.includes(string.target.value) || x.vehicle.brand.includes(string.target.value))
-    }else{
-      this.listPost = this.preFilter;
-    }
-
-
-
-  }
-
-  goBack(){
-    this.location.back()
+  goBack() {
+    this.location.back();
   }
 }

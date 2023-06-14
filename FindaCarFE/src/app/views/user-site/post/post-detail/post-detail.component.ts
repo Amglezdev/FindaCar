@@ -15,35 +15,45 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.css']
+  styleUrls: ['./post-detail.component.css'],
 })
-export class PostDetailComponent implements OnInit{
+export class PostDetailComponent implements OnInit {
+  id: string;
+  listPictures: VehiclePictures[];
+  post: Post;
+  favorites: Favorites;
+  user: User;
 
-  id:string;
-  listPictures:VehiclePictures[];
-  post:Post;
-  favorites:Favorites;
-  user:User;
-
-  constructor(private location:Location,private vs:VehicleService, private vp:VehiclePicturesService, private fav:FavoritesService, private cookieService:CookieService, private arm:ActivatedRoute, private pos:PostService ){}
+  constructor(
+    private location: Location,
+    private vs: VehicleService,
+    private vp: VehiclePicturesService,
+    private fav: FavoritesService,
+    private cookieService: CookieService,
+    private arm: ActivatedRoute,
+    private pos: PostService
+  ) {}
 
   ngOnInit(): void {
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
     this.user = userData;
     this.id = this.arm.snapshot.paramMap.get('id');
-    this.pos.findById(Number(this.id)).subscribe((resp) => {
+    this.getPost();
+  }
+  goBack() {
+    this.location.back();
+  }
+
+  async getPost() {
+    await this.pos.findById(Number(this.id)).subscribe((resp) => {
       this.post = resp;
-      this.vp.getByVehicleId(this.post.vehicle.id).subscribe((resp) =>{
-        this.listPictures = resp;
-        console.log(resp)
-      })
-    })
-    console.log(this.post.vehicle.id)
-
+       this.getVehiclePicture(this.post)
+    });
   }
-  goBack(){
-    this.location.back()
+  async getVehiclePicture(post:Post) {
+    await this.vp.getByVehicleId(post.vehicle.id).subscribe((resp) => {
+      this.listPictures = resp;
+    });
   }
-
 }

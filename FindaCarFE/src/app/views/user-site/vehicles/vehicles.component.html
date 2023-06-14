@@ -1,1 +1,30 @@
-<p>vehicles works!</p>
+<div class="background-image">
+  <div class="container">
+    <h2>Vehículos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Potencia</th>
+          <th>Kilometraje</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicleList">
+          <td>{{ vehicle.brand }}</td>
+          <td>{{ vehicle.model }}</td>
+          <td>{{ vehicle.power }}</td>
+          <td>{{ vehicle.mileage }}</td>
+          <td>
+            <!-- Enlace para actualizar vehículo -->
+            <a class="btn btn-primary" [routerLink]="'updateVehicle/' + vehicle.id">Actualizar</a>
+            <!-- Enlace para eliminar vehículo -->
+            <a class="btn btn-danger" [routerLink]="'deleteVehicle/' + vehicle.id">Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
