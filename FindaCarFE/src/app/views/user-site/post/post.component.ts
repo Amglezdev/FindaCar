@@ -36,9 +36,13 @@ export class PostComponent implements OnInit {
 
   filter(string:any){
 
-    console.log(string.target.value)
+    if(string.target.value != ''){
+      this.listPost = this.preFilter.filter(x => x.comment.includes(string.target.value) || x.vehicle.model.includes(string.target.value) || x.vehicle.brand.includes(string.target.value))
+    }else{
+      this.listPost = this.preFilter;
+    }
 
-    this.listPost = this.preFilter.filter(x => x.comment.includes(string.target.value) || x.vehicle.model.includes(string.target.value) || x.vehicle.brand.includes(string.target.value))
+
 
   }
 

@@ -1,25 +1,23 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { Fuel } from 'src/app/entities/fuel';
+import { User } from 'src/app/entities/user';
 import { Vehicle } from 'src/app/entities/vehicle';
+import { VehiclePictures } from 'src/app/entities/vehicle-pictures';
 import { VehicleType } from 'src/app/entities/vehicle-type';
 import { FuelService } from 'src/app/services/fuel.service';
+import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
 import { VehicleTypesService } from 'src/app/services/vehicle-types.service';
 import { VehicleService } from 'src/app/services/vehicle.service';
-import { Location } from '@angular/common';
-import { User } from 'src/app/entities/user';
-import { CookieService } from 'ngx-cookie-service';
-import { VehiclePictures } from 'src/app/entities/vehicle-pictures';
-import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
-import * as $ from 'jquery';
-import { take } from 'rxjs';
 
 @Component({
-  selector: 'app-vehicle',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css'],
+  selector: 'app-create-vehicle',
+  templateUrl: './create-vehicle.component.html',
+  styleUrls: ['./create-vehicle.component.css']
 })
-export class VehicleComponent implements OnInit {
+export class CreateVehicleComponent implements OnInit{
 
   vehicleForm: FormGroup;
   listType: VehicleType[];
@@ -101,7 +99,7 @@ export class VehicleComponent implements OnInit {
       if (this.vehicleForm.valid) {
         // Crear una copia del formulario y omitir la propiedad "url"
         const vehicleData = { ...this.vehicleForm.value };
-    
+
         this.vehicle = vehicleData;
         console.log(vehicleData);
         this.selectedFuel = {

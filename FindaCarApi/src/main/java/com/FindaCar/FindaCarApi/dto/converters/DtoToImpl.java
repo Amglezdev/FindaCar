@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.ConversationDto;
 import com.FindaCar.FindaCarApi.dto.FuelDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
@@ -17,6 +18,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.DtoToService;
+import com.FindaCar.FindaCarApi.entities.Conversation;
 import com.FindaCar.FindaCarApi.entities.Fuel;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
@@ -114,11 +116,9 @@ public class DtoToImpl implements DtoToService {
 		dao.setId(dto.getId());
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
-		dao.setReciever(userService.findById(dto.getReciever().getId()));
-		dao.setSender(userService.findById(dto.getSender().getId()));
 		dao.setContent(dto.getContent());
 			
-		System.out.println(dao.toString());
+	
 
 		return dao;
 	}
@@ -275,6 +275,31 @@ public class DtoToImpl implements DtoToService {
 
 		return listDao;
 
+	}
+
+	@Override
+	public Conversation converstaionToDao(ConversationDto dto) {
+		
+		Conversation dao = new Conversation();
+		
+		dao.setMdDate(calendar);
+		dao.setMdUuid(mdUuid);
+		dao.setReciever(userToDao(dto.getReciever()));
+		dao.setSender(userToDao(dto.getSender()));
+		
+		return dao;
+	}
+
+	@Override
+	public ArrayList<Conversation> listConversationToDao(ArrayList<ConversationDto> listDto) {
+		
+		ArrayList<Conversation> listDao = new ArrayList<>();
+		
+		for (ConversationDto dto : listDto) {
+			listDao.add(converstaionToDao(dto));
+		}
+		
+		return listDao;
 	}
 
 }

@@ -22,7 +22,7 @@ import com.FindaCar.FindaCarApi.util.PasswordEncryptor;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080","http://localhost:80" })
 public class UserController {
 
 	@Autowired

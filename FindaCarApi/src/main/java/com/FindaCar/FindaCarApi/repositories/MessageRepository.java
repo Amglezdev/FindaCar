@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.FindaCar.FindaCarApi.entities.Conversation;
 import com.FindaCar.FindaCarApi.entities.Messages;
 
 // TODO: Auto-generated Javadoc
@@ -15,20 +16,13 @@ import com.FindaCar.FindaCarApi.entities.Messages;
 public interface MessageRepository extends JpaRepository<Messages, Long> {
 
 	/**
-	 * Find by sender id and reciever id.
+	 * Find by conversation.
 	 *
-	 * @param senderId the sender id
-	 * @param recieverId the reciever id
+	 * @param conver the conver
 	 * @return the array list
 	 */
-	public ArrayList<Messages> findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(Long usuario1Id, Long usuario2Id, Long usuerio2Id, Long usurio1Id);;
-	
-	/**
-	 * Find by sender id.
-	 *
-	 * @param senderId the sender id
-	 * @return the array list
-	 */
-	public ArrayList<Messages> findBySenderId(long senderId);
+	public ArrayList<Messages> findByConversation(Conversation conver);
 
 }
+
+

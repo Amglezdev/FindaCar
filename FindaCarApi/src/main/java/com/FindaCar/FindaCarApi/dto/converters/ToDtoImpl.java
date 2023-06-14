@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
+import com.FindaCar.FindaCarApi.dto.ConversationDto;
 import com.FindaCar.FindaCarApi.dto.FuelDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.PostDto;
@@ -14,6 +15,7 @@ import com.FindaCar.FindaCarApi.dto.VehicleDto;
 import com.FindaCar.FindaCarApi.dto.VehiclePicturesDto;
 import com.FindaCar.FindaCarApi.dto.VehicleTypeDto;
 import com.FindaCar.FindaCarApi.dto.converters.service.ToDtoService;
+import com.FindaCar.FindaCarApi.entities.Conversation;
 import com.FindaCar.FindaCarApi.entities.Fuel;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.entities.Post;
@@ -59,7 +61,7 @@ public class ToDtoImpl implements ToDtoService {
 
 	@Override
 	public PostDto postToDto(Post post) {
-		
+
 		PostDto dto = new PostDto();
 
 		dto.setComment(post.getComment());
@@ -211,12 +213,9 @@ public class ToDtoImpl implements ToDtoService {
 
 		MessagesDto dto = new MessagesDto();
 
-		dto.setId(message.getId());
-		dto.setReciever(userToDto(message.getReciever()));
-		dto.setSender(userToDto(message.getSender()));
 		dto.setContent(message.getContent());
-		
-		System.out.println(dto.toString());
+		dto.setConversation(conversationToDto(message.getConversation()));
+		dto.setId(message.getId());
 
 		return dto;
 	}
@@ -255,6 +254,18 @@ public class ToDtoImpl implements ToDtoService {
 
 		return listDto;
 
+	}
+
+	@Override
+	public ConversationDto conversationToDto(Conversation dao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ConversationDto> listConversationToDto(ArrayList<Conversation> listDao) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

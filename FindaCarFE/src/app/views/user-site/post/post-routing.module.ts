@@ -8,10 +8,10 @@ import { ConfirmDeleteComponent } from '../../administration/users/confirm-delet
 
 const routes: Routes = [
   { path: '', component: PostComponent },
-  { path: 'post/deletePost/:id', component: DeletePostComponent },
-  { path: 'post/createPost', component: CreatePostComponent },
-  { path: 'post/detailPost/:id', component: PostDetailComponent },
-  { path: 'post/confirmDelete/:id', component: ConfirmDeleteComponent },
+  { path: 'deletePost/:id', component: DeletePostComponent },
+  { path: 'createPost', component: CreatePostComponent },
+  { path: 'detailPost/:id', component: PostDetailComponent },
+  { path: 'confirmDelete/:id', component: ConfirmDeleteComponent },
 ];
 //userSite/post/confirmDelete/1
 

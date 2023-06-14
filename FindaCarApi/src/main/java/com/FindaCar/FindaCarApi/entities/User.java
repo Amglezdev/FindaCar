@@ -72,15 +72,6 @@ public class User {
 	@Column(name = "pregunta_seguridad")
 	private String security;
 
-	/** The messages sent. */
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "sender", cascade = CascadeType.REMOVE)
-	@JsonIgnore
-	private List<Messages> messagesSent;
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "reciever", cascade = CascadeType.REMOVE)
-	@JsonIgnore
-	private List<Messages> messagesReceived;
-
 	/**
 	 * Gets the security.
 	 *

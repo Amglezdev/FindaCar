@@ -20,7 +20,7 @@ import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/pictures")
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080","http://localhost:80" })
 public class VehiclePicturesController {
 
 	@Autowired

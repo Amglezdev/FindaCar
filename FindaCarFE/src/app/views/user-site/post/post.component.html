@@ -1,7 +1,7 @@
 <div class="background-image">
   <div class="container">
     <h2>Posts</h2>
-    <button class="btn btn-primary" routerLink="post/createPost">Crear post</button>
+    <button class="btn btn-primary" routerLink="createPost">Crear post</button>
     <input type="text" (keyup)="filter($event)">
     <div class="row">
       <div class="col-md-4" *ngFor="let post of listPost">
@@ -9,8 +9,8 @@
           <div class="card-body">
             <h5 class="card-title">{{ post.vehicle.brand }} {{ post.vehicle.model }}</h5>
             <p class="card-text">{{ post.comment }}</p>
-            <a [routerLink]="['post/detailPost', post.id]" class="btn btn-primary">Ver detalles</a>
-            <a *ngIf="user.id === post.vehicle.owner.id" class="btn btn-danger" [routerLink]="['post/deletePost/' + post.id]">Eliminar</a>
+            <a [routerLink]="['detailPost', post.id]" class="btn btn-primary">Ver detalles</a>
+            <a *ngIf="user.id === post.vehicle.owner.id" class="btn btn-danger" [routerLink]="['deletePost/' + post.id]">Eliminar</a>
           </div>
         </div>
       </div>

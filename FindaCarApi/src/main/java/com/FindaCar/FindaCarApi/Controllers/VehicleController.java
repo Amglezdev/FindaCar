@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,7 +21,7 @@ import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/vehicles")
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080","http://localhost:80" })
 public class VehicleController {
 
 	@Autowired
@@ -95,6 +96,20 @@ public class VehicleController {
 			// TODO: handle exception
 			Logger.log("Error in /vehicles/findByOwnerId");
 			return null;	
+		}
+	}
+	
+	@DeleteMapping("/deleteVehicle")
+	public boolean deleteVehicle(@Param (value = "id")long id) {
+		Logger.log("Entering endpoint /vehicles/deleteVehicle");
+		
+		try {
+			Logger.log("Deleting vehicle with id :" +id);
+			return vehicleImpl.deleteVehicle(id);
+		}catch (Exception e) {
+			// TODO: handle exception
+			Logger.log("Error in /vehicles/deleteVehicle");
+			return false;
 		}
 	}
 

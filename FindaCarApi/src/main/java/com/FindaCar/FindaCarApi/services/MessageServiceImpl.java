@@ -6,26 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.FindaCar.FindaCarApi.entities.Conversation;
 import com.FindaCar.FindaCarApi.entities.Messages;
 import com.FindaCar.FindaCarApi.repositories.MessageRepository;
 
 @Component
-@RequestMapping("/message")
 public class MessageServiceImpl implements MessageService {
 
 	@Autowired
 	MessageRepository mRepo;
 
-	@Override
-	public ArrayList<Messages> findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(Long senderId, Long recieverId) {
-		try {
-			return (ArrayList<Messages>) mRepo.findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(senderId, recieverId, recieverId, senderId);
-		} catch (Exception e) {
-			// TODO: handle exception4
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
+
 
 	@Override
 	public boolean sendMessage(Messages message) {
@@ -38,14 +29,23 @@ public class MessageServiceImpl implements MessageService {
 		}
 	}
 
+
+
 	@Override
-	public ArrayList<Messages> findByUser(long id) {
+	public ArrayList<Messages> findByConversation(Conversation conversation) {
 		try {
-			return (ArrayList<Messages>) mRepo.findBySenderId(id);
+			return (ArrayList<Messages>)mRepo.findByConversation(conversation);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
 		}
+
 	}
+
+
+
+
+
+	
 
 }

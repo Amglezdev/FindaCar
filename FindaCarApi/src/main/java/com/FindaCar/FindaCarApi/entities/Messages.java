@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,19 +34,14 @@ public class Messages {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	/** The sender. */
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "remitente")
-	private User sender;
-
-	/** The reciever. */
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "destinatario")
-	private User reciever;
-
 	/** The content. */
 	@Column(name = "contenido")
 	private String content;
+	
+	/** The conversation. */
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "conversacion")
+	private Conversation conversation;
 
 	/**
 	 * Gets the content.
@@ -56,10 +52,22 @@ public class Messages {
 		return content;
 	}
 
-	@Override
-	public String toString() {
-		return "Messages [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", sender=" + sender + ", reciever="
-				+ reciever + ", content=" + content + "]";
+	/**
+	 * Gets the conversation.
+	 *
+	 * @return the conversation
+	 */
+	public Conversation getConversation() {
+		return conversation;
+	}
+
+	/**
+	 * Sets the conversation.
+	 *
+	 * @param conversation the new conversation
+	 */
+	public void setConversation(Conversation conversation) {
+		this.conversation = conversation;
 	}
 
 	/**
@@ -125,40 +133,7 @@ public class Messages {
 		this.id = id;
 	}
 
-	/**
-	 * Gets the sender.
-	 *
-	 * @return the sender
-	 */
-	public User getSender() {
-		return sender;
-	}
 
-	/**
-	 * Sets the sender.
-	 *
-	 * @param sender the new sender
-	 */
-	public void setSender(User sender) {
-		this.sender = sender;
-	}
 
-	/**
-	 * Gets the reciever.
-	 *
-	 * @return the reciever
-	 */
-	public User getReciever() {
-		return reciever;
-	}
-
-	/**
-	 * Sets the reciever.
-	 *
-	 * @param reciever the new reciever
-	 */
-	public void setReciever(User reciever) {
-		this.reciever = reciever;
-	}
-
+	
 }

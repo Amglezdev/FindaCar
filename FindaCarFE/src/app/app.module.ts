@@ -9,11 +9,8 @@ import { SignUpComponent } from './views/components/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { VehicleComponent } from './views/user-site/vehicle/vehicle.component';
-
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
 import { FuelService } from './services/fuel.service';
 import { VehicleService } from './services/vehicle.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -27,7 +24,6 @@ import { VehiclePicturesComponent } from './views/user-site/vehicle-pictures/veh
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    VehicleComponent,
     PasswordRecoveryComponent,
     VehiclePicturesComponent,
   ],

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.FindaCar.FindaCarApi.dto.ConversationDto;
 import com.FindaCar.FindaCarApi.dto.MessagesDto;
 import com.FindaCar.FindaCarApi.dto.converters.DtoToImpl;
 import com.FindaCar.FindaCarApi.dto.converters.ToDtoImpl;
@@ -19,7 +20,7 @@ import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/messages")
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080", "http://localhost:80" })
 public class MessageController {
 
 	@Autowired
@@ -30,20 +31,6 @@ public class MessageController {
 	DtoToImpl dtoTo;
 	@Autowired
 	Logger log;
-
-	@GetMapping("/findMessages")
-	public ArrayList<MessagesDto> findBySenderAndReciever(@Param(value = "senderId") Long senderId,
-			@Param(value = "recieverId") Long recieverId) {
-		Logger.log("Entering endpoint /messages/findMessages");
-		try {
-			Logger.log("Returning messages");
-			return toDto.listMessagesToDto(msi.findBySenderIdAndRecieverIdOrSenderIdAndRecieverId(senderId, recieverId));
-		} catch (Exception e) {
-			// TODO: handle exception
-			Logger.log("Error in /messages/findMessages");
-			return null;
-		}
-	}
 
 	@PutMapping("/sendMessage")
 	public boolean sendMessage(@RequestBody MessagesDto message) {
@@ -58,17 +45,15 @@ public class MessageController {
 		}
 	}
 	
-	@GetMapping("/findBySenderId")
-	public ArrayList<MessagesDto> findBySender(@Param(value = "senderId") long senderId) {
-		Logger.log("Entering endpoint /messages/findBySenderId");
-		try {
-			Logger.log("Returning messages");
-			return toDto.listMessagesToDto(msi.findByUser(senderId));
-		} catch (Exception e) {
+	@GetMapping("/getMessages")
+	public ArrayList<MessagesDto> findMessagesByConversation(@RequestBody ConversationDto conver){
+		try {			
+			return toDto.listMessagesToDto(msi.findByConversation(dtoTo.converstaionToDao(conver)));
+		}catch (Exception e) {
 			// TODO: handle exception
-			Logger.log("Error in /messages/findBySenderId");
 			return null;
 		}
 	}
+	
 
 }

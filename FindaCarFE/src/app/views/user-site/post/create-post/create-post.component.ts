@@ -43,7 +43,7 @@ export class CreatePostComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.selectedVehicle = {
       age: null,
       brand: '',
@@ -69,9 +69,8 @@ export class CreatePostComponent implements OnInit {
       comment: this.vehicleForm.get('comment').value,
       vehicle: this.vehicleForm.get('vehicle').value,
     };
-    console.log(this.post);
-    this.pos.createPost(this.post);
-    this.router.navigate['/'];
+    await this.pos.createPost(this.post).then(this.router.navigate['/']);
+
   }
 
   goBack(){

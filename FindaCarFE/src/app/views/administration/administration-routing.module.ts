@@ -29,6 +29,7 @@ const routes: Routes = [
     path: 'fuel',
     loadChildren: () => import('./fuel/fuel.module').then((m) => m.FuelModule),
   },
+  { path: 'post', loadChildren: () => import('./post/post.module').then(m => m.PostModule) },
 ];
 
 @NgModule({

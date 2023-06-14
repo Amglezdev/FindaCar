@@ -84,4 +84,33 @@ export class VehicleService {
     }
   }
 
+  async deleteVehicle(vehicle:Vehicle) {
+    try {
+      const response = await fetch(this.apiUrl + `deleteUser?id=${vehicle.id}`, {
+        method: 'DELETE',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(null),
+      });
+      console.log(vehicle);
+      if (response.ok) {
+        // Registro exitoso
+        return true;
+      } else {
+        // Error al realizar el registro
+        return false;
+      }
+    } catch (error) {
+      // Error en la solicitud
+      return false;
+    }
+  }
+
+
 }
