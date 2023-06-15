@@ -7,6 +7,7 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { UpdateVehicleComponent } from './update-vehicle/update-vehicle.component';
 import { DeleteVehicleComponent } from './delete-vehicle/delete-vehicle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserSiteModule } from '../user-site.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     VehiclesRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserSiteModule
   ]
 })
 export class VehiclesModule { }

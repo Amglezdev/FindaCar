@@ -7,6 +7,8 @@ import { VehiclePictures } from 'src/app/entities/vehicle-pictures';
 import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
 import { VehicleService } from 'src/app/services/vehicle.service';
 import { Location } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-pictures',
@@ -25,7 +27,8 @@ export class VehiclePicturesComponent implements OnInit {
     private vs: VehicleService,
     private location: Location,
     private cookieService: CookieService,
-    private vp: VehiclePicturesService
+    private vp: VehiclePicturesService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -56,7 +59,7 @@ export class VehiclePicturesComponent implements OnInit {
       },
   }
 }
-submitForm() {
+async submitForm() {
   this.selectedVehicle = this.imageForm.get('selectedVehicle').value
   this.picture = {
     id: 0,
@@ -64,7 +67,9 @@ submitForm() {
     vehicle: this.selectedVehicle,
   };
   console.log(this.picture)
-  this.vp.addPicture(this.picture);
+  if(await this.vp.addPicture(this.picture)){
+    this.router.navigate(['/vehiclePictures'])
+  };
 }
 goBack(){
   this.location.back()

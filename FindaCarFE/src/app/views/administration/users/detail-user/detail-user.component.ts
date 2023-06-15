@@ -21,7 +21,11 @@ export class DetailUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.arm.snapshot.paramMap.get('id');
-    this.us.getUserById(Number(this.id)).subscribe((resp) => {
+    this.getUserById(this.id)
+  }
+
+  async getUserById(id: string) {
+    await this.us.getUserById(Number(id)).subscribe((resp) => {
       this.user = resp;
     });
   }

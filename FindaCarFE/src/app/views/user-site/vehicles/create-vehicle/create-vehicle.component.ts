@@ -11,6 +11,7 @@ import { FuelService } from 'src/app/services/fuel.service';
 import { VehiclePicturesService } from 'src/app/services/vehicle-pictures.service';
 import { VehicleTypesService } from 'src/app/services/vehicle-types.service';
 import { VehicleService } from 'src/app/services/vehicle.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -35,7 +36,8 @@ export class CreateVehicleComponent implements OnInit{
     private vs: VehicleService,
     private location: Location,
     private cookieService: CookieService,
-    private vp: VehiclePicturesService
+    private vp: VehiclePicturesService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -94,14 +96,13 @@ export class CreateVehicleComponent implements OnInit{
     });
   }
 
-  createVehicle() {
+  async createVehicle() {
     try {
       if (this.vehicleForm.valid) {
         // Crear una copia del formulario y omitir la propiedad "url"
         const vehicleData = { ...this.vehicleForm.value };
 
         this.vehicle = vehicleData;
-        console.log(vehicleData);
         this.selectedFuel = {
           name : vehicleData.fuel
         }
@@ -111,9 +112,11 @@ export class CreateVehicleComponent implements OnInit{
 
         this.vehicle.type = this.selectedType;
         this.vehicle.fuel = this.selectedFuel
-        console.log(this.vehicle)
 
-        this.vs.createVehicle(this.vehicle);
+        if(await this.vs.createVehicle(this.vehicle) === true){
+          this.router.navigate(['/vehicles'])
+        }
+
 
       }
     } catch (error) { console.log(error)}

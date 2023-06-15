@@ -17,6 +17,7 @@ export class PostComponent implements OnInit {
   listPost: Post[];
   listPictures: VehiclePictures[] = [];
   preFilter: Post[] = [];
+  searchText: string;
 
   constructor(
     private ps: PostService,
@@ -32,22 +33,26 @@ export class PostComponent implements OnInit {
     this.getAllPost();
   }
 
-  filter(string: any) {
-    if (string.target.value != '' || string.target.value === null) {
-      this.listPost = this.preFilter.filter(
-        (x) =>
-          x.comment.includes(string.target.value) ||
-          x.vehicle.model.includes(string.target.value) ||
-          x.vehicle.brand.includes(string.target.value)
-      );
-    } else {
+  filter() {
+    const searchText = this.searchText ? this.searchText.toLowerCase() : '';
+
+    if (searchText === '') {
+      this.listPost = [];
       this.listPost = this.preFilter;
+    } else {
+      this.listPost = this.preFilter.filter(
+        (post) =>
+          post.vehicle.brand.toLowerCase().includes(searchText) ||
+          post.vehicle.model.toLowerCase().includes(searchText) ||
+          post.comment.toLowerCase().includes(searchText)
+      );
     }
   }
 
   async getAllPost() {
     await this.ps.getAllPosts().subscribe((resp) => {
       this.preFilter = resp;
+      this.filter();
     });
   }
 

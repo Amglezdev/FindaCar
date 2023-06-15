@@ -11,7 +11,7 @@ export class AdminSiteGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
-    if (userData && userData.rol && userData.rol.name && userData.rol.name === 'Administrador') {
+    if (userData && userData.rol && userData.rol.name && userData.rol.name === 'Administrador' || userData.rol.name === 'SuperAdministrador') {
       return true; // Permite el acceso solo si el rol es 'Administrador'
     } else {
       this.router.navigate(['/login']); // Redirige a la página de login para otros roles o si no se encuentra información de usuario

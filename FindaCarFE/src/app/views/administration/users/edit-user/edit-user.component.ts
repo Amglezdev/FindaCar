@@ -19,7 +19,7 @@ export class EditUserComponent implements OnInit {
     private rs: RoleService,
     private us: UserService,
     private route: ActivatedRoute,
-    private location:Location,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -28,15 +28,15 @@ export class EditUserComponent implements OnInit {
     this.getRoles();
   }
 
-  getUser(id: number) {
-    this.us.getUserById(Number(id)).subscribe((resp) => {
+  async getUser(id: number) {
+    await this.us.getUserById(Number(id)).subscribe((resp) => {
       this.user = resp;
     });
   }
 
-  getRoles() {
+  async getRoles() {
     try {
-      this.rs.getAllRoles().subscribe((resp) => {
+      await this.rs.getAllRoles().subscribe((resp) => {
         this.roles = resp;
       });
     } catch (error) {
@@ -44,14 +44,14 @@ export class EditUserComponent implements OnInit {
     }
   }
 
-  editUser() {
+  async editUser() {
     try {
-      this.us.updateUser(this.user);
+      await this.us.updateUser(this.user);
       this.goBack();
     } catch {}
   }
 
-  goBack(){
+  goBack() {
     this.location.back();
   }
 }

@@ -4,6 +4,7 @@ import { UserSiteComponent } from './user-site.component';
 import { VehiclePicturesComponent } from './vehicle-pictures/vehicle-pictures.component';
 
 
+
 const routes: Routes = [
   { path: '', component: UserSiteComponent },
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'vehiclePictures', component: VehiclePicturesComponent },
   { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
   { path: 'vehicles', loadChildren: () => import('./vehicles/vehicles.module').then(m => m.VehiclesModule) },
+  { path: 'favorites', loadChildren: () => import('./favorites/favorites.module').then(m => m.FavoritesModule) },
 ];
 
 @NgModule({

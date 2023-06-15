@@ -14,11 +14,17 @@ export class UsersComponent implements OnInit {
   constructor(private us: UserService, private location:Location) {}
 
   ngOnInit() {
-    this.us.getAllUsers().subscribe((response) => {
-      this.userList = response;
-    });
+    this.getUsers()
   }
   goBack(){
     this.location.back();
+  }
+
+  async getUsers(){
+    await this.us.getAllUsers().subscribe((response) => {
+      this.userList = response;
+      this.userList =  this.userList.filter( x => x.rol.name != 'SuperAdministrador')
+    });
+
   }
 }

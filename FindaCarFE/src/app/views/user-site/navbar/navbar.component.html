@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar-brand" routerLink="/">FindaCar</div>
+  <div class="navbar-toggle" (click)="toggleNavbar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navbar-menu" [ngClass]="{'navbar-menu-active': isNavbarOpen}">
+    <li class="nav-item">
+      <a routerLink="/" routerLinkActive="active" (click)="closeNavbar()">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="post" routerLinkActive="active" (click)="closeNavbar()">Publicaciones</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="vehiclePictures" routerLinkActive="active" (click)="closeNavbar()">Fotos de Vehículos</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="chat" routerLinkActive="active" (click)="closeNavbar()">Chat</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="vehicles" routerLinkActive="active" (click)="closeNavbar()">Vehículos</a>
+    </li>
+  </ul>
+</nav>

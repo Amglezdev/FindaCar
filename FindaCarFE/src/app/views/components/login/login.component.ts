@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/user.service';
-//import bcrypt from 'bcryptjs';
 import { take, map } from 'rxjs';
 import * as $ from 'jquery';
 import { CookieService } from 'ngx-cookie-service';
@@ -66,13 +65,13 @@ export class LoginComponent implements OnInit {
             buffer.user = await resp.json();
             if ((await buffer.user) != null) {
               buffer.cookieService.set('userData', JSON.stringify(buffer.user));
-              if (buffer.user.rol.name == 'Administrador') {
+              if (buffer.user.rol.name == 'Administrador' || buffer.user.rol.name == 'SuperAdministrador') {
                 buffer.router.navigate(['/administration']);
               } else {
                 buffer.router.navigate(['/userSite']);
               }
             } else {
-              console.log('Usuario no existente');
+
             }
           });
       } catch (error) {
@@ -81,10 +80,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // async encryptPassword(password: string): Promise<string> {
-  //   const saltRounds = 10; // Número de rondas de sal
-  //   const salt = await bcrypt.genSalt(saltRounds);
-  //   const hash = await bcrypt.hash(password, salt);
-  //   return hash;
-  // }
 }

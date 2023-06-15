@@ -30,9 +30,7 @@ export class DeleteVehicleComponent implements OnInit {
     const userDataString = this.cookieService.get('userData');
     const userData = JSON.parse(userDataString);
     this.user = userData;
-    this.vs.findById(Number(this.id)).subscribe((resp) =>{
-      this.vehicle = resp;
-    })
+    this.getVehicleId();
   }
 
   goBack() {
@@ -41,6 +39,11 @@ export class DeleteVehicleComponent implements OnInit {
 
   async deleteVehicle() {
     await this.vs.deleteVehicle(this.vehicle);
-    this.goBack();
+    this.router.navigate(['/vehicles'])
+  }
+  async getVehicleId(){
+    await this.vs.findById(Number(this.id)).subscribe((resp) =>{
+      this.vehicle = resp;
+    })
   }
 }

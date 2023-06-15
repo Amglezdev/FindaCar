@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { get } from 'jquery';
 import { User } from 'src/app/entities/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -17,27 +18,29 @@ export class ConfirmDeleteComponent implements OnInit {
     private us: UserService,
     private arm: ActivatedRoute,
     private location: Location,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.id = this.arm.snapshot.paramMap.get('id');
-    this.us.getUserById(Number(this.id)).subscribe((resp) => {
-      this.user = resp;
-    });
+    this.getUserById(this.id);
   }
 
   deleteUser() {
     try {
       this.us.deleteUser(this.user);
-      this.router.navigate['/administration']
+      this.router.navigate(['/administration/users']);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-
   }
 
   goBack() {
     this.location.back();
+  }
+  async getUserById(id: string) {
+    await this.us.getUserById(Number(id)).subscribe((resp) => {
+      this.user = resp;
+    });
   }
 }

@@ -7,6 +7,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeletePostComponent } from './delete-post/delete-post.component';
+import { UserSiteModule } from '../user-site.module';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 
@@ -21,7 +23,8 @@ import { DeletePostComponent } from './delete-post/delete-post.component';
     CommonModule,
     PostRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    UserSiteModule,
   ]
 })
 export class PostModule { }

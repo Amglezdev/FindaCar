@@ -39,18 +39,23 @@ export class ConversationService {
     }
   }
 
-  async findBySenderAndReciever(sender: User, reciever: User) {
+  findBySenderAndReciever(
+    sender: User,
+    reciever: User
+  ): Observable<Conversation> {
     try {
-      this.httpClient.get<Conversation>(
+      return this.httpClient.get<Conversation>(
         this.apiUrl +
           `findConversationByUserAndReciever?senderId=${sender.id}&receiverId=${reciever.id}`
       );
-    } catch (error) {}
+    } catch (error) {
+      return null;
+    }
   }
 
   findByUser(user: User): Observable<Conversation[]> {
     try {
-      return this.httpClient.get<Conversation[]>(
+      return this.httpClient.get<Conversation[]>( this.apiUrl +
         `getConversationForUser?id=${user.id}`
       );
     } catch (error) {

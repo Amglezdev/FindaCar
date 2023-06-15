@@ -82,6 +82,14 @@ public class Vehicle {
 	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Post> posts;
+	
+	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<VehiclePictures> pictures;
+	
+	@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<UserFavorites> favorites;
 
 	/**
 	 * Gets the md uuid.

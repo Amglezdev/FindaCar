@@ -47,27 +47,20 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  signUp() {
+  async signUp() {
     try {
       if (this.signUpForm.valid) {
         this.user = this.signUpForm.value;
-        this.us.createUser(this.user);
+        if ((await this.us.createUser(this.user)) == true) {
+          this.router.navigate(['/login']);
+        }
       } else {
         console.log('No se ha creado');
       }
-      this.router.navigate['/login'];
     } catch (error) {}
   }
 
   goBack() {
     this.location.back();
   }
-
-  // //Encriptador para contraseñas
-  // async encryptPassword(password: string): Promise<string> {
-  //   const saltRounds = 10; // Número de rondas de sal
-  //   const salt = await bcrypt.genSalt(saltRounds);
-  //   const hash = await bcrypt.hash(password, salt);
-  //   return hash;
-  // }
 }

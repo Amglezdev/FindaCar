@@ -17,6 +17,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from './services/role.service';
 import { PasswordRecoveryComponent } from './views/components/password-recovery/password-recovery.component';
 import { VehiclePicturesComponent } from './views/user-site/vehicle-pictures/vehicle-pictures.component';
+import { NavbarComponent } from './views/user-site/navbar/navbar.component';
 
 @NgModule({
   declarations: [

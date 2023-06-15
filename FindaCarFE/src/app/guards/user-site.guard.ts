@@ -14,6 +14,7 @@ export class UserSiteGuard implements CanActivate {
     if (userData && userData.rol && userData.rol.name) {
       switch (userData.rol.name) {
         case 'Administrador':
+        case'SuperAdministrador':
         case 'Usuario':
           return true; // Permite el acceso para los roles de Administrador y Usuario
         default:

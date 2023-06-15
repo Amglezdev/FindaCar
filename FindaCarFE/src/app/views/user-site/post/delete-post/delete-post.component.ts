@@ -32,8 +32,8 @@ export class DeletePostComponent implements OnInit {
     private cookieService: CookieService,
     private arm: ActivatedRoute,
     private pos: PostService,
-    private router:Router,
-    private location:Location
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -49,10 +49,11 @@ export class DeletePostComponent implements OnInit {
     });
   }
 
-  deletePost(){
+  deletePost() {
     this.pos.deletePost(this.post);
+    this.router.navigate(['/userSite/post']);
   }
-  goBack(){
-    this.location.back()
+  goBack() {
+    this.location.back();
   }
 }

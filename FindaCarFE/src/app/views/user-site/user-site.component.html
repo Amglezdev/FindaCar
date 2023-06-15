@@ -1,36 +1,50 @@
 <div class="background-image">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">FindaCar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="btn btn-dark" *ngIf="user.rol.name === 'Administrador'" routerLink="/administration">Administración</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-dark" routerLink="userSite/vehicle">Vehículos</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-dark" (click)="logOut()">Cerrar sesión</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<app-navbar></app-navbar>
   <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 56px);">
-    <div class="card">
-      <div class="card-header">
-        <h2>Bienvenido a FindaCar</h2>
-      </div>
-      <div class="card-body">
-        <p>¡Hola, {{user.name}}!</p>
-        <div class="d-grid gap-3">
-          <a class="btn btn-primary" routerLink="post">Ver Posts</a>
-          <a class="btn btn-primary" routerLink="vehicles">Gestionar vehiculos</a>
-          <a class="btn btn-primary" routerLink="vehiclePictures">Añadir Fotos</a>
-          <a class="btn btn-primary" routerLink="chat">Ir al chat</a>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-header">
+          <h2>Bienvenido a FindaCar</h2>
+        </div>
+        <div class="card-body">
+          <p>¡Hola, {{user.name}}!</p>
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <a class="btn btn-primary btn-lg btn-block" routerLink="post">Ver Posts</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <a class="btn btn-primary btn-lg btn-block" routerLink="vehicles">Gestionar vehículos</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <a class="btn btn-primary btn-lg btn-block" routerLink="vehiclePictures">Añadir Fotos</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <a class="btn btn-primary btn-lg btn-block" routerLink="chat">Chat</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <a class="btn btn-primary btn-lg btn-block" routerLink="favorites">Favoritos</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
