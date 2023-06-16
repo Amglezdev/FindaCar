@@ -27,7 +27,7 @@ export class CreatePostComponent implements OnInit {
     private location: Location,
     private formBuilder: FormBuilder,
     private cookieService: CookieService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -62,18 +62,16 @@ export class CreatePostComponent implements OnInit {
     };
 
     const id = this.vehicleForm.get('vehicle').value;
-    console.log(Number(id));
-
     this.post = {
       id: 0,
       comment: this.vehicleForm.get('comment').value,
       vehicle: this.vehicleForm.get('vehicle').value,
     };
-    await this.pos.createPost(this.post).then(this.router.navigate['/']);
-
+    await this.pos.createPost(this.post);
+    this.router.navigate(['/userSite/post']);
   }
 
-  goBack(){
-    this.location.back()
+  goBack() {
+    this.location.back();
   }
 }

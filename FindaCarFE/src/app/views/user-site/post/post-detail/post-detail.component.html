@@ -1,32 +1,30 @@
-<div>
-  <app-navbar></app-navbar>
-
-  <div class="container">
-
-    <h2>Detalles del Post</h2>
-    <div class="background-image">
-    </div>
-    <div class="card mb-4">
-      <div class="vehicle-slideshow swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" *ngFor="let image of listPictures">
-            <img class="vehicle-image mt-5" [src]="image.image" alt="Vehicle Image">
-          </div>
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Detalles del Post</h2>
+  <div class="background-image"></div>
+  <div class="card mb-4">
+    <div class="vehicle-slideshow swiper-container" #swiperContainer>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of listPictures">
+          <img class="vehicle-image mt-5" [src]="image.image" alt="Vehicle Image">
         </div>
-        <div class="swiper-pagination"></div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">{{ post.vehicle.brand }} {{ post.vehicle.model }}</h5>
-        <p class="card-text">Potencia: {{ post.vehicle.power }} CV</p>
-        <p class="card-text">Kilometraje: {{ post.vehicle.mileage }} KM</p>
-        <p class="card-text">Tipo de Vehículo: {{ post.vehicle.type.name }}</p>
-        <p class="card-text">Fecha de Matriculación: {{ post.vehicle.age | date }}</p>
-        <p class="card-text">Dueño: {{ post.vehicle.owner.name }} {{ post.vehicle.owner.surname }}</p>
-        <p class="card-text">Combustible: {{ post.vehicle.fuel.name }}</p>
-        <p class="card-text">Precio: {{ post.vehicle.price }} €</p>
-        <p class="card-text">Comentario: {{ post.comment }}</p>
-      </div>
-      <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.vehicle.brand }} {{ post.vehicle.model }}</h5>
+      <p class="card-text">Potencia: {{ post.vehicle.power }} CV</p>
+      <p class="card-text">Kilometraje: {{ post.vehicle.mileage }} KM</p>
+      <p class="card-text">Tipo de Vehículo: {{ post.vehicle.type.name }}</p>
+      <p class="card-text">Fecha de Matriculación: {{ post.vehicle.age | date }}</p>
+      <p class="card-text">Dueño: {{ post.vehicle.owner.name }} {{ post.vehicle.owner.surname }}</p>
+      <p class="card-text">Combustible: {{ post.vehicle.fuel.name }}</p>
+      <p class="card-text">Precio: {{ post.vehicle.price }} €</p>
+      <p class="card-text">Comentario: {{ post.comment }}</p>
+    </div>
+    <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
+    <button class="btn btn-primary" (click)="saveFavorite()">Guardar como favorito</button>
   </div>
 </div>

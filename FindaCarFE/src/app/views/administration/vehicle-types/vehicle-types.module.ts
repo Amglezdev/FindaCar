@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { VehicleTypesRoutingModule } from './vehicle-types-routing.module';
 import { VehicleTypesComponent } from './vehicle-types.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserSiteModule } from '../../user-site/user-site.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     VehicleTypesRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserSiteModule
   ]
 })
 export class VehicleTypesModule { }

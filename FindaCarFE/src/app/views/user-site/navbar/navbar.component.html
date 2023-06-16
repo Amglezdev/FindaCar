@@ -10,16 +10,27 @@
       <a routerLink="/" routerLinkActive="active" (click)="closeNavbar()">Inicio</a>
     </li>
     <li class="nav-item">
-      <a routerLink="post" routerLinkActive="active" (click)="closeNavbar()">Publicaciones</a>
+      <a routerLink="/administration" routerLinkActive="active"
+        *ngIf="user.rol.name.toLowerCase() === 'administrador' || user.rol.name.toLowerCase() === 'superadministrador' "
+        routerLink="/administration">Administración</a>
     </li>
     <li class="nav-item">
-      <a routerLink="vehiclePictures" routerLinkActive="active" (click)="closeNavbar()">Fotos de Vehículos</a>
+      <a routerLink="/userSite/post" routerLinkActive="active" (click)="closeNavbar()">Publicaciones</a>
     </li>
     <li class="nav-item">
-      <a routerLink="chat" routerLinkActive="active" (click)="closeNavbar()">Chat</a>
+      <a routerLink="/userSite/vehiclePictures" routerLinkActive="active" (click)="closeNavbar()">Fotos de Vehículos</a>
     </li>
     <li class="nav-item">
-      <a routerLink="vehicles" routerLinkActive="active" (click)="closeNavbar()">Vehículos</a>
+      <a routerLink="/userSite/chat" routerLinkActive="active" (click)="closeNavbar()">Chat</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/userSite/vehicles" routerLinkActive="active" (click)="closeNavbar()">Gestionar vehículos</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/userSite/favorites" routerLinkActive="active" (click)="closeNavbar()">Favoritos</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/login" routerLinkActive="active" (click)="signOff()">Cerrar Sesion</a>
     </li>
   </ul>
 </nav>

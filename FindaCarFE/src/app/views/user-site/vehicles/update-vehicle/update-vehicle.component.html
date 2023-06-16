@@ -1,1 +1,49 @@
 <app-navbar></app-navbar>
+<div class="container">
+  <div class="background-image"></div>
+  <div class="content">
+    <div class="container">
+      <h2>Editar Vehículo</h2>
+      <form (ngSubmit)="updateVehicle()" #vehicleForm="ngForm">
+        <div class="mb-3">
+          <label for="brand" class="form-label">Marca:</label>
+          <input type="text" class="form-control" id="brand" name="brand" [(ngModel)]="vehicle.brand" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="model" class="form-label">Modelo:</label>
+          <input type="text" class="form-control" id="model" name="model" [(ngModel)]="vehicle.model" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="power" class="form-label">Potencia:</label>
+          <input type="number" class="form-control" id="power" name="power" [(ngModel)]="vehicle.power">
+        </div>
+        <div class="mb-3">
+          <label for="mileage" class="form-label">Kilometraje:</label>
+          <input type="number" class="form-control" id="mileage" name="mileage" [(ngModel)]="vehicle.mileage">
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Tipo de vehículo:</label>
+          <select class="form-control" id="type" name="type" [(ngModel)]="vehicle.type">
+            <option *ngFor="let type of listType" [ngValue]="type">{{ type.name }}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="fuel" class="form-label">Tipo de combustible:</label>
+          <select class="form-control" id="fuel" name="fuel" [(ngModel)]="vehicle.fuel">
+            <option *ngFor="let fuel of listFuel" [ngValue]="fuel">{{ fuel.name }}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Fecha de matriculación:</label>
+          <input type="date" class="form-control" id="age" name="age" [(ngModel)]="vehicle.age">
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Precio:</label>
+          <input type="number" class="form-control" id="price" name="price" [(ngModel)]="vehicle.price">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+      <button class="btn btn-danger" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+</div>

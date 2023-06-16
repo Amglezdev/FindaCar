@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="navbar-brand" routerLink="/">FindaCar</div>
+  <div class="navbar-toggle" (click)="toggleNavbar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navbar-menu" [ngClass]="{'navbar-menu-active': isNavbarOpen}">
+    <li class="nav-item">
+      <a routerLink="/" routerLinkActive="active" (click)="closeNavbar()">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="userSite" routerLinkActive="active" (click)="closeNavbar()">Vista de usuario</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="users" routerLinkActive="active"  *ngIf="user.rol.name.toLowerCase() === 'administrador' || user.rol.name.toLowerCase() === 'superadministrador' " routerLink="/administration">Administrar usuarios</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="vehicleTypes" routerLinkActive="active" (click)="closeNavbar()">Tipos de vehiculo</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="fuel" routerLinkActive="active" (click)="closeNavbar()">Tipos de combustible</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="post" routerLinkActive="active" (click)="closeNavbar()">Gestionar publicaciones</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/login" routerLinkActive="active" (click)="signOff()">Cerrar Sesion</a>
+    </li>
+  </ul>
+</nav>

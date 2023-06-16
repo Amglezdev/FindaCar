@@ -1,18 +1,32 @@
-.background-image {
-  position: relative;
-  overflow: hidden;
+app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-.background-image::before {
-  content: '';
-  background-image: url('../../../../../assets/Fondo.jpg');
-  background-size: cover;
-  background-position: center;
-  position: absolute;
+.container {
+  margin-top: 60px; /* Ajusta este valor para dejar espacio debajo del navbar */
+}
+
+.container::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(8px);
   z-index: -1;
+  background-image: url('../../../../../assets/Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

@@ -39,7 +39,7 @@ export class DeleteVehicleComponent implements OnInit {
 
   async deleteVehicle() {
     await this.vs.deleteVehicle(this.vehicle);
-    this.router.navigate(['/vehicles'])
+    this.router.navigate(['userSite/vehicles'])
   }
   async getVehicleId(){
     await this.vs.findById(Number(this.id)).subscribe((resp) =>{

@@ -37,8 +37,9 @@ export class EditUserComponent implements OnInit {
   async getRoles() {
     try {
       await this.rs.getAllRoles().subscribe((resp) => {
-        this.roles = resp;
+        this.roles = resp.filter(x => x.name != 'SuperAdministrador');
       });
+      this.roles
     } catch (error) {
       return null;
     }

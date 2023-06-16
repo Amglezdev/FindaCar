@@ -14,12 +14,12 @@
             <p class="card-text">{{ post.comment }}</p>
             <div class="d-flex justify-content-between">
               <a *ngIf="user.id === post.vehicle.owner.id" class="btn btn-danger ml-2" [routerLink]="['deletePost/' + post.id]">Eliminar</a>
-              <a [routerLink]="['detailPost', post.id]" class="btn btn-primary">Ver detalles</a>
+              <a [routerLink]="['detailPost', post.id]" class="btn btn-primary mt-5">Ver detalles</a>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn btn-danger float-end" (click)="goBack()">Volver</button>
+      <button class="btn btn-danger mt-4" (click)="goBack()">Volver</button>
     </div>
   </div>
 </div>

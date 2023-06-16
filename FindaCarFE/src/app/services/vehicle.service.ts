@@ -50,7 +50,7 @@ export class VehicleService {
 
   async updateVehicle(vehicle:Vehicle) {
     try {
-      const response = await fetch(this.apiUrl + 'addVehicle', {
+      const response = await fetch(this.apiUrl + 'updateVehicle', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',

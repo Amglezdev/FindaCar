@@ -16,10 +16,9 @@ import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-create-vehicle',
   templateUrl: './create-vehicle.component.html',
-  styleUrls: ['./create-vehicle.component.css']
+  styleUrls: ['./create-vehicle.component.css'],
 })
-export class CreateVehicleComponent implements OnInit{
-
+export class CreateVehicleComponent implements OnInit {
   vehicleForm: FormGroup;
   listType: VehicleType[];
   listFuel: Fuel[];
@@ -37,7 +36,7 @@ export class CreateVehicleComponent implements OnInit{
     private location: Location,
     private cookieService: CookieService,
     private vp: VehiclePicturesService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -104,26 +103,24 @@ export class CreateVehicleComponent implements OnInit{
 
         this.vehicle = vehicleData;
         this.selectedFuel = {
-          name : vehicleData.fuel
-        }
+          name: vehicleData.fuel,
+        };
         this.selectedType = {
-          name : vehicleData.type
-        }
+          name: vehicleData.type,
+        };
 
         this.vehicle.type = this.selectedType;
-        this.vehicle.fuel = this.selectedFuel
+        this.vehicle.fuel = this.selectedFuel;
 
-        if(await this.vs.createVehicle(this.vehicle) === true){
-          this.router.navigate(['/vehicles'])
-        }
-
-
+        await this.vs.createVehicle(this.vehicle);
+        this.router.navigate(['userSite/vehicles']);
       }
-    } catch (error) { console.log(error)}
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   goBack() {
     this.location.back();
   }
-
 }

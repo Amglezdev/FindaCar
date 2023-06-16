@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { DetailUserComponent } from './detail-user/detail-user.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { AdministrationModule } from '../administration.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.componen
     CommonModule,
     UsersRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AdministrationModule
   ],
   providers:[UserService]
 })

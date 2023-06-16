@@ -66,10 +66,8 @@ async submitForm() {
     image: this.imageForm.get('imageUrl').value,
     vehicle: this.selectedVehicle,
   };
-  console.log(this.picture)
-  if(await this.vp.addPicture(this.picture)){
-    this.router.navigate(['/vehiclePictures'])
-  };
+  await this.vp.addPicture(this.picture)
+    this.router.navigate(['/userSite/post'])
 }
 goBack(){
   this.location.back()
