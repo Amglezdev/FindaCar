@@ -28,6 +28,7 @@ import com.FindaCar.FindaCarApi.entities.UserFavorites;
 import com.FindaCar.FindaCarApi.entities.Vehicle;
 import com.FindaCar.FindaCarApi.entities.VehiclePictures;
 import com.FindaCar.FindaCarApi.entities.VehicleType;
+import com.FindaCar.FindaCarApi.services.ConversationServiceImpl;
 import com.FindaCar.FindaCarApi.services.FuelServiceImpl;
 import com.FindaCar.FindaCarApi.services.RoleServiceImpl;
 import com.FindaCar.FindaCarApi.services.UserServiceImpl;
@@ -50,6 +51,8 @@ public class DtoToImpl implements DtoToService {
 	VehicleTypeServiceImpl vtService;
 	@Autowired
 	FuelServiceImpl fService;
+	@Autowired
+	ConversationServiceImpl converService;
 
 	@Override
 	public User userToDao(UserDto dto) {
@@ -112,14 +115,14 @@ public class DtoToImpl implements DtoToService {
 	public Messages messageToDao(MessagesDto dto) {
 		// TODO Auto-generated method stub
 		Messages dao = new Messages();
-
-		dao.setId(dto.getId());
+		
 		dao.setMdDate(calendar);
 		dao.setMdUuid(mdUuid);
 		dao.setContent(dto.getContent());
-			
+		dao.setConversation(converService.findById(dto.getConversation().getId()));
+		
+		System.out.println(dao.toString());
 	
-
 		return dao;
 	}
 
@@ -165,10 +168,10 @@ public class DtoToImpl implements DtoToService {
 		uf.setId(dto.getId());
 		uf.setMdDate(calendar);
 		uf.setMdUuid(mdUuid);
-		uf.setUser(userService.findById(dto.getId()));
+		uf.setUser(userService.findById(dto.getUser().getId()));
 		uf.setVehicle(vehicleService.findById(dto.getVehicle().getId()));	
 
-		System.out.println(uf.getUser().toString());
+		System.out.println(uf.toString());
 		
 		return uf;
 	}

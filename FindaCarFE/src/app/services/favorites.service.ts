@@ -11,7 +11,7 @@ export class FavoritesService {
 
   constructor(private http: HttpClient) {}
 
-  getUserById(id: number): Observable<Favorites[]> {
+   getUserById(id: number): Observable<Favorites[]> {
     try {
       return this.http.get<Favorites[]>(`${this.apiUrl}getByUserId?id=${id}`);
     } catch {
@@ -46,11 +46,39 @@ export class FavoritesService {
     }
   }
 
-  async deleteFromFavorites(id: number) {
+  async deleteFromFavorites(favorite:Favorites) {
     try {
-      return this.http.delete(`${this.apiUrl}deleteFromFavorites?id=${id}`);
+      const response = await fetch(this.apiUrl + 'deleteFromFavorites', {
+        method: 'DELETE',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(favorite),
+      });
+      if (response.ok) {
+        // Registro exitoso
+        return true;
+      } else {
+        // Error al realizar el registro
+        return false;
+      }
     } catch (error) {
+      // Error en la solicitud
+      return false;
+    }
+  }
+  findById(id: number): Observable<Favorites> {
+    try {
+      return this.http.get<Favorites>(`${this.apiUrl}findById?id=${id}`);
+    } catch {
       return null;
     }
   }
+
+
 }

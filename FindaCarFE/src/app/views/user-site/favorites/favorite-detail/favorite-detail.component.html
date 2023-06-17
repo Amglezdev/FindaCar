@@ -1,1 +1,48 @@
 <app-navbar></app-navbar>
+<div class="background-image">
+  <div class="container">
+    <div class="content">
+      <h2>{{favorite.vehicle.brand}} {{favorite.vehicle.model}} de {{favorite.vehicle.owner.name}} {{favorite.vehicle.owner.surname}} </h2>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Potencia:</label>
+          <p>{{ favorite.vehicle.power }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Kilometraje:</label>
+          <p>{{ favorite.vehicle.mileage }}</p>
+        </div>
+        <div class="col-md-6">
+          <label>Tipo:</label>
+          <p>{{ favorite.vehicle.type.name }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Edad:</label>
+          <p>{{ favorite.vehicle.age | date }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Combustible:</label>
+          <p>{{ favorite.vehicle.fuel.name }}</p>
+        </div>
+        <div class="col-md-6">
+          <label>Precio:</label>
+          <p>{{ favorite.vehicle.price }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-danger" (click)="deleteFavorite()">Eliminar</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary" (click)="goBack()">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

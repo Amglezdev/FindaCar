@@ -49,12 +49,9 @@ export class ChatComponent implements OnInit {
       sender: this.user,
       reciever: reciever,
     };
-    this.cs.createConversation(this.conversation);
-    this.cs.findBySenderAndReciever(this.user, reciever).subscribe((resp) => {
-      this.newConversation = resp;
-      console.log(resp)
-      this.router.navigate(['/chatWindow/' + this.newConversation.id])
-    });
+
+    await this.cs.createConversation(this.conversation);
+    await this.getAllConversations();
   }
 
   filter() {

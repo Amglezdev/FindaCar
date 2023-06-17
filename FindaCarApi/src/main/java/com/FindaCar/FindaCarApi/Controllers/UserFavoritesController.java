@@ -20,7 +20,7 @@ import com.FindaCar.FindaCarApi.util.Logger;
 
 @RestController
 @RequestMapping("/userFavorites")
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" ,"http://localhost:80"})
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080", "http://localhost:80" })
 public class UserFavoritesController {
 
 	@Autowired
@@ -40,6 +40,7 @@ public class UserFavoritesController {
 			return toDto.listUserFavoritesToDto(ufService.findByUserId(id));
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e.getMessage());
 			Logger.log("Error in /userFavorites/getByUserId");
 			return null;
 		}
@@ -54,6 +55,7 @@ public class UserFavoritesController {
 		} catch (Exception e) {
 			// TODO: handle exception
 			Logger.log("Error in /userFavorites/addFavorites");
+
 			return false;
 		}
 	}
@@ -66,8 +68,19 @@ public class UserFavoritesController {
 			return ufService.removeFromFavorites(dtoTo.userFavoritesToDao(dto));
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e.getMessage());
 			Logger.log("Error in /userFavorites/deleteFromFavorites");
 			return false;
+		}
+	}
+	
+	@GetMapping("/findById")
+	public UserFavoritesDto findById(@Param(value = "id") long id) {
+		try {
+			return toDto.userFavoritesToDto(ufService.findById(id));
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
 		}
 	}
 

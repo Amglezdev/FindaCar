@@ -116,7 +116,6 @@ export class CreateVehicleComponent implements OnInit {
         this.router.navigate(['userSite/vehicles']);
       }
     } catch (error) {
-      console.log(error);
     }
   }
 

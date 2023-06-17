@@ -26,7 +26,6 @@ export class FavoritesComponent implements OnInit{
   async getFavoritesByUser(){
     await this.fs.getUserById(this.user.id).subscribe((resp) =>{
       this.favoriteList = resp;
-      console.log(resp)
     })
   }
 

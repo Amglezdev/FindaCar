@@ -20,6 +20,7 @@ public class UserFavoritesServiceImpl implements UserFavoritesService {
 			return (ArrayList<UserFavorites>) ufService.findByUserId(id);
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e.getMessage());
 			return null;
 		}
 	}
@@ -30,7 +31,7 @@ public class UserFavoritesServiceImpl implements UserFavoritesService {
 			ufService.save(uf);
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 			return false;
 		}
 	}
@@ -45,5 +46,17 @@ public class UserFavoritesServiceImpl implements UserFavoritesService {
 			return false;
 		}
 	}
+
+	@Override
+	public UserFavorites findById(Long id) {
+		try {
+			return ufService.findById(id).orElse(null);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+	}
+	
+	
 
 }

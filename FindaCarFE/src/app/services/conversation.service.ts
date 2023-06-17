@@ -65,7 +65,7 @@ export class ConversationService {
 
   findById(id:number){
     try {
-      return this.httpClient.get<Conversation>(this.apiUrl + `findById?id=${id}`)
+      return this.httpClient.get<Conversation>(this.apiUrl + `getById?id=${id}`)
     } catch (error) {
       return null;
     }

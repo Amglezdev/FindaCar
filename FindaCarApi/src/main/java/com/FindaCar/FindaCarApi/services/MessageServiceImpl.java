@@ -15,8 +15,6 @@ public class MessageServiceImpl implements MessageService {
 	@Autowired
 	MessageRepository mRepo;
 
-
-
 	@Override
 	public boolean sendMessage(Messages message) {
 		try {
@@ -28,23 +26,15 @@ public class MessageServiceImpl implements MessageService {
 		}
 	}
 
-
-
 	@Override
 	public ArrayList<Messages> findByConversation(Conversation conversation) {
 		try {
-			return (ArrayList<Messages>)mRepo.findByConversation(conversation);
+			return (ArrayList<Messages>) mRepo.findByConversation(conversation);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
 		}
 
 	}
-
-
-
-
-
-	
 
 }

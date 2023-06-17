@@ -2,6 +2,7 @@ package com.FindaCar.FindaCarApi.entities;
 
 import java.util.Calendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,9 +39,16 @@ public class Messages {
 	private String content;
 	
 	/** The conversation. */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "conversacion")
 	private Conversation conversation;
+
+	
+	@Override
+	public String toString() {
+		return "Messages [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", content=" + content
+				+ ", conversation=" + conversation + "]";
+	}
 
 	/**
 	 * Gets the content.

@@ -1,6 +1,7 @@
 package com.FindaCar.FindaCarApi.entities;
 
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -42,6 +46,10 @@ public class Conversation {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "destinatario")
 	private User reciever;
+	
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "conversation")
+//	@JsonIgnore
+//	private List<Messages> messages;
 
 	
 	/**

@@ -92,7 +92,6 @@ export class PostDetailComponent implements OnInit, AfterViewInit {
       user: this.user,
       vehicle: this.post.vehicle,
     }
-    console.log(this.favorites)
     await this.fav.addFavorites(this.favorites);
   }
 }

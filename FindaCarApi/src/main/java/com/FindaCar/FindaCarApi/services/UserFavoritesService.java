@@ -9,7 +9,7 @@ import com.FindaCar.FindaCarApi.entities.UserFavorites;
  * The Interface UserFavoritesService.
  */
 public interface UserFavoritesService {
-	
+
 	/**
 	 * Find by user id.
 	 *
@@ -17,7 +17,7 @@ public interface UserFavoritesService {
 	 * @return the array list
 	 */
 	public ArrayList<UserFavorites> findByUserId(long id);
-	
+
 	/**
 	 * Adds the favorite.
 	 *
@@ -25,7 +25,7 @@ public interface UserFavoritesService {
 	 * @return true, if successful
 	 */
 	public boolean addFavorite(UserFavorites uf);
-	
+
 	/**
 	 * Removes the from favorites.
 	 *
@@ -33,7 +33,13 @@ public interface UserFavoritesService {
 	 * @return true, if successful
 	 */
 	public boolean removeFromFavorites(UserFavorites uf);
-	
-	
+
+	/**
+	 * Find by id.
+	 *
+	 * @param id the id
+	 * @return the user favorites
+	 */
+	public UserFavorites findById(Long id);
 
 }

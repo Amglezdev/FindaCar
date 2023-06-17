@@ -46,16 +46,15 @@ public class MessageController {
 			return false;
 		}
 	}
-	
+
 	@GetMapping("/getMessages")
-	public ArrayList<MessagesDto> findMessagesByConversation(@Param (value = "id")long id){
-		try {			
+	public ArrayList<MessagesDto> findMessagesByConversation(@Param(value = "id") long id) {
+		try {
 			return toDto.listMessagesToDto(msi.findByConversation(converService.findById(id)));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
 		}
 	}
-	
 
 }

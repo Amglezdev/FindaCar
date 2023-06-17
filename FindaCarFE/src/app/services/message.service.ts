@@ -42,9 +42,9 @@ export class MessageService {
     }
   }
 
-  findByConversationId(conversation:Conversation):Observable<Message[]>{
+  findByConversationId(id:number):Observable<Message[]>{
     try {
-      return this.http.get<Message[]>(`${this.apiUrl}getMessages?id=${conversation.id}`)
+      return this.http.get<Message[]>(`${this.apiUrl}getMessages?id=${id}`)
     } catch (error) {
       return null;
     }

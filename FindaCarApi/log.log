@@ -1930,3 +1930,537 @@
 2023-06-17 18:50:51 - Returning all posts
 2023-06-17 18:50:52 - Entering endpoint /userFavorites/getByUserId
 2023-06-17 18:50:52 - Returning user favorite list
+2023-06-17 18:59:33 - Entering endpoint /users/addUser
+2023-06-17 18:59:33 - Returning user by mail and password
+2023-06-17 18:59:36 - Entering endpoint /users/addUser
+2023-06-17 18:59:36 - Returning user by mail and password
+2023-06-17 18:59:40 - Entering endpoint /post/findAll
+2023-06-17 18:59:40 - Returning all posts
+2023-06-17 18:59:41 - Entering endpoint /post/updatePost
+2023-06-17 18:59:41 - Returning post with id:34
+2023-06-17 18:59:41 - Entering endpoint /pictures/findAllById
+2023-06-17 18:59:41 - Returning pictures for vehicle id:15
+2023-06-17 18:59:42 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 18:59:42 - Adding to user favorite list
+2023-06-17 18:59:42 - Error in /userFavorites/addFavorites
+2023-06-17 18:59:48 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 18:59:48 - Adding to user favorite list
+2023-06-17 18:59:48 - Error in /userFavorites/addFavorites
+2023-06-17 19:00:18 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:00:18 - Adding to user favorite list
+2023-06-17 19:00:18 - Error in /userFavorites/addFavorites
+2023-06-17 19:00:56 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:00:56 - Adding to user favorite list
+2023-06-17 19:00:56 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:56 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:56 - Adding to user favorite list
+2023-06-17 19:05:56 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:57 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:57 - Adding to user favorite list
+2023-06-17 19:05:57 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:58 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:58 - Adding to user favorite list
+2023-06-17 19:05:58 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:58 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:58 - Adding to user favorite list
+2023-06-17 19:05:58 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:58 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:58 - Adding to user favorite list
+2023-06-17 19:05:58 - Error in /userFavorites/addFavorites
+2023-06-17 19:05:59 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:05:59 - Adding to user favorite list
+2023-06-17 19:05:59 - Error in /userFavorites/addFavorites
+2023-06-17 19:06:00 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:06:00 - Adding to user favorite list
+2023-06-17 19:06:00 - Error in /userFavorites/addFavorites
+2023-06-17 19:07:03 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:07:03 - Adding to user favorite list
+2023-06-17 19:07:03 - Error in /userFavorites/addFavorites
+2023-06-17 19:07:45 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:07:45 - Adding to user favorite list
+2023-06-17 19:07:45 - Error in /userFavorites/addFavorites
+2023-06-17 19:07:46 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:07:46 - Adding to user favorite list
+2023-06-17 19:07:46 - Error in /userFavorites/addFavorites
+2023-06-17 19:08:00 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:08:00 - Adding to user favorite list
+2023-06-17 19:08:00 - Error in /userFavorites/addFavorites
+2023-06-17 19:08:00 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:08:00 - Adding to user favorite list
+2023-06-17 19:08:00 - Error in /userFavorites/addFavorites
+2023-06-17 19:08:01 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:08:01 - Adding to user favorite list
+2023-06-17 19:08:01 - Error in /userFavorites/addFavorites
+2023-06-17 19:08:41 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:08:41 - Adding to user favorite list
+2023-06-17 19:08:41 - Error in /userFavorites/addFavorites
+2023-06-17 19:10:27 - Entering endpoint /post/findAll
+2023-06-17 19:10:27 - Returning all posts
+2023-06-17 19:10:29 - Entering endpoint /post/updatePost
+2023-06-17 19:10:29 - Returning post with id:34
+2023-06-17 19:10:29 - Entering endpoint /pictures/findAllById
+2023-06-17 19:10:29 - Returning pictures for vehicle id:15
+2023-06-17 19:10:45 - Entering endpoint /post/updatePost
+2023-06-17 19:10:45 - Returning post with id:34
+2023-06-17 19:10:45 - Entering endpoint /pictures/findAllById
+2023-06-17 19:10:45 - Returning pictures for vehicle id:15
+2023-06-17 19:10:52 - Entering endpoint /post/updatePost
+2023-06-17 19:10:52 - Returning post with id:34
+2023-06-17 19:10:52 - Entering endpoint /pictures/findAllById
+2023-06-17 19:10:52 - Returning pictures for vehicle id:15
+2023-06-17 19:10:55 - Entering endpoint /post/updatePost
+2023-06-17 19:10:55 - Returning post with id:34
+2023-06-17 19:10:55 - Entering endpoint /pictures/findAllById
+2023-06-17 19:10:55 - Returning pictures for vehicle id:15
+2023-06-17 19:10:59 - Entering endpoint /post/updatePost
+2023-06-17 19:10:59 - Returning post with id:34
+2023-06-17 19:10:59 - Entering endpoint /pictures/findAllById
+2023-06-17 19:10:59 - Returning pictures for vehicle id:15
+2023-06-17 19:11:06 - Entering endpoint /post/updatePost
+2023-06-17 19:11:06 - Returning post with id:34
+2023-06-17 19:11:06 - Entering endpoint /pictures/findAllById
+2023-06-17 19:11:06 - Returning pictures for vehicle id:15
+2023-06-17 19:11:08 - Entering endpoint /post/updatePost
+2023-06-17 19:11:08 - Returning post with id:34
+2023-06-17 19:11:08 - Entering endpoint /pictures/findAllById
+2023-06-17 19:11:08 - Returning pictures for vehicle id:15
+2023-06-17 19:11:12 - Entering endpoint /fuels/getAll
+2023-06-17 19:11:12 - Returning all fuels
+2023-06-17 19:11:18 - Entering endpoint /post/findAll
+2023-06-17 19:11:18 - Returning all posts
+2023-06-17 19:11:19 - Entering endpoint /post/updatePost
+2023-06-17 19:11:19 - Returning post with id:34
+2023-06-17 19:11:19 - Entering endpoint /pictures/findAllById
+2023-06-17 19:11:19 - Returning pictures for vehicle id:15
+2023-06-17 19:11:20 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:11:20 - Adding to user favorite list
+2023-06-17 19:11:20 - Error in /userFavorites/addFavorites
+2023-06-17 19:12:07 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:12:07 - Adding to user favorite list
+2023-06-17 19:12:07 - Error in /userFavorites/addFavorites
+2023-06-17 19:18:46 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:18:46 - Adding to user favorite list
+2023-06-17 19:18:46 - Error in /userFavorites/addFavorites
+2023-06-17 19:19:26 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:19:26 - Adding to user favorite list
+2023-06-17 19:19:26 - Error in /userFavorites/addFavorites
+2023-06-17 19:22:50 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:22:50 - Adding to user favorite list
+2023-06-17 19:23:46 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:23:46 - Adding to user favorite list
+2023-06-17 19:23:51 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:23:51 - Adding to user favorite list
+2023-06-17 19:23:51 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:23:51 - Adding to user favorite list
+2023-06-17 19:23:51 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:23:51 - Adding to user favorite list
+2023-06-17 19:23:51 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:23:51 - Adding to user favorite list
+2023-06-17 19:24:09 - Entering endpoint /post/findAll
+2023-06-17 19:24:09 - Returning all posts
+2023-06-17 19:24:10 - Entering endpoint /post/updatePost
+2023-06-17 19:24:10 - Returning post with id:34
+2023-06-17 19:24:10 - Entering endpoint /pictures/findAllById
+2023-06-17 19:24:10 - Returning pictures for vehicle id:15
+2023-06-17 19:24:31 - Entering endpoint /post/findAll
+2023-06-17 19:24:31 - Returning all posts
+2023-06-17 19:24:33 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:24:33 - Returning user favorite list
+2023-06-17 19:25:53 - Entering endpoint /post/findAll
+2023-06-17 19:25:53 - Returning all posts
+2023-06-17 19:25:53 - Entering endpoint /post/updatePost
+2023-06-17 19:25:53 - Returning post with id:34
+2023-06-17 19:25:53 - Entering endpoint /pictures/findAllById
+2023-06-17 19:25:53 - Returning pictures for vehicle id:15
+2023-06-17 19:25:55 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:25:55 - Adding to user favorite list
+2023-06-17 19:27:59 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:27:59 - Adding to user favorite list
+2023-06-17 19:28:06 - Entering endpoint /post/findAll
+2023-06-17 19:28:06 - Returning all posts
+2023-06-17 19:28:07 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:28:07 - Returning user favorite list
+2023-06-17 19:28:10 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:28:10 - Returning user favorite list
+2023-06-17 19:31:46 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:31:46 - Returning user favorite list
+2023-06-17 19:33:10 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:33:10 - Returning user favorite list
+2023-06-17 19:33:25 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:33:25 - Returning user favorite list
+2023-06-17 19:34:54 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:34:54 - Returning user favorite list
+2023-06-17 19:35:01 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:35:01 - Returning user favorite list
+2023-06-17 19:42:14 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:42:14 - Returning user favorite list
+2023-06-17 19:42:32 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:42:32 - Returning user favorite list
+2023-06-17 19:42:36 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:42:36 - Returning user favorite list
+2023-06-17 19:42:48 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:42:48 - Returning user favorite list
+2023-06-17 19:42:52 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:42:52 - Returning user favorite list
+2023-06-17 19:43:01 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:43:01 - Returning user favorite list
+2023-06-17 19:43:08 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:43:08 - Returning user favorite list
+2023-06-17 19:48:48 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:48:48 - Returning user favorite list
+2023-06-17 19:49:25 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:49:25 - Returning user favorite list
+2023-06-17 19:49:50 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:49:50 - Returning user favorite list
+2023-06-17 19:50:22 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:22 - Returning user favorite list
+2023-06-17 19:50:27 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:27 - Returning user favorite list
+2023-06-17 19:50:29 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:29 - Returning user favorite list
+2023-06-17 19:50:31 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:31 - Returning user favorite list
+2023-06-17 19:50:34 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:34 - Returning user favorite list
+2023-06-17 19:50:50 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:50:50 - Returning user favorite list
+2023-06-17 19:51:07 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:51:07 - Returning user favorite list
+2023-06-17 19:51:11 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:51:11 - Returning user favorite list
+2023-06-17 19:51:13 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:51:13 - Returning user favorite list
+2023-06-17 19:51:39 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:51:39 - Returning user favorite list
+2023-06-17 19:51:49 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:51:49 - Returning user favorite list
+2023-06-17 19:52:06 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:06 - Returning user favorite list
+2023-06-17 19:52:11 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:11 - Returning user favorite list
+2023-06-17 19:52:19 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:19 - Returning user favorite list
+2023-06-17 19:52:22 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:22 - Returning user favorite list
+2023-06-17 19:52:47 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:47 - Returning user favorite list
+2023-06-17 19:52:48 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:52:48 - Returning user favorite list
+2023-06-17 19:53:05 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:53:05 - Returning user favorite list
+2023-06-17 19:53:07 - Entering endpoint /userFavorites/deleteFromFavorites
+2023-06-17 19:53:07 - Deleting from user favorite list
+2023-06-17 19:53:07 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:53:07 - Returning user favorite list
+2023-06-17 19:53:09 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:53:09 - Returning user favorite list
+2023-06-17 19:53:12 - Entering endpoint /post/findAll
+2023-06-17 19:53:12 - Returning all posts
+2023-06-17 19:53:13 - Entering endpoint /post/updatePost
+2023-06-17 19:53:13 - Returning post with id:34
+2023-06-17 19:53:13 - Entering endpoint /pictures/findAllById
+2023-06-17 19:53:13 - Returning pictures for vehicle id:15
+2023-06-17 19:53:14 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:53:14 - Adding to user favorite list
+2023-06-17 19:53:14 - Entering endpoint /post/findAll
+2023-06-17 19:53:14 - Returning all posts
+2023-06-17 19:53:16 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:53:16 - Returning user favorite list
+2023-06-17 19:53:17 - Entering endpoint /userFavorites/deleteFromFavorites
+2023-06-17 19:53:17 - Deleting from user favorite list
+2023-06-17 19:53:17 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:53:17 - Returning user favorite list
+2023-06-17 19:55:08 - Entering endpoint /post/findAll
+2023-06-17 19:55:08 - Returning all posts
+2023-06-17 19:55:09 - Entering endpoint /post/updatePost
+2023-06-17 19:55:09 - Returning post with id:34
+2023-06-17 19:55:09 - Entering endpoint /pictures/findAllById
+2023-06-17 19:55:09 - Returning pictures for vehicle id:15
+2023-06-17 19:55:10 - Entering endpoint /userFavorites/addFavorites
+2023-06-17 19:55:10 - Adding to user favorite list
+2023-06-17 19:55:11 - Entering endpoint /post/findAll
+2023-06-17 19:55:11 - Returning all posts
+2023-06-17 19:55:12 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:55:12 - Returning user favorite list
+2023-06-17 19:55:26 - Entering endpoint /userFavorites/getByUserId
+2023-06-17 19:55:26 - Returning user favorite list
+2023-06-17 19:55:48 - Entering endpoint /users/getUsers
+2023-06-17 19:55:48 - Returning all users
+2023-06-17 20:01:06 - Entering endpoint /messages/sendMessage
+2023-06-17 20:01:06 - Creating message
+2023-06-17 20:01:58 - Entering endpoint /messages/sendMessage
+2023-06-17 20:01:58 - Creating message
+2023-06-17 20:03:17 - Entering endpoint /messages/sendMessage
+2023-06-17 20:03:17 - Creating message
+2023-06-17 20:03:55 - Entering endpoint /users/getUsers
+2023-06-17 20:03:55 - Returning all users
+2023-06-17 20:04:24 - Entering endpoint /users/getUsers
+2023-06-17 20:04:24 - Returning all users
+2023-06-17 20:05:59 - Entering endpoint /users/getUsers
+2023-06-17 20:05:59 - Returning all users
+2023-06-17 20:06:07 - Entering endpoint /messages/sendMessage
+2023-06-17 20:06:07 - Creating message
+2023-06-17 20:06:33 - Entering endpoint /messages/sendMessage
+2023-06-17 20:06:33 - Creating message
+2023-06-17 20:08:57 - Entering endpoint /messages/sendMessage
+2023-06-17 20:08:57 - Creating message
+2023-06-17 20:10:46 - Entering endpoint /messages/sendMessage
+2023-06-17 20:10:46 - Creating message
+2023-06-17 21:33:42 - Entering endpoint /messages/sendMessage
+2023-06-17 21:33:42 - Creating message
+2023-06-17 21:33:42 - Error in /messages/sendMessage
+2023-06-17 21:34:49 - Entering endpoint /messages/sendMessage
+2023-06-17 21:34:49 - Creating message
+2023-06-17 21:35:54 - Entering endpoint /messages/sendMessage
+2023-06-17 21:35:54 - Creating message
+2023-06-17 21:38:50 - Entering endpoint /messages/sendMessage
+2023-06-17 21:38:50 - Creating message
+2023-06-17 21:41:29 - Entering endpoint /messages/sendMessage
+2023-06-17 21:41:29 - Creating message
+2023-06-17 21:41:29 - Error in /messages/sendMessage
+2023-06-17 21:42:15 - Entering endpoint /messages/sendMessage
+2023-06-17 21:42:15 - Creating message
+2023-06-17 21:43:33 - Entering endpoint /messages/sendMessage
+2023-06-17 21:43:33 - Creating message
+2023-06-17 21:43:56 - Entering endpoint /messages/sendMessage
+2023-06-17 21:43:56 - Creating message
+2023-06-17 21:45:29 - Entering endpoint /users/getUsers
+2023-06-17 21:45:29 - Returning all users
+2023-06-17 21:46:08 - Entering endpoint /messages/sendMessage
+2023-06-17 21:46:08 - Creating message
+2023-06-17 21:46:49 - Entering endpoint /users/addUser
+2023-06-17 21:46:49 - Returning user by mail and password
+2023-06-17 21:46:53 - Entering endpoint /users/getUsers
+2023-06-17 21:46:53 - Returning all users
+2023-06-17 21:47:31 - Entering endpoint /users/getUsers
+2023-06-17 21:47:31 - Returning all users
+2023-06-17 21:47:40 - Entering endpoint /messages/sendMessage
+2023-06-17 21:47:40 - Creating message
+2023-06-17 21:48:02 - Entering endpoint /messages/sendMessage
+2023-06-17 21:48:02 - Creating message
+2023-06-17 21:50:25 - Entering endpoint /users/getUsers
+2023-06-17 21:50:25 - Returning all users
+2023-06-17 21:50:43 - Entering endpoint /users/getUsers
+2023-06-17 21:50:43 - Returning all users
+2023-06-17 21:51:08 - Entering endpoint /users/getUsers
+2023-06-17 21:51:08 - Returning all users
+2023-06-17 21:51:11 - Entering endpoint /users/getUsers
+2023-06-17 21:51:11 - Returning all users
+2023-06-17 21:51:15 - Entering endpoint /users/getUsers
+2023-06-17 21:51:15 - Returning all users
+2023-06-17 21:53:22 - Entering endpoint /users/getUsers
+2023-06-17 21:53:22 - Returning all users
+2023-06-17 21:53:43 - Entering endpoint /users/getUsers
+2023-06-17 21:53:43 - Returning all users
+2023-06-17 21:53:49 - Entering endpoint /messages/sendMessage
+2023-06-17 21:53:49 - Creating message
+2023-06-17 21:54:18 - Entering endpoint /messages/sendMessage
+2023-06-17 21:54:18 - Creating message
+2023-06-17 21:55:23 - Entering endpoint /messages/sendMessage
+2023-06-17 21:55:23 - Creating message
+2023-06-17 21:59:42 - Entering endpoint /users/getUsers
+2023-06-17 21:59:42 - Returning all users
+2023-06-17 23:15:38 - Entering endpoint /users/getUsers
+2023-06-17 23:15:38 - Returning all users
+2023-06-17 23:15:44 - Entering endpoint /users/getUsers
+2023-06-17 23:15:44 - Returning all users
+2023-06-17 23:15:44 - Entering endpoint /users/getUsers
+2023-06-17 23:15:44 - Returning all users
+2023-06-17 23:15:56 - Entering endpoint /users/getUsers
+2023-06-17 23:15:56 - Returning all users
+2023-06-17 23:15:57 - Entering endpoint /users/getUsers
+2023-06-17 23:15:57 - Returning all users
+2023-06-17 23:16:00 - Entering endpoint /users/getUsers
+2023-06-17 23:16:00 - Returning all users
+2023-06-17 23:16:18 - Entering endpoint /users/getUsers
+2023-06-17 23:16:18 - Returning all users
+2023-06-17 23:16:41 - Entering endpoint /users/getUsers
+2023-06-17 23:16:41 - Returning all users
+2023-06-17 23:18:38 - Entering endpoint /users/getUsers
+2023-06-17 23:18:38 - Returning all users
+2023-06-17 23:19:10 - Entering endpoint /users/getUsers
+2023-06-17 23:19:10 - Returning all users
+2023-06-17 23:19:37 - Entering endpoint /users/getUsers
+2023-06-17 23:19:37 - Returning all users
+2023-06-17 23:23:01 - Entering endpoint /users/getUsers
+2023-06-17 23:23:01 - Returning all users
+2023-06-17 23:23:08 - Entering endpoint /users/getUsers
+2023-06-17 23:23:08 - Returning all users
+2023-06-17 23:23:11 - Entering endpoint /users/getUsers
+2023-06-17 23:23:11 - Returning all users
+2023-06-17 23:23:21 - Entering endpoint /users/getUsers
+2023-06-17 23:23:21 - Returning all users
+2023-06-17 23:23:22 - Entering endpoint /users/getUsers
+2023-06-17 23:23:22 - Returning all users
+2023-06-17 23:23:24 - Entering endpoint /users/getUsers
+2023-06-17 23:23:24 - Returning all users
+2023-06-17 23:23:50 - Entering endpoint /messages/sendMessage
+2023-06-17 23:23:50 - Creating message
+2023-06-17 23:26:27 - Entering endpoint /messages/sendMessage
+2023-06-17 23:26:27 - Creating message
+2023-06-17 23:35:13 - Entering endpoint /users/getUsers
+2023-06-17 23:35:13 - Returning all users
+2023-06-17 23:36:55 - Entering endpoint /users/addUser
+2023-06-17 23:36:55 - Returning user by mail and password
+2023-06-17 23:36:56 - Entering endpoint /users/getUsers
+2023-06-17 23:36:56 - Returning all users
+2023-06-17 23:38:05 - Entering endpoint /users/getUsers
+2023-06-17 23:38:05 - Returning all users
+2023-06-17 23:38:06 - Entering endpoint /users/getUsers
+2023-06-17 23:38:06 - Returning all users
+2023-06-17 23:38:13 - Entering endpoint /users/getUsers
+2023-06-17 23:38:13 - Returning all users
+2023-06-17 23:38:29 - Entering endpoint /users/addUser
+2023-06-17 23:38:29 - Returning user by mail and password
+2023-06-17 23:38:32 - Entering endpoint /users/getUsers
+2023-06-17 23:38:32 - Returning all users
+2023-06-17 23:38:54 - Entering endpoint /users/getUsers
+2023-06-17 23:38:54 - Returning all users
+2023-06-17 23:38:58 - Entering endpoint /users/addUser
+2023-06-17 23:38:58 - Returning user by mail and password
+2023-06-17 23:39:00 - Entering endpoint /users/getUsers
+2023-06-17 23:39:00 - Returning all users
+2023-06-17 23:39:08 - Entering endpoint /messages/sendMessage
+2023-06-17 23:39:08 - Creating message
+2023-06-17 23:39:08 - Error in /messages/sendMessage
+2023-06-17 23:39:15 - Entering endpoint /messages/sendMessage
+2023-06-17 23:39:15 - Creating message
+2023-06-17 23:39:15 - Error in /messages/sendMessage
+2023-06-17 23:39:49 - Entering endpoint /messages/sendMessage
+2023-06-17 23:39:49 - Creating message
+2023-06-17 23:39:49 - Error in /messages/sendMessage
+2023-06-17 23:40:31 - Entering endpoint /users/addUser
+2023-06-17 23:40:31 - Returning user by mail and password
+2023-06-17 23:40:33 - Entering endpoint /users/getUsers
+2023-06-17 23:40:33 - Returning all users
+2023-06-17 23:40:37 - Entering endpoint /messages/sendMessage
+2023-06-17 23:40:37 - Creating message
+2023-06-17 23:40:37 - Error in /messages/sendMessage
+2023-06-17 23:41:17 - Entering endpoint /messages/sendMessage
+2023-06-17 23:41:17 - Creating message
+2023-06-17 23:41:17 - Error in /messages/sendMessage
+2023-06-17 23:43:20 - Entering endpoint /messages/sendMessage
+2023-06-17 23:43:20 - Creating message
+2023-06-17 23:43:20 - Error in /messages/sendMessage
+2023-06-17 23:43:53 - Entering endpoint /messages/sendMessage
+2023-06-17 23:43:53 - Creating message
+2023-06-17 23:43:53 - Error in /messages/sendMessage
+2023-06-17 23:44:22 - Entering endpoint /messages/sendMessage
+2023-06-17 23:44:22 - Creating message
+2023-06-17 23:45:11 - Entering endpoint /messages/sendMessage
+2023-06-17 23:45:11 - Creating message
+2023-06-17 23:45:29 - Entering endpoint /messages/sendMessage
+2023-06-17 23:45:29 - Creating message
+2023-06-17 23:45:43 - Entering endpoint /messages/sendMessage
+2023-06-17 23:45:43 - Creating message
+2023-06-17 23:46:05 - Entering endpoint /messages/sendMessage
+2023-06-17 23:46:05 - Creating message
+2023-06-17 23:49:57 - Entering endpoint /messages/sendMessage
+2023-06-17 23:49:57 - Creating message
+2023-06-17 23:50:49 - Entering endpoint /messages/sendMessage
+2023-06-17 23:50:49 - Creating message
+2023-06-17 23:51:11 - Entering endpoint /messages/sendMessage
+2023-06-17 23:51:11 - Creating message
+2023-06-17 23:51:21 - Entering endpoint /messages/sendMessage
+2023-06-17 23:51:21 - Creating message
+2023-06-17 23:51:42 - Entering endpoint /users/getUsers
+2023-06-17 23:51:42 - Returning all users
+2023-06-17 23:52:01 - Entering endpoint /users/getUsers
+2023-06-17 23:52:01 - Returning all users
+2023-06-17 23:52:11 - Entering endpoint /users/addUser
+2023-06-17 23:52:11 - Returning user by mail and password
+2023-06-17 23:52:14 - Entering endpoint /users/getUsers
+2023-06-17 23:52:14 - Returning all users
+2023-06-17 23:52:27 - Entering endpoint /messages/sendMessage
+2023-06-17 23:52:27 - Creating message
+2023-06-17 23:52:31 - Entering endpoint /users/addUser
+2023-06-17 23:52:31 - Returning user by mail and password
+2023-06-17 23:52:43 - Entering endpoint /users/getUsers
+2023-06-17 23:52:43 - Returning all users
+2023-06-17 23:53:06 - Entering endpoint /users/addUser
+2023-06-17 23:53:06 - Returning user by mail and password
+2023-06-17 23:53:08 - Entering endpoint /users/getUsers
+2023-06-17 23:53:08 - Returning all users
+2023-06-17 23:53:18 - Entering endpoint /messages/sendMessage
+2023-06-17 23:53:18 - Creating message
+2023-06-17 23:53:21 - Entering endpoint /users/addUser
+2023-06-17 23:53:21 - Returning user by mail and password
+2023-06-17 23:53:23 - Entering endpoint /users/getUsers
+2023-06-17 23:53:23 - Returning all users
+2023-06-17 23:53:28 - Entering endpoint /users/getUsers
+2023-06-17 23:53:28 - Returning all users
+2023-06-17 23:53:31 - Entering endpoint /users/getUsers
+2023-06-17 23:53:31 - Returning all users
+2023-06-17 23:53:32 - Entering endpoint /users/getUsers
+2023-06-17 23:53:32 - Returning all users
+2023-06-17 23:53:40 - Entering endpoint /messages/sendMessage
+2023-06-17 23:53:40 - Creating message
+2023-06-17 23:53:43 - Entering endpoint /users/getUsers
+2023-06-17 23:53:43 - Returning all users
+2023-06-17 23:55:28 - Entering endpoint /users/getUsers
+2023-06-17 23:55:28 - Returning all users
+2023-06-17 23:55:31 - Entering endpoint /users/getUsers
+2023-06-17 23:55:31 - Returning all users
+2023-06-17 23:55:32 - Entering endpoint /users/getUsers
+2023-06-17 23:55:32 - Returning all users
+2023-06-17 23:55:33 - Entering endpoint /users/getUsers
+2023-06-17 23:55:33 - Returning all users
+2023-06-17 23:56:34 - Entering endpoint /users/getUsers
+2023-06-17 23:56:34 - Returning all users
+2023-06-18 00:09:50 - Entering endpoint /users/addUser
+2023-06-18 00:09:50 - Returning user by mail and password
+2023-06-18 00:09:51 - Entering endpoint /post/findAll
+2023-06-18 00:09:51 - Returning all posts
+2023-06-18 00:09:53 - Entering endpoint /post/updatePost
+2023-06-18 00:09:53 - Entering endpoint /vehicles/findById
+2023-06-18 00:09:53 - Returning vehicle with id:34
+2023-06-18 00:09:53 - Returning post with id:34
+2023-06-18 00:09:53 - Error in /vehicles/findById
+2023-06-18 00:09:55 - Entering endpoint /post/deletePost
+2023-06-18 00:09:55 - Deleting post
+2023-06-18 00:09:55 - Entering endpoint /post/findAll
+2023-06-18 00:09:55 - Returning all posts
+2023-06-18 00:09:59 - Entering endpoint /post/updatePost
+2023-06-18 00:09:59 - Entering endpoint /vehicles/findById
+2023-06-18 00:09:59 - Returning post with id:34
+2023-06-18 00:09:59 - Returning vehicle with id:34
+2023-06-18 00:09:59 - Error in /vehicles/findById
+2023-06-18 00:10:00 - Entering endpoint /post/findAll
+2023-06-18 00:10:00 - Returning all posts
+2023-06-18 00:10:02 - Entering endpoint /post/findAll
+2023-06-18 00:10:02 - Returning all posts
+2023-06-18 00:10:16 - Entering endpoint /users/addUser
+2023-06-18 00:10:16 - Returning user by mail and password
+2023-06-18 00:10:17 - Entering endpoint /post/findAll
+2023-06-18 00:10:17 - Returning all posts
+2023-06-18 00:10:24 - Entering endpoint /post/findAll
+2023-06-18 00:10:24 - Returning all posts
+2023-06-18 00:10:25 - Entering endpoint /vehicles/findByOwnerId
+2023-06-18 00:10:25 - Returning vehicle for user id:21
+2023-06-18 00:10:30 - Entering endpoint /post/addPost
+2023-06-18 00:10:30 - Creating new post
+2023-06-18 00:10:30 - PostDto [id=0, vehicle=com.FindaCar.FindaCarApi.dto.VehicleDto@6bac9479, comment=Suerte]
+2023-06-18 00:10:30 - Entering endpoint /post/findAll
+2023-06-18 00:10:30 - Returning all posts
+2023-06-18 00:10:31 - Entering endpoint /vehicles/findByOwnerId
+2023-06-18 00:10:31 - Returning vehicle for user id:21
+2023-06-18 00:10:36 - Entering endpoint /users/addUser
+2023-06-18 00:10:36 - Returning user by mail and password
+2023-06-18 00:10:37 - Entering endpoint /post/findAll
+2023-06-18 00:10:37 - Returning all posts
+2023-06-18 00:10:38 - Entering endpoint /post/updatePost
+2023-06-18 00:10:38 - Returning post with id:35
+2023-06-18 00:10:38 - Entering endpoint /vehicles/findById
+2023-06-18 00:10:38 - Returning vehicle with id:35
+2023-06-18 00:10:38 - Error in /vehicles/findById
+2023-06-18 00:10:39 - Entering endpoint /post/deletePost
+2023-06-18 00:10:39 - Deleting post
+2023-06-18 00:10:39 - Entering endpoint /post/findAll
+2023-06-18 00:10:39 - Returning all posts
+2023-06-18 00:10:40 - Entering endpoint /post/updatePost
+2023-06-18 00:10:40 - Returning post with id:35
+2023-06-18 00:10:40 - Entering endpoint /vehicles/findById
+2023-06-18 00:10:40 - Returning vehicle with id:35
+2023-06-18 00:10:40 - Error in /vehicles/findById
+2023-06-18 00:10:41 - Entering endpoint /post/findAll
+2023-06-18 00:10:41 - Returning all posts

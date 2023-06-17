@@ -1,21 +1,21 @@
 <app-navbar></app-navbar>
 
-<div class="container">
-    <div class="content">
-      <h2>Favoritos</h2>
-      <div class="row">
-        <div class="col-md-4" *ngFor="let favorite of favoriteList">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">{{ favorite.vehicle.brand }} {{ favorite.vehicle.model }}</h5>
-              <p class="card-text">Propietario: {{ favorite.vehicle.owner.name }}</p>
-              <div class="d-flex justify-content-between">
-                <a [routerLink]="['favoriteDetail/', favorite.vehicle.id]" class="btn btn-primary">Ver detalles</a>
-              </div>
+<div class="container mt-5">
+  <div class="background-image"></div>
+  <div class="content">
+    <h2>Favoritos</h2>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let favorite of favoriteList">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">{{ favorite.vehicle.brand }} {{ favorite.vehicle.model }}</h5>
+            <p class="card-text">Propietario: {{ favorite.vehicle.owner.name }}</p>
+            <div class="d-flex justify-content-between">
+              <a [routerLink]="['favoriteDetail/', favorite.id]" class="btn btn-primary">Ver detalles</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>

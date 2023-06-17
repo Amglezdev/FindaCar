@@ -15,37 +15,47 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChatWindowComponent implements OnInit{
 
-  conversation:Conversation;
+  conversation:Conversation = {
+    id:0,
+    reciever:null,
+    sender:null,
+  };
   message:Message;
   listMessage:Message[];
   user:User;
   converId:string;
-  newMessageContent:string
+  newMessageContent:string = '';
 
 
   constructor(private cookieService:CookieService, private us:UserService, private ms:MessageService, private cs:ConversationService, private arm:ActivatedRoute){}
 
   ngOnInit(): void {
     this.converId = this.arm.snapshot.paramMap.get('id');
-    this.findConversation(this.converId)
-    this.findByConversationId(this.conversation)
+    this.findByConversationId(Number(this.converId))
+    this.findConversation(Number(this.converId))
   }
 
   async sendMessage(){
+    this.message = {
+      content : this.newMessageContent,
+      conversation : this.conversation,
+      id:0,
+    }
     await this.ms.sendMessage(this.message)
-    await this.ms.findByConversationId(this.conversation)
-
+    this.findByConversationId(Number(this.converId))
+    this.newMessageContent = '';
   }
 
-  async findByConversationId(conver:Conversation){
-    await this.ms.findByConversationId(conver).subscribe((resp) => {
+  async findByConversationId(id:Number){
+    await this.ms.findByConversationId(Number(this.converId)).subscribe((resp) => {
       this.listMessage = resp;
     })
   }
 
-  async findConversation(id:string){
-    await this.cs.findById(Number(id)).subscribe((resp) =>{
+  async findConversation(id:number){
+    await this.cs.findById(id).subscribe((resp) => {
       this.conversation = resp;
-    })
+    });
   }
+
 }
