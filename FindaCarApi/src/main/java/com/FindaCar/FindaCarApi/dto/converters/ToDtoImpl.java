@@ -40,9 +40,7 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setPhoneNumber(user.getPhoneNumber());
 		dto.setRol(roleToDto(user.getRole()));
 		dto.setSurname(user.getSurname());
-		dto.setSecurity(user.getSecurity());
-
-		System.out.println(dto.toString());
+		dto.setSecurity(user.getSecurity());	
 
 		return dto;
 	}
@@ -114,7 +112,10 @@ public class ToDtoImpl implements ToDtoService {
 		dto.setId(dao.getId());
 		dto.setUser(userToDto(dao.getUser()));
 		dto.setVehicle(vehicleToDto(dao.getVehicle()));
-
+		
+		System.out.println(dto.toString());
+		System.out.println(dao.toString());
+		
 		return dto;
 	}
 
@@ -258,14 +259,27 @@ public class ToDtoImpl implements ToDtoService {
 
 	@Override
 	public ConversationDto conversationToDto(Conversation dao) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ConversationDto dto = new ConversationDto();
+
+		dto.setId(dao.getId());
+		dto.setReciever(userToDto(dao.getReciever()));
+		dto.setSender(userToDto(dao.getSender()));
+
+		return dto;
 	}
 
 	@Override
 	public ArrayList<ConversationDto> listConversationToDto(ArrayList<Conversation> listDao) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ArrayList<ConversationDto> listDto = new ArrayList<>();
+
+		for (Conversation dao : listDao) {
+			listDto.add(conversationToDto(dao));
+		}
+
+		return listDto;
+
 	}
 
 }

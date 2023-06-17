@@ -41,6 +41,14 @@ public class UserFavorites {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vehiculo_favorito")
 	private Vehicle vehicle;
+	
+	
+
+	@Override
+	public String toString() {
+		return "UserFavorites [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", user=" + user + ", vehicle="
+				+ vehicle + "]";
+	}
 
 	/**
 	 * Gets the md uuid.

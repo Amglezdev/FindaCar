@@ -39,7 +39,7 @@ public class ConversationServiceImpl implements ConversationService {
 	@Override
 	public Conversation findConversationBySenderAndReciever(User sender, User reciever) {
 		try {
-			return converRepo.findBySenderAndRecieverOrRecieverAndSender(sender, reciever, reciever, sender);
+			return converRepo.findBySenderAndRecieverOrRecieverAndSender(sender, reciever, sender, reciever);
 		}catch (Exception e) {
 			// TODO: handle exception
 			return null;

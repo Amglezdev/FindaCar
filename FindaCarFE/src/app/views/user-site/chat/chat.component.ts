@@ -20,6 +20,7 @@ export class ChatComponent implements OnInit {
   searchText:string;
   userList:User[];
   preFilter:User[];
+  newConversation:Conversation;
 
   constructor(
     private cs: ConversationService,
@@ -33,6 +34,7 @@ export class ChatComponent implements OnInit {
     const userData = JSON.parse(userDataString);
     this.user = userData;
     this.getAllConversations();
+    this.getUsers();
   }
 
   async getAllConversations() {
@@ -41,17 +43,18 @@ export class ChatComponent implements OnInit {
     });
   }
 
-  async createConversation() {
+  async createConversationWithUser(reciever:User) {
     this.conversation = {
       id: 0,
       sender: this.user,
-      reciever: this.selectedUser,
+      reciever: reciever,
     };
-    if ((await this.cs.createConversation(this.conversation)) === true) {
-      await this.cs
-        .findBySenderAndReciever(this.user, this.selectedUser)
-        .subscribe((resp) => { this.router.navigate(['/chatWindow/' + resp.id])});
-    }
+    this.cs.createConversation(this.conversation);
+    this.cs.findBySenderAndReciever(this.user, reciever).subscribe((resp) => {
+      this.newConversation = resp;
+      console.log(resp)
+      this.router.navigate(['/chatWindow/' + this.newConversation.id])
+    });
   }
 
   filter() {
@@ -71,7 +74,13 @@ export class ChatComponent implements OnInit {
   }
 
   openChat(id:Number){
-    this.router.navigate(['/chatWindow/' + id])
+    this.router.navigate(['/userSite/chat/chatWindow/' + id])
+  }
+
+  async getUsers(){
+    await this.us.getAllUsers().subscribe((resp) =>{
+      this.preFilter = resp;
+    })
   }
 
 }

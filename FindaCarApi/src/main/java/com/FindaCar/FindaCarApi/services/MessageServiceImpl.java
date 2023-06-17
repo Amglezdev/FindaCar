@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.FindaCar.FindaCarApi.entities.Conversation;
 import com.FindaCar.FindaCarApi.entities.Messages;

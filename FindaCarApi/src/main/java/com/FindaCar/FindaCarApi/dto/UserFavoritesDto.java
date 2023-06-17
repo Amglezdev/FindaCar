@@ -15,6 +15,13 @@ public class UserFavoritesDto {
 	/** The vehicle id. */
 	private VehicleDto vehicle;
 	
+	
+	
+	@Override
+	public String toString() {
+		return "UserFavoritesDto [id=" + id + ", user=" + user + ", vehicle=" + vehicle + "]";
+	}
+
 	/**
 	 * Gets the id.
 	 *

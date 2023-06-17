@@ -3,7 +3,6 @@ package com.FindaCar.FindaCarApi.entities;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -76,6 +75,16 @@ public class User {
 	@JsonIgnore
 	private List<Conversation> conversations;
 	
+	
+	
+
+	@Override
+	public String toString() {
+		return "User [mdUuid=" + mdUuid + ", mdDate=" + mdDate + ", id=" + id + ", name=" + name + ", surname="
+				+ surname + ", phoneNumber=" + phoneNumber + ", mail=" + mail + ", password=" + password + ", role="
+				+ role + ", vehiclesOwned=" + vehiclesOwned + ", conversationsStarted=" + conversationsStarted
+				+ ", conversations=" + conversations + ", security=" + security + "]";
+	}
 
 	/** The security. */
 	@Column(name = "pregunta_seguridad")

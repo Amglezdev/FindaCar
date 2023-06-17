@@ -62,4 +62,12 @@ export class ConversationService {
       return null;
     }
   }
+
+  findById(id:number){
+    try {
+      return this.httpClient.get<Conversation>(this.apiUrl + `findById?id=${id}`)
+    } catch (error) {
+      return null;
+    }
+  }
 }

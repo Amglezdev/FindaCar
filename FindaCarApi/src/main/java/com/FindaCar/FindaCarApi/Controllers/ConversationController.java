@@ -55,9 +55,19 @@ public class ConversationController {
 	}
 	
 	@GetMapping("/findConversationByUserAndReciever")
-	public ConversationDto conversationByUserAndReciever(@Param(value = "senderId") long senderId, @Param(value = "recieverId") long recieverId){
+	public ConversationDto conversationByUserAndReciever(@Param(value = "senderId") Long senderId, @Param(value = "recieverId") Long recieverId){
 		try {
 			return toDto.conversationToDto(converService.findConversationBySenderAndReciever(userService.findById(senderId), userService.findById(recieverId)));
+		} catch (Exception e) {
+			// TODO: handle exception
+			return null;
+		}
+	}
+	
+	@GetMapping("/getById")
+	public ConversationDto findById(@Param(value = "id") Long id) {
+		try {
+			return toDto.conversationToDto(converService.findById(id));
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;

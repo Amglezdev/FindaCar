@@ -166,8 +166,10 @@ public class DtoToImpl implements DtoToService {
 		uf.setMdDate(calendar);
 		uf.setMdUuid(mdUuid);
 		uf.setUser(userService.findById(dto.getId()));
-		uf.setVehicle(vehicleService.findById(dto.getVehicle().getId()));
+		uf.setVehicle(vehicleService.findById(dto.getVehicle().getId()));	
 
+		System.out.println(uf.getUser().toString());
+		
 		return uf;
 	}
 

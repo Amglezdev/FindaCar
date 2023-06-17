@@ -1,1 +1,25 @@
 <app-navbar></app-navbar>
+<div class="background-image"></div>
+<div class="container">
+  <div class="chat-window">
+    <div class="message-list-container">
+      <div class="message-list" [ngClass]="{'no-messages': listMessage.length === 0}">
+        <div class="empty-message" *ngIf="listMessage.length === 0">
+          No hay mensajes disponibles.
+        </div>
+        <div class="message" *ngFor="let message of listMessage">
+          <div [ngClass]="{'sender-message': message.conversation.reciever, 'receiver-message': !message.conversation.sender}">
+            {{ message.content }}
+          </div>
+        </div>
+        <div class="empty-message" *ngIf="listMessage.length > 0 && listMessage.length < 8">
+          <!-- Espacio en blanco para visualizar los mensajes -->
+        </div>
+      </div>
+    </div>
+    <div class="new-message">
+      <textarea class="message-input" [(ngModel)]="newMessageContent" placeholder="Escribe tu mensaje"></textarea>
+      <button class="send-button" (click)="sendMessage()">Enviar</button>
+    </div>
+  </div>
+</div>
